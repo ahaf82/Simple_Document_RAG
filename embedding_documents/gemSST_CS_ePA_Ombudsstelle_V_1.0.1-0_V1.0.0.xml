@@ -1,0 +1,1669 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<characteristics>
+  <documents>
+    <document>
+      <id>gemILF_PS_ePA</id>
+      <denotation>Implementierungsleitfaden Primärsysteme ePA</denotation>
+      <version>3.1.0</version>
+    </document>
+    <document>
+      <id>gemSpec_Aktensystem_ePAfueralle</id>
+      <denotation>Spezifikation Aktensystem ePA für alle</denotation>
+      <version>1.1.0</version>
+    </document>
+    <document>
+      <id>gemSpec_Krypt</id>
+      <denotation>Übergreifende Spezifikation Verwendung kryptographischer Algorithmen in der Telematikinfrastruktur</denotation>
+      <version>2.32.0</version>
+    </document>
+  </documents>
+  <requirements>
+    <requirement id="A_14179" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-18">
+      <title><![CDATA[Verständliche Fehlermeldung]]></title>
+      <description><![CDATA[Das PS MUSS im Falle von Fehlern Fehlermeldungen bereitstellen, die es den 
+Mitarbeitern der Leistungserbringerinstitution ermöglichen, die Ursache des 
+Fehlers zu identifizieren und mögliche Gegenmaßnahmen zu ergreifen.]]></description>
+      <description_html><![CDATA[Das PS MUSS im Falle von Fehlern Fehlermeldungen bereitstellen, die es den Mitarbeitern der Leistungserbringerinstitution ermöglichen, die Ursache des Fehlers zu identifizieren und mögliche Gegenmaßnahmen zu ergreifen.]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_16434" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[Übertragungsprotokolle durchsuchbar und einsehbar speichern]]></title>
+      <description><![CDATA[Das PS MUSS Übertragungsprotokolle der Kommunikation mit dem ePA-Aktensystem 
+speichern, durchsuchbar und einsehbar machen.]]></description>
+      <description_html><![CDATA[Das PS MUSS Übertragungsprotokolle der Kommunikation mit dem ePA-Aktensystem speichern, durchsuchbar und einsehbar machen.]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_20655" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-18">
+      <title><![CDATA[Regelmäßiges Einlesen des Discovery Document]]></title>
+      <description><![CDATA[Das Primärsystem MUSS das Discovery Document (DD) [RFC8414] regelmäßig alle 24 
+Stunden einlesen und auswerten, und danach die darin aufgeführten URI zu den 
+benötigten öffentlichen Schlüsseln (PUKs) und Diensten verwenden. 
+Der Downloadpunkt wird als Teil der organisatorischen Registrierung des 
+Primärsystems beim IDP-Dienst übergeben. 
+Das Primärsystem MUSS den Downloadpunkt des Discovery Document als 
+konfigurierbaren Parameter speichern.   ]]></description>
+      <description_html><![CDATA[<span style="font-size: 10pt;line-height: 1.5;">Das Primärsystem MUSS das Discovery Document (DD) [RFC8414] regelmäßig alle 24 Stunden einlesen und auswerten, und danach die darin aufgeführten URI zu den benötigten öffentlichen Schlüsseln (PUKs) und Diensten verwenden.  </span><br/>
+ <span style="font-size: 10pt;line-height: 1.5;">Der Downloadpunkt wird als Teil der organisatorischen Registrierung des Primärsystems beim IDP-Dienst übergeben.  </span><br/>
+ <span style="font-size: 10pt;line-height: 1.5;">Das Primärsystem MUSS den Downloadpunkt des Discovery Document als konfigurierbaren Parameter speichern.   </span>]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_20656-01" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-18">
+      <title><![CDATA[Prüfung der Signatur des Discovery Document]]></title>
+      <description><![CDATA[Das Primärsystem MUSS die JWS (JSON Web Signature) [RFC7515 # section-3 - 
+Compact Serialization] Signatur des Discovery Document auf mathematische 
+Korrektheit sowie über die Funktion "VerifyCertificate" des Konnektors gemäß 
+[gemSpec_Kon#4.1.9.5.3] bzw. [gemILF_PS#4.4.4.3] auf Gültigkeit des 
+ausstellenden Zertifikates innerhalb der TI prüfen.]]></description>
+      <description_html><![CDATA[<span style="font-size: 10pt;line-height: 1.5;">Das Primärsystem MUSS die JWS (JSON Web Signature) [RFC7515 # section-3 - Compact Serialization] Signatur des Discovery Document auf mathematische Korrektheit sowie über die Funktion &quot;VerifyCertificate&quot; des Konnektors gemäß [gemSpec_Kon#4.1.9.5.3] bzw. [gemILF_PS#4.4.4.3] auf Gültigkeit des ausstellenden Zertifikates innerhalb der TI prüfen.<br/></span>]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_20657" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-18">
+      <title><![CDATA[Prüfung der Signatur des Discovery Document]]></title>
+      <description><![CDATA[Das Primärsystem MUSS die Signatur des Discovery Document auf ein zeitlich 
+gültiges C.FD.SIG-Zertifikat mit der Rollen-OID "oid_idpd" zurückführen können.]]></description>
+      <description_html><![CDATA[<span style="font-size: 10pt;line-height: 1.5;">Das Primärsystem MUSS die Signatur des Discovery Document auf ein zeitlich gültiges C.FD.SIG-Zertifikat mit der Rollen-OID &quot;oid_idpd&quot; zurückführen können.</span>]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_20662" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-18">
+      <title><![CDATA[Annahme des "user_consent" und des "CHALLENGE_TOKEN"]]></title>
+      <description><![CDATA[Das Primärsystem MUSS den "user_consent" und den "CHALLENGE_TOKEN" vom 
+Authorization-Endpunkt des IDP-Dienstes annehmen. Der Authorization-Endpunkt 
+liefert diese als Antwort auf den Authorization-Request des Primärsystems.]]></description>
+      <description_html><![CDATA[Das Primärsystem MUSS den &quot;user_consent&quot; und den &quot;CHALLENGE_TOKEN&quot; vom Authorization-Endpunkt des IDP-Dienstes annehmen. Der Authorization-Endpunkt liefert diese als Antwort auf den Authorization-Request des Primärsystems.]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_20663-01" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-18">
+      <title><![CDATA[Prüfung der Signatur des CHALLENGE_TOKEN]]></title>
+      <description><![CDATA[Das Primärsystem MUSS die Signatur des "CHALLENGE_TOKEN" gegen den aktuellen 
+öffentlichen Schlüssel des Authorization-Endpunktes "PUK_IDP_SIG" prüfen. Liegt 
+dem Primärsystem der öffentliche Schlüssel des Authorization-Endpunktes noch 
+nicht vor, MUSS es diesen gemäß dem "kid"-Parameter "puk_idp_sig" aus dem 
+Discovery Document abrufen.]]></description>
+      <description_html><![CDATA[Das Primärsystem MUSS die Signatur des &quot;CHALLENGE_TOKEN&quot; gegen den aktuellen öffentlichen Schlüssel des Authorization-Endpunktes &quot;PUK_IDP_SIG&quot; prüfen. Liegt dem Primärsystem der öffentliche Schlüssel des Authorization-Endpunktes noch nicht vor, MUSS es diesen gemäß dem &quot;kid&quot;-Parameter &quot;puk_idp_sig&quot; aus dem Discovery Document abrufen.]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_20665-01" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-18">
+      <title><![CDATA[Signatur der Challenge des IdP-Dienstes]]></title>
+      <description><![CDATA[Das Primärsystem MUSS für das Signieren des CHALLENGE_TOKEN des IdP-Dienstes 
+mit der Identität ID.HCI.AUT der SM-B die Operation ExternalAuthenticate des 
+Konnektors gemäß [gemSpec_Kon#4.1.13.4] bzw. [gemILF_PS#4.4.6.1] verwenden und 
+als zu signierende DatenBinaryString den SHA-256-Hashwert des CHALLENGE_TOKEN 
+in Base64-Codierung übergeben.]]></description>
+      <description_html><![CDATA[<span style="font-size: 10pt;line-height: 1.5;">Das Primärsystem MUSS für das Signieren des CHALLENGE_TOKEN des IdP-Dienstes mit der Identität ID.HCI.AUT der SM-B die Operation ExternalAuthenticate des Konnektors gemäß [gemSpec_Kon#4.1.13.4] bzw. [gemILF_PS#4.4.6.1] verwenden und als zu signierende Daten <span style="font-family: 'Courier New', Courier, monospace, HanWangKanTan;">BinaryString</span> den SHA-256-Hashwert des CHALLENGE_TOKEN in Base64-Codierung übergeben.</span><br/>]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_20666-02" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-27">
+      <title><![CDATA[Auslesen des Authentisierungszertifikates]]></title>
+      <description><![CDATA[Das Primärsystem MUSS das Zertifikat C.HCI.AUT der SM-B über die Operation 
+ReadCardCertificatedes Konnektors gemäß [gemSpec_Kon#4.1.9.5.2] bzw. 
+[gemILF_PS#4.4.4.2] auslesen.]]></description>
+      <description_html><![CDATA[<span style="font-size: 10pt;line-height: 1.5;">Das Primärsystem MUSS das Zertifikat <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">C.HCI.AUT </span>der SM-B über die Operation <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">ReadCardCertificate </span>des Konnektors gemäß [gemSpec_Kon#4.1.9.5.2] bzw. [gemILF_PS#4.4.4.2] auslesen.</span><span id="polarion-comment:883"></span>]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_20667-01" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-18">
+      <title><![CDATA[Response auf die Challenge des Authorization-Endpunktes]]></title>
+      <description><![CDATA[Das Primärsystem MUSS das eingereichte "CHALLENGE_TOKEN" zusammen mit der von 
+der Smartcard signierten Challenge-Signatur "signed_challenge" (siehe A_20665) 
+und dem Authentifizierungszertifikat der Smartcard (siehe A_20666), mit dem 
+öffentlichen Schlüssel des Authorization-Endpunktes "PUK_IDP_ENC" 
+verschlüsselt, an diesen in Form eines HTTP-POST-Requests senden.]]></description>
+      <description_html><![CDATA[<span style="font-size: 10pt;line-height: 1.5;">Das Primärsystem MUSS das eingereichte &quot;CHALLENGE_TOKEN&quot; zusammen mit der von der Smartcard signierten Challenge-Signatur &quot;signed_challenge&quot; (siehe A_20665) und dem Authentifizierungszertifikat der Smartcard (siehe A_20666), mit dem öffentlichen Schlüssel des Authorization-Endpunktes &quot;PUK_IDP_ENC&quot; verschlüsselt, an diesen in Form eines HTTP-POST-Requests senden.</span>]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_20668" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-18">
+      <title><![CDATA[Annahme des "AUTHORIZATION_CODE"]]></title>
+      <description><![CDATA[Das Primärsystem MUSS den vom Authorization-Endpunkt als Antwort auf die 
+signierte Challenge gesendeten "AUTHORIZATION_CODE" verarbeiten. Das 
+Primärsystem MUSS das "AUTHORIZATION_CODE" ablehnen, wenn dieser außerhalb der 
+mit dem Authorization-Endpunkt etablierten TLS-Verbindung übertragen wird.]]></description>
+      <description_html><![CDATA[<span style="font-size: 10pt;line-height: 1.5;">Das Primärsystem MUSS den vom Authorization-Endpunkt als Antwort auf die signierte Challenge gesendeten &quot;AUTHORIZATION_CODE&quot; verarbeiten. Das Primärsystem MUSS das &quot;AUTHORIZATION_CODE&quot; ablehnen, wenn dieser außerhalb der mit dem Authorization-Endpunkt etablierten TLS-Verbindung übertragen wird.</span>]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24368" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[Persistieren der Information zur Teilnahme an Versorgungsprozessen]]></title>
+      <description><![CDATA[Das PS MUSS die erhaltenen Informationen zur Teilnahme an Versorgungsprozessen 
+persistieren.]]></description>
+      <description_html><![CDATA[Das PS MUSS die erhaltenen Informationen zur Teilnahme an Versorgungsprozessen persistieren.<span id="polarion-comment:780"></span>]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24380" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[Endpunkt Schnittstelle ePA-Aktensysteme]]></title>
+      <description><![CDATA[Das Primärsystem MUSS die URL für die Kommunikation mit den ePA-Aktensystemen 
+gemäßhttps://<FQDN aus DNS Lookup>:443/ bilden.]]></description>
+      <description_html><![CDATA[Das Primärsystem MUSS die URL für die Kommunikation mit den ePA-Aktensystemen gemäß <span style="font-family: 'Courier New', Courier, monospace, HanWangKanTan;">https://&lt;FQDN aus DNS Lookup&gt;:443/</span> bilden.]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24401" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[Mandantenweite Verwendung der korrekten SMC-B]]></title>
+      <description><![CDATA[Das PS MUSS sicherstellen, dass bei Vorhandensein mehrerer Mandanten in einer 
+LEI jeder Mandant nur seine eigene SMC-B für den Aufbau der VAU, die Erstellung 
+der Befugnis-Signatur und das IDP-Token verwendet.]]></description>
+      <description_html><![CDATA[Das PS MUSS sicherstellen, dass bei Vorhandensein mehrerer Mandanten in einer LEI jeder Mandant nur seine eigene SMC-B für den Aufbau der VAU, die Erstellung der Befugnis-Signatur und das IDP-Token verwendet.]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24435" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[Ermitteln des zuständigen Service-Endpunkts zu einem Aktenkonto]]></title>
+      <description><![CDATA[Das PS MUSS die Abfrage der Existenz eines Aktenkontos zu einer KVNR gegen die 
+bekannten Aktensysteme wiederholen, bis diese erfolgreich ist oder alle 
+Aktensysteme angefragt wurden.]]></description>
+      <description_html><![CDATA[Das PS MUSS die Abfrage der Existenz eines Aktenkontos zu einer KVNR gegen die bekannten Aktensysteme wiederholen, bis diese erfolgreich ist oder alle Aktensysteme angefragt wurden.]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24439-01" type="leafRequirement" severity="SOLL" lastUpdate="2024-03-27">
+      <title><![CDATA[Speichern und Nutzen des zuständigen Service-Endpunkts zu einem Aktenkonto]]></title>
+      <description><![CDATA[Das PS SOLL den zuständigen Service-Endpunkt zu einem Aktenkonto speichern und 
+verwenden. Nur wenn der Status "Unknown" vom Aktensystem zurückgegeben wurde, 
+darf es den Service-Endpunkt neu ermitteln.]]></description>
+      <description_html><![CDATA[Das PS SOLL den zuständigen Service-Endpunkt zu einem Aktenkonto speichern und verwenden. Nur wenn der Status &quot;Unknown&quot; vom Aktensystem zurückgegeben wurde, darf es den Service-Endpunkt neu ermitteln.<span id="polarion-comment:870"></span>]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24445" type="leafRequirement" severity="MUSS" lastUpdate="2024-02-06">
+      <title><![CDATA[Fehlermeldung Akte existiert nicht]]></title>
+      <description><![CDATA[Das PS MUSS dem Nutzer eine verständliche Fehlermeldung oder eine eindeutige 
+Statusinformation anzeigen, wenn alle verfügbaren Aktensysteme angefragt wurden 
+und alle den Status "Unknown" zurückgeben.]]></description>
+      <description_html><![CDATA[Das PS MUSS dem Nutzer eine verständliche Fehlermeldung <span style="font-size: 10pt;line-height: 1.5;">oder eine eindeutige Statusinformation </span>anzeigen, wenn alle verfügbaren Aktensysteme angefragt wurden und alle den Status &quot;Unknown&quot; zurückgeben.]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24447" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[Domänen als konfigurierbarer Wert]]></title>
+      <description><![CDATA[Das PS MUSS die Domänen für die DNS-Service Discovery als einen 
+konfigurierbaren Wert umsetzen, damit ein Wechsel der Umgebungen einfach 
+möglich ist.]]></description>
+      <description_html><![CDATA[Das PS MUSS die Domänen für die DNS-Service Discovery als einen konfigurierbaren Wert umsetzen, damit ein Wechsel der Umgebungen einfach möglich ist.]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24448" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[DNS-Service Discovery täglich für Service-Endpunkte der ePA]]></title>
+      <description><![CDATA[Das PS MUSS die DNS-Service Discovery für die Service-Endpunkte der ePA beim 
+Start und einmal täglich ausführen, die Ergebnisse lokal speichern und diese 
+Informationen nutzen.]]></description>
+      <description_html><![CDATA[Das PS MUSS die DNS-Service Discovery für die Service-Endpunkte der ePA beim Start und einmal täglich ausführen, die Ergebnisse lokal speichern und diese Informationen nutzen.]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24493" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[Nutzung der Schnittstelle I_Information_Service]]></title>
+      <description><![CDATA[Das PS MUSS es dem Nutzer ermöglichen, die Entscheidung zur Teilnahme an 
+Versorgungsprozessen abzufragen unter der Verwendung der Operation
+getConsentDecisionInformation gemäß [I_Information_Service].]]></description>
+      <description_html><![CDATA[Das PS MUSS es dem Nutzer ermöglichen, die Entscheidung zur Teilnahme an Versorgungsprozessen abzufragen unter der Verwendung der Operation <span style="font-style: italic;">getConsentDecisionInformation</span> gemäß [I_Information_Service].]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24494" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[Kommunikation mit der Vertrauenswürdigen Ausführungsumgebung (VAU)]]></title>
+      <description><![CDATA[Das PS MUSS als ePA-Client für die Kommunikation mit der Vertrauenswürdigen 
+Ausführungsumgebung (VAU) die Vorgaben aus [gemSpec_Krypt#7,3.15] umsetzen.]]></description>
+      <description_html><![CDATA[Das PS MUSS als ePA-Client für die Kommunikation mit der Vertrauenswürdigen Ausführungsumgebung (VAU) die Vorgaben aus [gemSpec_Krypt#7,3.15] umsetzen.]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24499" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[Nutzung der Schnittstelle I_Information_Service]]></title>
+      <description><![CDATA[Das PS MUSS die Operation getRecordStatus nutzen gemäß [I_Information_Service].]]></description>
+      <description_html><![CDATA[Das PS MUSS die Operation getRecordStatus nutzen gemäß [I_Information_Service].]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24500" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[Kommunikation über TLS-Verbindung]]></title>
+      <description><![CDATA[Das PS MUSS für die Anwendungsfälle der ePA für alle mit den Diensten der TI 
+ausschließlich über TLS mit serverseitiger Authentisierung kommunizieren.]]></description>
+      <description_html><![CDATA[Das PS MUSS für die Anwendungsfälle der ePA für alle mit den Diensten der TI ausschließlich über TLS mit serverseitiger Authentisierung kommunizieren.]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24502" type="leafRequirement" severity="MUSS" lastUpdate="2024-02-06">
+      <title><![CDATA[Vorgaben für TLS-Verbindungen]]></title>
+      <description><![CDATA[Das PS MUSS als ePA-Client für die TLS-Kommunikation die Vorgaben aus 
+[gemSpec_Krypt#3.15.3] umsetzen.]]></description>
+      <description_html><![CDATA[Das PS MUSS als ePA-Client für die TLS-Kommunikation die Vorgaben aus [gemSpec_Krypt#3.15.3] umsetzen.]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24556" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[Verpflichtende Zertifikatsprüfung]]></title>
+      <description><![CDATA[Das PS MUSS als ePA-Client alle Zertifikate der Tabelle TAB_ILF_Zertifikate, 
+die es aktiv verwendet (bspw. TLS-Verbindungsaufbau), auf Integrität und 
+Authentizität prüfen. Falls die Prüfung kein positives Ergebnis ("gültig") 
+liefert, so MUSS es die von dem Zertifikat und den darin enthaltenen Attributen 
+(bspw. öffentliche Schlüssel) abhängenden Arbeitsabläufe ablehnen.
+Das Primärsystem MUSS alle öffentlichen Schlüssel, die es verwenden will, auf 
+eine positiv verlaufene Zertifikatsprüfung zurückführen können.]]></description>
+      <description_html><![CDATA[Das PS MUSS als ePA-Client alle Zertifikate der Tabelle TAB_ILF_Zertifikate, die es aktiv verwendet (bspw. TLS-Verbindungsaufbau), auf Integrität und Authentizität prüfen. Falls die Prüfung kein positives Ergebnis (&quot;gültig&quot;) liefert, so MUSS es die von dem Zertifikat und den darin enthaltenen Attributen (bspw. öffentliche Schlüssel) abhängenden Arbeitsabläufe ablehnen.<br/>Das Primärsystem MUSS alle öffentlichen Schlüssel, die es verwenden will, auf eine positiv verlaufene Zertifikatsprüfung zurückführen können.]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24578" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[Kryptografische Vorgaben für TLS- und VAU-Clients]]></title>
+      <description><![CDATA[Das PS MUSS alle Anforderungen zur Benutzung von Zertifikaten bei den 
+Kommunikationsprotokollen TLS und VAU-Protokoll für die Kommunikation mit dem 
+ePA-Aktensystem umsetzen, die in [gemSpec_Krypt#3.15.3] (ePA-spezifische 
+TLS-Vorgaben) und in [gemSpec_Krypt#7] (VAU-Protokoll für ePA-für-alle) für 
+einen ePA-Client definiert sind.]]></description>
+      <description_html><![CDATA[Das<span id="polarion-comment:722"></span> PS MUSS alle Anforderungen zur Benutzung von Zertifikaten bei den Kommunikationsprotokollen TLS und VAU-Protokoll für die Kommunikation mit dem ePA-Aktensystem umsetzen, die in [gemSpec_Krypt#3.15.3] (ePA-spezifische TLS-Vorgaben) und in [gemSpec_Krypt#7] (VAU-Protokoll für ePA-für-alle) für einen ePA-Client definiert sind. <br/>]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24657" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[Sperren einer spezifischen LEI durch Ombudsstelle]]></title>
+      <description><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, einen 
+Widerspruch gegen die Nutzung der ePA durch eine spezifische LEI zu erteilen 
+unter Verwendung der Operation setBlockedUserPolicyAssignment gemäß 
+[I_Entitlement_Management].]]></description>
+      <description_html><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, einen Widerspruch gegen die Nutzung der ePA durch eine spezifische LEI zu erteilen unter Verwendung der Operation <span style="font-style: italic;">setBlockedUserPolicyAssignment</span> gemäß [I_Entitlement_Management].]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24659" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[Entscheidung zum Medikationsprozess setzen durch Ombudsstelle]]></title>
+      <description><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, Widersprüche 
+im Rahmen des Medikationsprozesses zu erteilen bzw. zurückzunehmen unter 
+Verwendung der OperationupdateConsentDecision gemäß 
+[I_Consent_Decision_Management].]]></description>
+      <description_html><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, Widersprüche im Rahmen des Medikationsprozesses zu erteilen bzw. zurückzunehmen unter Verwendung der Operation <span style="font-size: 10pt;font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;line-height: 1.5;">updateConsentDecision </span>gemäß [I_Consent_Decision_Management].]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24660" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[Abruf der Protokolldaten durch Ombudsstelle]]></title>
+      <description><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, 
+Protokolldaten aus einem Aktenkonto herunterzuladen gemäß [I_Audit_Event].]]></description>
+      <description_html><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, Protokolldaten aus einem Aktenkonto herunterzuladen gemäß [I_Audit_Event].]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24666" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[Löschen einer Sperrung  einer spezifische LEI durch Ombudsstelle]]></title>
+      <description><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, einen 
+Widerspruch gegen die Nutzung der ePA durch eine spezifische LEI zurückzunehmen 
+unter Verwendung der OperationdeleteBlockedUserPolicyAssignment gemäß 
+[I_Entitlement_Management].]]></description>
+      <description_html><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, einen Widerspruch gegen die Nutzung der ePA durch eine spezifische LEI zurückzunehmen unter Verwendung der Operation <span style="font-style: italic;">deleteBlockedUserPolicyAssignment</span> gemäß [I_Entitlement_Management].]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24668" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[Suche nach LEI im Verzeichnisdienst durch Ombudsstelle]]></title>
+      <description><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, eine oder 
+mehrere LEI im VZD-FHIR-Directory zu suchen und für die weitere Verarbeitung 
+auszuwählen.]]></description>
+      <description_html><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, eine oder mehrere LEI im VZD-FHIR-Directory zu suchen und für die weitere Verarbeitung auszuwählen.]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24680" type="leafRequirement" severity="MUSS" lastUpdate="2024-02-06">
+      <title><![CDATA[User Agent im Nachrichtenheader]]></title>
+      <description><![CDATA[Das PS MUSS die HTTP Header Elemente "ClientID" und "Versionsnummer" bei jedem 
+Request sowohl im HTTP-Header der VAU-Nachricht, als auch im HTTP-Header der 
+Nachricht an den Service einfügen gemäß [gemSpec_Aktensystem_ePAfuerAlle#2].]]></description>
+      <description_html><![CDATA[Das PS MUSS die HTTP Header Elemente &quot;ClientID&quot; und &quot;Versionsnummer&quot; <span id="polarion-comment:771"></span>bei jedem Request sowohl im HTTP-Header der VAU-Nachricht, als auch im HTTP-Header der Nachricht an den Service einfügen gemäß [gemSpec_Aktensystem_ePAfuerAlle#2].]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24685" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[Messung von Verarbeitungszeiten]]></title>
+      <description><![CDATA[Das PS MUSS bei Durchführung der Anwendungsfälle aus Tab_UX_KPI_Messung_ePA_PS 
+die in der Spalte "Beschreibung" beschriebene Messung von Verarbeitungszeiten 
+durchführen und das Ergebnis in Millisekunden speichern. 
+
+Tabelle #: Tab_UX_KPI_Messung_ePA_PS
+
+UX-AnwendungsfälleBeschreibung
+UX_Login_PSEs wird der Zeitraum gemessen, den ein Nutzer eines Primärsystems 
+nach der Auswahl einer ePA warten muss, bis die angeforderte Akte geöffnet ist. 
+Dabei beginnt die Messung mit der letzten Nutzer-Interaktion (z. B. Anklicken 
+eines Feldes "Patient A12345680") bevor die Akte geöffnet wird und endet mit 
+der Anzeige von Inhalten der Akte (z. B. Dokumentenübersicht oder einer 
+Fehlermeldung bei fehlender Befugnis).
+UX_Doc_Upload_PSEs wird der Zeitraum gemessen, den ein Nutzer eines 
+Primärsystems nach dem Befehl zum Hochladen eines Dokumentes warten muss, bis 
+dieses Dokument im PS angezeigt wird oder die Information über den Erfolg der 
+Operation erfolgt.
+UX_Doc_Download_PSEs wird der Zeitraum gemessen, den ein Nutzer eines 
+Primärsystems nach dem Befehl zum Herunterladen eines Dokumentes warten muss, 
+bis dieses Dokument vollständig heruntergeladen wurde.]]></description>
+      <description_html><![CDATA[Das PS MUSS bei Durchführung der Anwendungsfälle aus Tab_UX_KPI_Messung_ePA_PS die in der Spalte &quot;Beschreibung&quot; beschriebene Messung von Verarbeitungszeiten durchführen und das Ergebnis in Millisekunden speichern. <br/> <p class="polarion-rte-caption-paragraph" data-keep-next="true">Tabelle <span class="polarion-rte-caption" data-sequence="Tabelle">#</span>: Tab_UX_KPI_Messung_ePA_PS</p><table style="width: 100%;max-width: 1280px;margin-left: 0px;margin-right: auto;border: 1px solid #CCCCCC;empty-cells: show;max-width: 1280.0px;" class="polarion-Document-table" id="polarion_wiki macro name=table;params=uid=client43"><tbody><tr><th style="background-color: #F0F0F0;text-align: left;vertical-align: top;width: 166px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">UX-Anwendungsfälle</th><th style="background-color: #F0F0F0;text-align: left;vertical-align: top;width: 565px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Beschreibung</th></tr><tr><td style="width: 166px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">UX_Login_PS</td><td style="width: 565px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Es wird der Zeitraum gemessen, den ein Nutzer eines Primärsystems nach der Auswahl einer ePA warten muss, bis die angeforderte Akte geöffnet ist. Dabei beginnt die Messung mit der letzten Nutzer-Interaktion (z. B. Anklicken eines Feldes &quot;Patient A12345680&quot;) bevor die Akte geöffnet wird und endet mit der Anzeige von Inhalten der Akte (z. B. Dokumentenübersicht oder einer Fehlermeldung bei fehlender Befugnis).</td></tr><tr><td style="width: 166px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">UX_Doc_Upload_PS</td><td style="width: 565px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Es wird der Zeitraum gemessen, den ein Nutzer eines Primärsystems nach dem Befehl zum Hochladen eines Dokumentes warten muss, bis dieses Dokument im PS angezeigt wird oder die Information über den Erfolg der Operation erfolgt.</td></tr><tr><td style="width: 166px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">UX_Doc_Download_PS</td><td style="width: 565px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Es wird der Zeitraum gemessen, den ein Nutzer eines Primärsystems nach dem Befehl zum Herunterladen eines Dokumentes warten muss, bis dieses Dokument vollständig heruntergeladen wurde.</td></tr></tbody></table>]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24686" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[Übertragung von Verarbeitungszeiten]]></title>
+      <description><![CDATA[Das PS MUSS unmittelbar nach erfolgreicher Durchführung der Messung von 
+Verarbeitungszeiten der Anwendungsfälle aus 
+[gemILF_PS_ePA::Tab_UX_KPI_Messung_ePA_PS] das Messergebnis ohne 
+Nutzerinteraktion im Hintergrund an das gleiche Aktensystem (unter Verwendung 
+der SchnittstelleInformationService.setUserExperienceResult) übermitteln, bei 
+dem der Aktenzugriff erfolgte. Im Anschluss MÜSSEN die gespeicherten Werte 
+gelöscht werden, sofern die Übermittlung erfolgreich war.]]></description>
+      <description_html><![CDATA[Das PS MUSS unmittelbar nach erfolgreicher Durchführung der Messung von Verarbeitungszeiten der Anwendungsfälle aus [gemILF_PS_ePA::Tab_UX_KPI_Messung_ePA_PS] das Messergebnis ohne Nutzerinteraktion im Hintergrund an<span id="polarion-comment:799"></span> das gleiche Aktensystem (unter Verwendung der Schnittstelle <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">InformationService.setUserExperienceResult</span>) übermitteln, bei dem der Aktenzugriff erfolgte. Im Anschluss MÜSSEN die gespeicherten Werte gelöscht werden, sofern die Übermittlung erfolgreich war.]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24711-01" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-27">
+      <title><![CDATA[Aufbereitung der Protokolldaten für den Versicherten]]></title>
+      <description><![CDATA[Das Clientsystem der Ombudsstelle MUSS die Protokolldaten in für den 
+Versicherten lesbarer Form bereitstellen.]]></description>
+      <description_html><![CDATA[Das Clientsystem der Ombudsstelle MUSS die Protokolldaten in für den Versicherten lesbarer Form bereitstellen.<span id="polarion-comment:874"></span>]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24751" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[Challenge signieren als ECDSA-Signatur]]></title>
+      <description><![CDATA[Das PS MUSS beim Signieren der Challenge mit Operation ExternalAuthenticate den 
+Signatur-Typ  ECDSA-Signatur verwenden. Dazu MUSS im Elementdss:SignatureType 
+die URI urn:bsi:tr:03111:ecdsa übergeben werden. Nur wenn der Signaturversuch 
+scheitert, weil noch eine SMC-B G2 vorliegt, darf das PS auf eine 
+PKCS#1-Signatur ausweichen.]]></description>
+      <description_html><![CDATA[Das PS MUSS beim Signieren der Challenge mit Operation <span style="font-style: italic;">ExternalAuthenticate</span> den Signatur-Typ  ECDSA-Signatur verwenden. Dazu MUSS im Element <span style="font-size: 10pt;font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;line-height: 1.5;">dss:SignatureType</span> die URI urn:bsi:tr:03111:ecdsa übergeben werden. Nur wenn der Signaturversuch scheitert, weil noch eine SMC-B G2 vorliegt, darf das PS auf eine PKCS#1-Signatur ausweichen.]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24752" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[Challenge signieren als PKCS#1-Signatur]]></title>
+      <description><![CDATA[Das PS muss beim Signieren der Challenge nach einem gescheiterten Versuch eine 
+ECDSA-Signatur zu erzeugen, eine PKCS#1-Signatur erzeugen. Dazu MUSS im Element
+dss:SignatureType die URI urn:ietf:rfc:3447 übergeben werden. Als 
+Signatur-Schema MUSS der Default-Wert fürSIG:SignatureSchemes RSASSA-PSS 
+genutzt werden.]]></description>
+      <description_html><![CDATA[Das PS muss beim Signieren der Challenge nach einem gescheiterten Versuch eine ECDSA-Signatur zu erzeugen, eine PKCS#1-Signatur erzeugen. Dazu MUSS im Element <span style="font-size: 10pt;font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;line-height: 1.5;">dss:SignatureType</span> die URI urn:ietf:rfc:3447 übergeben werden. Als Signatur-Schema MUSS der Default-Wert für <span style="font-size: 10pt;font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;line-height: 1.5;">SIG:SignatureSchemes</span> RSASSA-PSS genutzt werden.]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24760" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-27">
+      <title><![CDATA[Start der Nutzerauthentifizierung]]></title>
+      <description><![CDATA[Das PS MUSS, um die Nutzerauthentifizierung zu starten, die Operation 
+sendAuthorizationRequestSCnutzen gemäß [I_Authorization_Service].]]></description>
+      <description_html><![CDATA[Das PS MUSS, um die Nutzerauthentifizierung zu starten, die Operation <span style="font-style: italic;">sendAuthorizationRequestSC </span>nutzen gemäß [I_Authorization_Service].]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24766" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-27">
+      <title><![CDATA[Abschluss der Nutzerauthentifizierung]]></title>
+      <description><![CDATA[Das PS MUSS, um die Nutzerauthentifizierung abzuschließen, die Operation 
+sendAuthCode nutzen gemäß [I_Authorization_Service].]]></description>
+      <description_html><![CDATA[Das PS MUSS, um die Nutzerauthentifizierung abzuschließen, die Operation <span style="font-style: italic;">sendAuthCode </span>nutzen gemäß [I_Authorization_Service].<br/>]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24881" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[Nonce anfordern für Erstellung "Attestation der Umgebung"]]></title>
+      <description><![CDATA[Das PS MUSS, um die Nutzerauthentifizierung zu starten, die Operation getNonce 
+nutzen gemäß [I_Authorization_Service].]]></description>
+      <description_html><![CDATA[Das PS MUSS, um die Nutzerauthentifizierung zu starten, die Operation <span style="font-style: italic;">getNonce </span>nutzen gemäß [I_Authorization_Service].]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24882-01" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-27">
+      <title><![CDATA[Signatur clientAttest]]></title>
+      <description><![CDATA[Das PS MUSS zum Signieren des clientAttest-JWT mit der SMC-B die 
+KonnektorschnittstelleAuthSignatureService::ExternalAuthenticate nutzen gemäß 
+[gemSpec_Kon] und als zu signierende Daten den BinaryString den 
+SHA-256-Hashwert des clientAttest-JWT in Base64-Codierung übergeben. ]]></description>
+      <description_html><![CDATA[Das PS MUSS zum Signieren des clientAttest-JWT mit der SMC-B die Konnektorschnittstelle <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">AuthSignatureService::ExternalAuthenticate</span> nutzen gemäß [gemSpec_Kon] und als zu signierende Daten den BinaryString den SHA-256-Hashwert des clientAttest-JWT in Base64-Codierung übergeben. ]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24883-02" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-27">
+      <title><![CDATA[clientAttest als ECDSA-Signatur]]></title>
+      <description><![CDATA[Das PS MUSS beim Signieren des clientAttest-JWT mit Operation 
+ExternalAuthenticate den Signatur-Typ  ECDSA-Signatur verwenden. Dazu MUSS im 
+Elementdss:SignatureType die URI urn:bsi:tr:03111:ecdsa übergeben werden. Nur 
+wenn der Signaturversuch scheitert, weil noch eine SMC-B G2 vorliegt, darf das 
+PS auf eine PKCS#1-Signatur ausweichen.]]></description>
+      <description_html><![CDATA[Das PS MUSS beim Signieren des clientAttest-JWT mit Operation <span style="font-style: italic;">ExternalAuthenticate</span> den Signatur-Typ  ECDSA-Signatur verwenden. Dazu MUSS im Element <span style="font-size: 10pt;font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;line-height: 1.5;">dss:SignatureType</span> die URI urn:bsi:tr:03111:ecdsa übergeben werden. Nur wenn der Signaturversuch scheitert, weil noch eine SMC-B G2 vorliegt, darf das PS auf eine PKCS#1-Signatur ausweichen.]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24886-02" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-27">
+      <title><![CDATA[clientAttest als ClientAttest]]></title>
+      <description><![CDATA[Das PS MUSS die signierte clientAttest-JWT als Parameter ClientAttest im 
+sendAuthCodeSC setzen.]]></description>
+      <description_html><![CDATA[Das PS MUSS die signierte clientAttest-JWT als Parameter ClientAttest im sendAuthCodeSC setzen.]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24900" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[Prüfung TI-Zertifikate]]></title>
+      <description><![CDATA[Das Primärsystem MUSS X.509-Zertifikate der TI auf eine der beiden folgenden 
+beiden Arten prüfen:
+
+ * Verwenden des CertificateService des Konnektors mit der Operation 
+VerifyCertificate gemäß [gemSpec_Kon#4.1.9.5.3], wobei das zu prüfende 
+Zertifikat als Parameter X509Certificate und die aktuelle Systemzeit als 
+Parameter VerificationTime verwendet werden. Das Primärsystem MUSS bei Prüfung 
+von TI-Zertifikaten der TAB_ILF_Zertifikate den Rückgabewert in RoleList gegen 
+die erwartete Rollen-OID prüfen. 
+ * Das Primärsystem prüft die TI-Zertifikate selbst ohne Nutzung des 
+Konnektors nach [gemSpec_PKI#TUC_PKI_018] mit folgenden Parametern: 
+Parameter Wert
+
+Zertifikat C.FD.TLS-S (für TLS) bzw. C.FD.AUT (für VAU-Kanal)
+
+PolicyList oid_epa_dvw  bzw. oid_epa_vau
+
+intendedKeyUsage digitalSignature  
+intendedExtendedKeyUsage id-kp-serverAuth  bzw. leer
+
+OCSP-Graceperiod 60 Minuten 
+Offline-Modus nein 
+Prüfmodus OCSP  Ist die Zertifikatsprüfung nicht erfolgreich, ist 
+der Verbindungsaufbau abzulehnen.]]></description>
+      <description_html><![CDATA[Das Primärsystem MUSS X.509-Zertifikate der TI auf eine der beiden folgenden beiden Arten prüfen:<br/>
+ 
+<ol>
+  <li>Verwenden des <span style="font-size: 10pt;font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;line-height: 1.5;">CertificateService</span> des Konnektors mit der Operation <span style="font-size: 10pt;line-height: 1.5;"><span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">VerifyCertificate</span> </span>gemäß [gemSpec_Kon#4.1.9.5.3], wobei das zu prüfende Zertifikat als Parameter <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">X509Certificate </span>und die aktuelle Systemzeit als Parameter <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">VerificationTime </span>verwendet werden. Das Primärsystem MUSS bei Prüfung von TI-Zertifikaten der TAB_ILF_Zertifikate den Rückgabewert in <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">RoleList </span>gegen die erwartete Rollen-OID prüfen.</li>
+  <li>Das Primärsystem prüft die TI-Zertifikate selbst ohne Nutzung des Konnektors nach [gemSpec_PKI#TUC_PKI_018] mit folgenden Parametern:</li>
+</ol>
+ 
+<table id="polarion_wiki macro name=table;params=width=100%|uid=client1" class="polarion-Document-table" style="width: 100%;max-width: 1280px;margin-left: auto;margin-right: auto;border: 1px solid #CCCCCC;empty-cells: show;border-collapse: collapse;max-width: 1280.0px;">
+  <tbody>
+    <tr>
+      <th style="font-weight: bold;background-color: #F0F0F0;text-align: left;vertical-align: top;width: 225px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Parameter</th>
+      <th style="font-weight: bold;background-color: #F0F0F0;text-align: left;vertical-align: top;width: 508px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Wert<br/>
+        </th>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 225px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Zertifikat</td>
+      <td style="text-align: left;vertical-align: top;width: 508px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">C.FD.TLS-S (für TLS) bzw. C.FD.AUT (für VAU-Kanal)<br/>
+        </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 225px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">PolicyList</td>
+      <td style="text-align: left;vertical-align: top;width: 508px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">oid_epa_dvw  bzw. oid_epa_vau<br/>
+        </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 225px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">intendedKeyUsage</td>
+      <td style="text-align: left;vertical-align: top;width: 508px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">digitalSignature </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 225px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">intendedExtendedKeyUsage</td>
+      <td style="text-align: left;vertical-align: top;width: 508px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">id-kp-serverAuth  bzw. leer<br/>
+        </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 225px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">OCSP-Graceperiod</td>
+      <td style="text-align: left;vertical-align: top;width: 508px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">60 Minuten</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 225px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Offline-Modus</td>
+      <td style="text-align: left;vertical-align: top;width: 508px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">nein</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 225px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Prüfmodus</td>
+      <td style="text-align: left;vertical-align: top;width: 508px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">OCSP</td>
+    </tr>
+  </tbody>
+</table>
+ Ist die Zertifikatsprüfung nicht erfolgreich, ist der Verbindungsaufbau abzulehnen.]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24906" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[lokales Caching von Sperrinformationen und Toleranzzeiten]]></title>
+      <description><![CDATA[Das Primärsystem, welches im Rahmen von Zertifikatsprüfungen Sperrinformation 
+für nonQES-Zertifikate einholt, MUSS folgende Vorgaben umsetzen:
+
+ * Die Sperrinformationen (bspw. OCSP-Responses) müssen lokal gespeichert 
+werden (caching), solange sie noch zeitlich gültig sind.
+ * Definition zeitliche Gültigkeit: Sei p die Zeit zu der die Sperrinformation 
+vom TSP erzeugt wurde. Im Fall von OCSP-Responses ist diese Zeit die 
+productedAt-Angabe [RFC-6960]. Sei s die lokale Systemzeit des prüfenden 
+Systems. Eine Sperrinformation ist zeitlich gültig, wenn gilt s - D <= p <= s + 
+5 Minuten, wobei D im default-Fall eine Stunde beträgt.
+ (Es gibt anwendungsspezifische Verlängerungen der Gültigkeitsdauer D, die 
+dann explizit in den entsprechenden Spezifikationen definiert werden.
+ D. h. die Sperrinformation können im default-Fall maximal eine Stunde alt 
+sein und maximal für fünf Minuten "aus der Zukunft kommen". (Da nicht alle 
+Produkttypen ihre Systemzeit in der TI synchronisieren, erlauben wir hier eine 
+fünfminutige fehlerhafte Abweichung der lokalen Zeit.)
+ * Das prüfende System muss, bevor es Sperrinformationen (bspw. für ein 
+Zertifikat) einholt, prüfen, ob im Cache (vgl. Punkt 1) zeitlich gültige 
+Sperrinformationen schon vorliegen. Falls ja, muss es diese Informationen 
+verwenden und darf diese nicht neu beziehen.
+ * Bei einer evtl. Abarbeitung von TUC_PKI_006 muss der optionale 
+Eingabeparameter "OCSP-Graceperiod" ignoriert werden und für die zeitliche 
+Gültigkeit ist Punkt 2 maßgeblich. Bei OCSP-Antworten ist in diesem Kontext die 
+Konsistenzprüfung, wie in TUC_PKI_006 in Schritt 6 aufgeführt, fachlich unnötig 
+und deshalb nicht durchzuführen.
+ * Zeitlich ungültige Sperrinformation im Cache dürfen nicht für 
+Zertifikatsprüfvorgänge verwendet werden und müssen mindestens alle 24h aus dem 
+Cache aktiv entfernt werden.]]></description>
+      <description_html><![CDATA[Das Primärsystem, welches im Rahmen von Zertifikatsprüfungen Sperrinformation für nonQES-Zertifikate einholt, MUSS folgende Vorgaben umsetzen:<span style="background-color: #33FFFF;"><br/></span> <ol><li>Die Sperrinformationen (bspw. OCSP-Responses) müssen lokal gespeichert werden (caching), solange sie noch zeitlich gültig sind.<span id="polarion-comment:772"></span></li><li>Definition zeitliche Gültigkeit: Sei p die Zeit zu der die Sperrinformation vom TSP erzeugt wurde. Im Fall von OCSP-Responses ist diese Zeit die productedAt-Angabe [RFC-6960]. Sei s die lokale Systemzeit des prüfenden Systems. Eine Sperrinformation ist zeitlich gültig, wenn gilt s - D &lt;= p &lt;= s + 5 Minuten, wobei D im default-Fall eine Stunde beträgt.<br/> (Es gibt anwendungsspezifische Verlängerungen der Gültigkeitsdauer D, die dann explizit in den entsprechenden Spezifikationen definiert werden.<br/> D. h. die Sperrinformation können im default-Fall maximal eine Stunde alt sein und maximal für fünf Minuten &quot;aus der Zukunft kommen&quot;. (Da nicht alle Produkttypen ihre Systemzeit in der TI synchronisieren, erlauben wir hier eine fünfminutige fehlerhafte Abweichung der lokalen Zeit.)</li><li>Das prüfende System muss, bevor es Sperrinformationen (bspw. für ein Zertifikat) einholt, prüfen, ob im Cache (vgl. Punkt 1) zeitlich gültige Sperrinformationen schon vorliegen. Falls ja, muss es diese Informationen verwenden und darf diese nicht neu beziehen.</li><li>Bei einer evtl. Abarbeitung von TUC_PKI_006 muss der optionale Eingabeparameter &quot;OCSP-Graceperiod&quot; ignoriert werden und für die zeitliche Gültigkeit ist Punkt 2 maßgeblich. Bei OCSP-Antworten ist in diesem Kontext die Konsistenzprüfung, wie in TUC_PKI_006 in Schritt 6 aufgeführt, fachlich unnötig und deshalb nicht durchzuführen.</li><li>Zeitlich ungültige Sperrinformation im Cache dürfen nicht für Zertifikatsprüfvorgänge verwendet werden und müssen mindestens alle 24h aus dem Cache aktiv entfernt werden.</li></ol>]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24926" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[Umsetzung sicherer Kanal zur Aktenkontoverwaltung]]></title>
+      <description><![CDATA[Das PS MUSS die im Rahmen des sicheren Verbindungsaufbaus zur 
+Aktenkontoverwaltung ausgehandelten Sitzungsschlüssel verwenden, um den HTTP 
+Body aller über den sicheren Kanal zu sendenden Requests an die 
+Aktenkontoverwaltung zu verschlüsseln und alle über den sicheren Kanal 
+gesendeten Responses von der Aktenkontoverwaltung zu entschlüsseln.]]></description>
+      <description_html><![CDATA[Das PS MUSS die im Rahmen des sicheren Verbindungsaufbaus zur Aktenkontoverwaltung ausgehandelten Sitzungsschlüssel verwenden, um den HTTP Body aller über den sicheren Kanal zu sendenden Requests an die Aktenkontoverwaltung zu verschlüsseln und alle über den sicheren Kanal gesendeten Responses von der Aktenkontoverwaltung zu entschlüsseln.]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24927" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[Entscheidungen zu widerspruchsfähigen Funktionen abfragen]]></title>
+      <description><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, den aktuellen 
+Zustand des Widerspruchs gegen die Nutzung von widerspruchsfähigen Funktionen 
+abzufragen unter Verwendung der OperationgetConsentDecision gemäß 
+[I_Consent_Decision_Management].]]></description>
+      <description_html><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, den aktuellen Zustand des Widerspruchs gegen die Nutzung von widerspruchsfähigen Funktionen abzufragen unter Verwendung der Operation <span style="font-size: 10pt;font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;line-height: 1.5;">getConsentDecision</span> gemäß [I_Consent_Decision_Management].]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24931" type="leafRequirement" severity="MUSS" lastUpdate="2024-02-06">
+      <title><![CDATA[Einsehbarkeit von Befugnisausschlüssen]]></title>
+      <description><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, alle aktuell 
+vorhandenen Befugnisausschlüsse abzurufen unter Verwendung der Operation
+getBlockedUserPolicyAssignment gemäß [I_Entitlement_Management].]]></description>
+      <description_html><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, alle aktuell vorhandenen Befugnisausschlüsse abzurufen unter Verwendung der Operation <span style="font-style: italic;">getBlockedUserPolicyAssignment </span>gemäß [I_Entitlement_Management].]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24944-01" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-27">
+      <title><![CDATA[Anfrage des "AUTHORIZATION_CODE" für ein "ID_TOKEN"]]></title>
+      <description><![CDATA[Das Primärsystem MUSS in Form eines HTTP/1.1 GET AuthorizationRequest beim 
+Authorization-Endpunkt (URI_AUTH) den Antrag zum Erhalt eines 
+"AUTHORIZATION_CODE" für ein "ID_TOKEN" stellen. Dabei übermittelt es die 
+folgenden Attribute, die aus der Response von send_Authorization_Request 
+stammen: 
+
+ * "response_type" 
+ * "scope" 
+ * "nonce" 
+ * "client_id" 
+ * "redirect_uri" 
+ * "code_challenge" (Hashwert des "code_verifier") [RFC7636 # section-4.2] 
+ * "code_challenge_method" HASH-Algorithmus (S256) [RFC7636 # section-4.3] 
+ * "state"]]></description>
+      <description_html><![CDATA[<span style="font-size: 10pt;line-height: 1.5;">Das Primärsystem MUSS in Form eines HTTP/1.1 GET AuthorizationRequest beim Authorization-Endpunkt (URI_AUTH) </span> den A<span style="font-size: 10pt;line-height: 1.5;">ntrag zum Erhalt eines &quot;AUTHORIZATION_CODE&quot; für ein &quot;ID_TOKEN&quot; stellen. Dabei übermittelt es die folgenden Attribute, die aus der Response von send_Authorization_Request stammen: </span><br/>
+ 
+<ul>
+  <li><span style="font-size: 10pt;line-height: 1.5;">&quot;response_type&quot;</span></li>
+  <li><span style="font-size: 10pt;line-height: 1.5;">&quot;scope&quot;</span></li>
+  <li><span style="font-size: 10pt;line-height: 1.5;">&quot;nonce&quot;</span></li>
+  <li><span style="font-size: 10pt;line-height: 1.5;">&quot;client_id&quot;</span></li>
+  <li><span style="font-size: 10pt;line-height: 1.5;">&quot;redirect_uri&quot;</span></li>
+  <li><span style="font-size: 10pt;line-height: 1.5;">&quot;code_challenge&quot; (Hashwert des &quot;code_verifier&quot;) [RFC7636 # section-4.2]</span></li>
+  <li><span style="font-size: 10pt;line-height: 1.5;">&quot;code_challenge_method&quot; HASH-Algorithmus (S256) [RFC7636 # section-4.3]</span></li>
+  <li><span style="font-size: 10pt;line-height: 1.5;">&quot;state&quot;</span></li>
+</ul>
+ <span id="polarion-comment:880"></span>]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24998" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[InsurantID im Nachrichtenheader]]></title>
+      <description><![CDATA[Das PS MUSS bei Aufrufen innerhalb der VAU ein HTTP Header Element mit dem 
+Namen "x-insurantId" senden, um das Aktenkonto zu adressieren.]]></description>
+      <description_html><![CDATA[Das PS MUSS bei Aufrufen innerhalb der VAU ein HTTP Header Element mit dem Namen &quot;x-insurantId&quot; senden, um das Aktenkonto zu adressieren.<span id="polarion-comment:795"></span>]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_25146" type="leafRequirement" severity="MUSS" lastUpdate="2024-02-06">
+      <title><![CDATA[Aktenlokalisierung als Hintergrundprozess]]></title>
+      <description><![CDATA[Das PS MUSS die Lokalisierung der Akte ohne Nutzeraktion im Rahmen eines 
+ePA-Zugriffs durchführen, wenn noch kein Service-Endpunkt zur Akte vorliegt. 
+Dieses soll im Hintergrund ablaufen und darf nicht die Weiterarbeit behindern.]]></description>
+      <description_html><![CDATA[Das PS MUSS die Lokalisierung der Akte ohne Nutzeraktion im Rahmen eines ePA-Zugriffs durchführen, wenn noch kein Service-Endpunkt zur Akte vorliegt. Dieses soll im Hintergrund ablaufen und darf nicht die Weiterarbeit behindern.]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_25350" type="leafRequirement" severity="KANN" lastUpdate="2024-03-27">
+      <title><![CDATA[Abruf der Protokolldaten im Format PDF/A durch Ombudsstelle]]></title>
+      <description><![CDATA[Das Clientsystem der Ombudsstelle KANN es dem Nutzer alternativ auch 
+ermöglichen, gerenderte Protokolldaten aus einem Aktenkonto herunterzuladen 
+gemäß [I_Audit_Event_Render].]]></description>
+      <description_html><![CDATA[Das Clientsystem der Ombudsstelle KANN es dem Nutzer alternativ auch ermöglichen, gerenderte Protokolldaten aus einem Aktenkonto herunterzuladen gemäß [I_Audit_Event_Render].<span id="polarion-comment:875"></span>]]></description_html>
+      <sourceDocumentId>gemILF_PS_ePA</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_17969-05" type="leafRequirement" severity="MUSS" lastUpdate="2024-02-20">
+      <title><![CDATA[Anbieter ePA-Aktensystem - Schnittstellenadressierung]]></title>
+      <description><![CDATA[Der Anbieter des ePA-Aktensystems MUSS alle nach außen angebotenen Dienste 
+unter den folgenden URLs zur Verfügung stellen und eingehende SOAP- und 
+REST-Nachrichten entsprechend verarbeiten:
+
+ * ePA-Clients über das zentrale Netz der TI:
+
+ * https://<FQDN aus DNS Lookup>:443/accounts/I_Information_Service_Accounts 
+ * https://<FQDN aus DNS Lookup>:443/info/I_Information_Service
+
+ * https://<FQDN aus DNS Lookup>:443/epa/<Schnittstellen der verschiedenen 
+Services in der VAU>
+
+ * ePA-Frontend des Versicherten:
+
+ * https://<FQDN lokaler Konfiguration des ePA-FdV>:443/epa/<Schnittstellen 
+der verschiedenen Services in der VAU>]]></description>
+      <description_html><![CDATA[Der Anbieter des ePA-Aktensystems MUSS alle nach außen angebotenen Dienste unter den folgenden URLs zur Verfügung stellen und eingehende SOAP- und REST-Nachrichten entsprechend verarbeiten:<br/>
+ 
+<ul>
+  <li>ePA-Clients über das zentrale Netz der TI:<br/>
+  </li>
+  <ul>
+    <li>https://&lt;FQDN aus DNS Lookup&gt;:443/accounts/I_Information_Service_Accounts</li>
+    <li>https://&lt;FQDN aus DNS Lookup&gt;:443/info/I_Information_Service<br/>
+    </li>
+    <li>https://&lt;FQDN aus DNS Lookup&gt;:443/epa/&lt;Schnittstellen der verschiedenen Services in der VAU&gt;<br/>
+    </li>
+  </ul>
+  <li>ePA-Frontend des Versicherten:<br/>
+  </li>
+  <ul>
+    <li>https://&lt;FQDN lokaler Konfiguration des ePA-FdV&gt;:443/epa/&lt;Schnittstellen<span id="polarion-comment:1779"></span> der verschiedenen Services in der VAU&gt;</li>
+  </ul>
+</ul>]]></description_html>
+      <sourceDocumentId>gemSpec_Aktensystem_ePAfueralle</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_22470-05" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-27">
+      <title><![CDATA[Definition Useragent]]></title>
+      <description><![CDATA[Das Produkt MUSS für das UserAgent-Element in Eingangs- oder Ausgangsparametern 
+einer Operation folgende Formatvorgaben berücksichtigen:
+
+ * der Useragent umfasst 2 Informationen, welche als 1 String - getrennt durch 
+"/" (Slash) - im Header übertragen werden 
+ * erster Teil: ClientID = ein bis zu 20 Zeichen langer String (a-z A-Z 0-9, 
+"-"), welcher im Rahmen der Produktregistrierung bei der gematik erzeugt wird, 
+ * zweiter Teil: Versionsnummer = bis zu 15 Zeichen langer String (a-z A-Z 
+0-9, "-", ".") welcher die aktuelle Produktversion des Clients repräsentiert.  
+Beispiel: "CLIENTID1234567890AB/2.1.12-45"]]></description>
+      <description_html><![CDATA[Das Produkt MUSS für das <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">UserAgent</span>-Element in Eingangs- oder Ausgangsparametern einer Operation folgende Formatvorgaben berücksichtigen: <br/>
+ 
+<ul>
+  <li>der Useragent umfasst 2 Informationen, welche als 1 String - getrennt durch &quot;/&quot; (Slash) - im Header übertragen werden</li>
+  <ul>
+    <li>erster Teil: ClientID = ein bis zu 20 Zeichen langer String (a-z A-Z 0-9, &quot;-&quot;), welcher im Rahmen der Produktregistrierung bei der gematik erzeugt wird,</li>
+    <li>zweiter Teil: Versionsnummer = bis zu 15 Zeichen langer String (a-z A-Z 0-9, &quot;-&quot;, &quot;.&quot;) welcher die aktuelle Produktversion des Clients repräsentiert.</li>
+  </ul>
+</ul>
+Beispiel: &quot;CLIENTID1234567890AB/2.1.12-45&quot;<br/>]]></description_html>
+      <sourceDocumentId>gemSpec_Aktensystem_ePAfueralle</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_23734-01" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-27">
+      <title><![CDATA[Entitlement Management - Definition einer Befugnis]]></title>
+      <description><![CDATA[Das Entitlement Management MUSS für eine individuelle Befugnis die folgenden 
+Daten nutzen und verwalten: 
+
+ Tabelle #:: Inhalt einer Befugnis 
+
+Element Inhalt Anmerkung signiertes
+ Element (*) 
+Identifier des Aktenkontos
+ (insurantId) KVNR des Aktenkontos, für welches die Befugnis ausgestellt ist ja
+Identifier des befugten Nutzers
+ (actorId) Telematik-ID oder KVNR ja 
+Name des befugten Nutzers
+ (displayName) Name der Institution, des Nutzers nein 
+Rolle des Nutzers
+ (oid) OID der Nutzerrolle (professionOID) nein 
+Ende der Gültigkeit
+ (validTo) Datum und Zeitpunkt
+ (letzter Tag der Gültigkeit, d.h eine heutige Befugnisvergabe für 3 Tage 
+setzt für validTo das Datum von übermorgen (aktueller Tag + 2 Tage). aktueller 
+Tag ist inklusiv zu bewerten). Wird gemäß [RFC3339] mit Zeitzone UTC (z.B.: 
+2024-04-12T22:59:59Z) bzw. Zeitzonen-Offset (z.B.: 2024-04-12T23:59:59+01:00) 
+gespeichert. 
+ Eine unbegrenzt gültige Befugnis erhält das Datum 9999-12-31T00:00:00Z. .
+ Die Befugnisdauer der Befugnisse (Karte stecken), die durch das Aktensystem 
+erstellt werden, werden auf das Ende des resultierenden Tages der aktuell 
+gültigen Zeitzone in Deutschland gesetzt, z.B.: 2024-04-12T23:59:59+01:00.
+ Wird durch den Versicherten oder einen Vertreter oder das Entitlement 
+Management gesetzt. ja 
+Beginn der Gültigkeit, Ausstellungszeitpunkt
+ (issued-at) Datum und Zeitpunkt Wird durch das Entitlement Management gesetzt.
+nein 
+Identifier des Erstellers
+ (issued-actorId) Telematik-ID oder
+ KVNR
+Wird durch das Entitlement Management gesetzt. nein 
+Name des Erstellers
+ (issued-displayName) Name der Institution, des Nutzers Wird durch das 
+Entitlement Management gesetzt. nein]]></description>
+      <description_html><![CDATA[Das<span id="polarion-comment:1976"></span> <span style="font-size: 10pt;line-height: 1.5;">Entitlement Management </span>MUSS für eine individuelle Befugnis die folgenden Daten nutzen und verwalten: <br/>
+ 
+<p data-keep-next="true" class="polarion-rte-caption-paragraph">
+  Tabelle <span data-sequence="Tabelle" class="polarion-rte-caption">#</span>:: Inhalt einer Befugnis 
+</p>
+ 
+<table id="polarion_wiki macro name=table;params=width=100%" class="polarion-Document-table" style="width: 100%;max-width: 1280px;margin-left: auto;margin-right: auto;border: 1px solid #CCCCCC;empty-cells: show;max-width: 1280.0px;">
+  <tbody>
+    <tr>
+      <th style="background-color: #F0F0F0;text-align: left;vertical-align: top;width: 351px;height: 19.4907px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Element</th>
+      <th style="background-color: #F0F0F0;text-align: left;vertical-align: top;width: 319px;height: 19.4907px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Inhalt</th>
+      <th style="background-color: #F0F0F0;text-align: left;vertical-align: top;width: 395px;height: 19.4907px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Anmerkung</th>
+      <th style="background-color: #F0F0F0;text-align: left;vertical-align: top;width: 157px;height: 19.4907px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">signiertes<br/>
+        Element (*)</th>
+    </tr>
+    <tr>
+      <td style="width: 351px;height: 19.4907px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Identifier des Aktenkontos<br/>
+        (insurantId)<span id="polarion-comment:1467"></span></td>
+      <td style="width: 319px;height: 19.4907px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">KVNR des Aktenkontos, für welches die Befugnis ausgestellt ist</td>
+      <td style="width: 395px;height: 19.4907px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;"></td>
+      <td style="width: 157px;height: 19.4907px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">ja</td>
+    </tr>
+    <tr>
+      <td style="width: 351px;height: 19.4907px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Identifier des befugten Nutzers<br/>
+        (actorId)</td>
+      <td style="width: 319px;height: 19.4907px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Telematik-ID oder KVNR</td>
+      <td style="width: 395px;height: 19.4907px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;"></td>
+      <td style="width: 157px;height: 19.4907px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">ja</td>
+    </tr>
+    <tr>
+      <td style="width: 351px;height: 19.4907px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Name des befugten Nutzers<br/>
+        (displayName)</td>
+      <td style="width: 319px;height: 19.4907px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Name der Institution, des Nutzers</td>
+      <td style="width: 395px;height: 19.4907px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;"></td>
+      <td style="width: 157px;height: 19.4907px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">nein</td>
+    </tr>
+    <tr>
+      <td style="width: 351px;height: 19.4907px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Rolle des Nutzers<br/>
+        (oid)</td>
+      <td style="width: 319px;height: 19.4907px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">OID der Nutzerrolle (professionOID)</td>
+      <td style="width: 395px;height: 19.4907px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;"></td>
+      <td style="width: 157px;height: 19.4907px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">nein</td>
+    </tr>
+    <tr>
+      <td style="width: 351px;height: 19.4907px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Ende der Gültigkeit<br/>
+        (validTo)</td>
+      <td style="width: 319px;height: 19.4907px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Datum und Zeitpunkt<br/>
+        (letzter Tag der Gültigkeit, d.h eine heutige Befugnisvergabe für 3 Tage setzt für validTo das Datum von übermorgen (aktueller Tag + 2 Tage). aktueller Tag ist inklusiv zu bewerten).</td>
+      <td style="width: 395px;height: 19.4907px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Wird gemäß [RFC3339] mit Zeitzone UTC (z.B.: 2024-04-12T22:59:59Z) bzw. Zeitzonen-Offset (z.B.: 2024-04-12T23:59:59+01:00) gespeichert. <br/>
+        Eine unbegrenzt gültige Befugnis erhält das Datum 9999-12-31T00:00:00Z. .<br/>
+        Die Befugnisdauer der Befugnisse (Karte stecken), die durch das Aktensystem erstellt werden, werden auf das Ende des resultierenden Tages der aktuell gültigen Zeitzone in Deutschland gesetzt, z.B.: 2024-04-12T23:59:59+01:00.<br/>
+        Wird durch den Versicherten oder einen Vertreter oder das Entitlement Management gesetzt.<span id="polarion-comment:1983"></span></td>
+      <td style="width: 157px;height: 19.4907px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">ja</td>
+    </tr>
+    <tr>
+      <td style="width: 351px;height: 38.9815px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Beginn der Gültigkeit, Ausstellungszeitpunkt<br/>
+        (issued-at)</td>
+      <td style="width: 319px;height: 38.9815px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Datum und Zeitpunkt</td>
+      <td style="width: 395px;height: 38.9815px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Wird durch das Entitlement Management gesetzt.</td>
+      <td style="width: 157px;height: 38.9815px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">nein</td>
+    </tr>
+    <tr>
+      <td style="width: 351px;height: 38.9815px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Identifier des Erstellers<br/>
+        (issued-actorId)</td>
+      <td style="width: 319px;height: 38.9815px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Telematik-ID oder<br/>
+        KVNR<br/>
+        </td>
+      <td style="width: 395px;height: 38.9815px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Wird durch das Entitlement Management gesetzt.</td>
+      <td style="width: 157px;height: 38.9815px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">nein</td>
+    </tr>
+    <tr>
+      <td style="width: 351px;height: 58.4722px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Name des Erstellers<br/>
+        (issued-displayName)</td>
+      <td style="width: 319px;height: 58.4722px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Name der Institution, des Nutzers</td>
+      <td style="width: 395px;height: 58.4722px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Wird durch das Entitlement Management gesetzt.</td>
+      <td style="width: 157px;height: 58.4722px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">nein</td>
+    </tr>
+  </tbody>
+</table>]]></description_html>
+      <sourceDocumentId>gemSpec_Aktensystem_ePAfueralle</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_23824" type="leafRequirement" severity="MUSS" lastUpdate="2024-02-20">
+      <title><![CDATA[Aktensystem - Realisierung der Schnittstelle I_Consent_Decision_Management]]></title>
+      <description><![CDATA[Das Aktensystem MUSS die Operationen der Schnittstelle 
+I_Consent_Decision_Management gemäß [I_Consent_Decision_Management] umsetzen.]]></description>
+      <description_html><![CDATA[Das <span style="font-size: 10pt;line-height: 1.5;">Aktensystem </span>MUSS die Operationen der Schnittstelle <span style="font-size: 10pt;line-height: 1.5;"><span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">I_Consent_Decision_Management</span> </span>gemäß [I_Consent_Decision_Management] umsetzen.]]></description_html>
+      <sourceDocumentId>gemSpec_Aktensystem_ePAfueralle</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24344" type="leafRequirement" severity="MUSS" lastUpdate="2024-02-20">
+      <title><![CDATA[Information Service - Realisierung der Schnittstelle I_Information_Service]]></title>
+      <description><![CDATA[Der Information Service MUSS die Operationen der Schnittstelle 
+I_Information_Servicegemäß [I_Information_Service] umsetzen.]]></description>
+      <description_html><![CDATA[Der Information Service MUSS die Operationen der Schnittstelle <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">I_Information_Service </span>gemäß [I_Information_Service] umsetzen.]]></description_html>
+      <sourceDocumentId>gemSpec_Aktensystem_ePAfueralle</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24592" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-04">
+      <title><![CDATA[Anbieter ePA-Aktensystem -Registrierung an übergreifender ePA-Domäne]]></title>
+      <description><![CDATA[Der Anbieter des ePA-Aktensystems MUSS seine Hosts und IP-Adressen für 
+Services, die über das zentrale Netz der TI angeboten werden, in der 
+übergreifenden ePA-Domäneepa4all.de für die Sub-Domänen .ref (RU1), .dev (RU2), 
+.test (TU) und .prod (PU) registrieren. Dies sind
+
+ * <host_epa>: Host und IP-Adressen für den Endpunkt I_Information_Service 
+und der Services in der VAU 
+ * <host_accounts>: Host und IP-Adressen für den Endpunkt 
+I_Information_Service_Accounts]]></description>
+      <description_html><![CDATA[Der Anbieter des ePA-Aktensystems MUSS seine Hosts und IP-Adressen für Services, die über das zentrale Netz der TI angeboten werden, in der übergreifenden ePA-Domäne <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">epa4all.de</span> für die Sub-Domänen .ref (RU1), .dev (RU2), .test (TU) und .prod (PU) registrieren. Dies sind<br/>
+ 
+<ul>
+  <li>&lt;host_epa&gt;: Host und IP-Adressen für den Endpunkt I_Information_Service und der Services in der VAU</li>
+  <li>&lt;host_accounts&gt;: Host und IP-Adressen für den Endpunkt I_Information_Service_Accounts</li>
+</ul>]]></description_html>
+      <sourceDocumentId>gemSpec_Aktensystem_ePAfueralle</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_15549-01" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-29">
+      <title><![CDATA[ePA-VAU-Client: Kommunikation zwischen ePA-Client und ePA-VAU]]></title>
+      <description><![CDATA[Ein ePA-Client MUSS bei der Kommunikation mit der VAU das 
+Kommunikationsprotokoll aus [gemSpec_Krypt#Abschnitt "VAU-Protokoll für ePA für 
+alle"] verwenden.
+ Der Client einer VAU MUSS nach spätestens 24 Stunden das Aushandeln neuer 
+AES-Verbindungsschlüssel erzwingen. Er MUSS zeitlich abgelaufene 
+Verbindungsschlüssel bei sich sicher löschen.]]></description>
+      <description_html><![CDATA[Ein ePA-Client MUSS bei der Kommunikation mit der VAU das Kommunikationsprotokoll aus [gemSpec_Krypt#Abschnitt &quot;VAU-Protokoll für ePA für alle&quot;] verwenden. <br/>
+ Der Client einer VAU MUSS nach spätestens 24 Stunden das Aushandeln neuer AES-Verbindungsschlüssel erzwingen. Er MUSS zeitlich abgelaufene Verbindungsschlüssel bei sich sicher löschen.]]></description_html>
+      <sourceDocumentId>gemSpec_Krypt</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_15751-02" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[TLS-Verbindung zwischen ePA-Aktensystem und ePA-Client]]></title>
+      <description><![CDATA[Ein ePA-Aktensystem und ein ePA-Client MÜSSEN in Bezug auf die TLS-Verbindung 
+zwischen ihnen 
+ * folgende Ciphersuiten unterstützen 
+ * TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (0xC0, 0x30), 
+ * TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (0xC0, 0x2F), 
+ * TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 (0xC0, 0x2C), 
+ * TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 (0xC0, 0x2B). 
+ * Sie KÖNNEN weitere Cipher-Suiten aus [TR-02102-2, Abschnitt 3.3.1 Tabelle 
+1] unterstützen.  
+ * Bei dem ephemeren Elliptic-Curve-Diffie-Hellman-Schlüsselaustausch und bei 
+der Signaturprüfung mittels ECDSA MÜSSEN die Kurven P-256 oder P-384 
+[FIPS-186-5] unterstützt werden. Daneben SOLLEN die Kurven brainpoolP256r1, 
+brainpoolP384r1 oder brainpoolP512r1 (vgl. [RFC-5639] und [RFC-7027]) 
+unterstützt werden. Andere Kurven SOLLEN NICHT verwendet werden (Hinweis: die 
+Intention des letzten Satzes ist insbesondere, dass die Ordnung des 
+Basispunktes in E(F_p) nicht zu klein werden darf).]]></description>
+      <description_html><![CDATA[Ein ePA-Aktensystem und ein ePA-Client MÜSSEN in Bezug auf die TLS-Verbindung zwischen ihnen 
+<ol>
+  <li>folgende Ciphersuiten unterstützen</li>
+  <ul>
+    <li>TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (0xC0, 0x30),</li>
+    <li>TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (0xC0, 0x2F),</li>
+    <li>TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 (0xC0, 0x2C),</li>
+    <li>TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 (0xC0, 0x2B).</li>
+  </ul>
+  <li>Sie KÖNNEN weitere Cipher-Suiten aus [TR-02102-2, Abschnitt 3.3.1 Tabelle 1] unterstützen. </li>
+  <li>Bei dem ephemeren Elliptic-Curve-Diffie-Hellman-Schlüsselaustausch und bei der Signaturprüfung mittels ECDSA MÜSSEN die Kurven P-256 oder P-384 [FIPS-186-5] unterstützt werden. Daneben SOLLEN die Kurven brainpoolP256r1, brainpoolP384r1 oder brainpoolP512r1 (vgl. [RFC-5639] und [RFC-7027]) unterstützt werden. Andere Kurven SOLLEN NICHT verwendet werden (Hinweis: die Intention des letzten Satzes ist insbesondere, dass die Ordnung des Basispunktes in E(F_p) nicht zu klein werden darf).</li>
+</ol>]]></description_html>
+      <sourceDocumentId>gemSpec_Krypt</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_21269-01" type="leafRequirement" severity="SOLL" lastUpdate="2024-01-25">
+      <title><![CDATA[ePA-Client: TLS-Session-Resumption]]></title>
+      <description><![CDATA[Ein ePA-Client SOLL TLS-Session-Resumption (per Session-ID oder per 
+TLS-Session-Resumption per Session-Tickets) unterstützen.]]></description>
+      <description_html><![CDATA[Ein ePA-Client SOLL TLS-Session-Resumption (per Session-ID oder per TLS-Session-Resumption per Session-Tickets) unterstützen.]]></description_html>
+      <sourceDocumentId>gemSpec_Krypt</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24425" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-29">
+      <title><![CDATA[VAU-Protokoll: VAU-Schlüssel für die  VAU-Protokoll-Schlüsselaushandlung]]></title>
+      <description><![CDATA[Ein Aktensystem MUSS sicherstellen, dass
+
+ * es eine Signatur-Identität aus der Komponenten-PKI der TI gibt, die 
+technisch sichergestellt ausschließlich nur von VAU-Instanzen verwendbar ist 
+(AUT-Zertifikat und Schlüsselmaterial (VAU-HSM) wie bei ePA 1x. und 2.x). 
+ * es semi-statische Schlüsselpaare für ECDH (auf Basis Kurve P-256 
+[FIPS-186-5]) und Kyber768 [IEFT-Kyber] gibt, deren private Schlüssel, 
+technisch sichergestellt, ausschließlich von VAU-Instanzen verwendbar sind. 
+ * die privaten Schlüssel in einer VAU-Instanz erzeugt und verarbeitet werden 
+(also nicht im VAU-HSM), 
+ * die semi-statischen Schlüssel eine maximale Lebensdauer von einem Monat 
+besitzen (Hinweis: die Forward-Secrecy hängt nicht vom Wechselintervall ab, 
+innerhalb eines Verbindungsaufbaus und der Schlüsselaushandlung dabei fließen 
+ephemere Schlüsselwerte von Client und Sever ein). 
+ * die semi-statischen Schlüssel in einer über die Signatur-Identität 
+authentisierten folgenden Datenstruktur aufgeführt werden. 
+Struktur der signierten semi-statischen öffentlichen VAU-Schlüssel 
+VAU_Keys = {
+           "ECDH_PK" :
+             { "crv" : "P-256",
+               "x" : Binärwert-x-Koordinate-32-Bit-big-endian,
+               "y" : Binärwert-x-Koordinate-32-Bit-big-endian,
+             },
+           "Kyber768_PK" : 
+Binärwert-öffentlicher-Schlüssel-nach-keygen-Spec-Kyber768,
+           "iat" : Erzeugungszeits-Sekunden-Since-Epoch (integer),
+           "exp" : Nicht-mehr-Verwendbar-nach (integer),
+           "comment" : "Erzeugt bei VAU-Instanz xyz, Meta-Info abcd"
+ }
+
+ In "comment" KÖNNEN beliebige Text-Daten aufgeführt werden. Es können weitere 
+Attribute hinzugeführt werden. Ein Client MUSS ihm unbekannte Attribute 
+ignorieren.
+ Diese Struktur wird mittels CBOR [RFC-CBOR] binär kodiert und im Folgenden 
+VAU_Keys_encoded genannt.
+
+ Diese binäre Byte-Folge wird in folgende Datenstruktur eingebracht
+
+{
+  "signed_pub_keys" : VAU_Keys_encoded,
+  "signature-ES256" : ECDSA-Signatur-SHA-256-analog-RFC-7515 (R||S => 64 Byte) 
+binär,
+  "cert_hash"       : SHA-256-Wert des "signierenden" AUT-VAU-Zertifikats,
+  "cdv"             : Cert-Data-Version (natürliche Zahl, beginnend mit 1, 
+vgl. A_24957-*),
+  "ocsp_response"   : 
+OCSP-Response-für-das-VAU-Signaturzertifikat-nicht-älter-als-24-Stunden-DER-Kodierung
+ }
+
+ Diese Datenstruktur wird mittels CBOR binär kodiert (serialisiert). Das 
+Ergebnis der Kodierung wird "signierte öffentliche VAU-Schlüssel" (Plural) 
+genannt.]]></description>
+      <description_html><![CDATA[Ein Aktensystem MUSS sicherstellen, dass<br/>
+ 
+<ol>
+  <li>es eine Signatur-Identität aus der Komponenten-PKI der TI gibt, die technisch sichergestellt ausschließlich nur von VAU-Instanzen verwendbar ist (AUT-Zertifikat und Schlüsselmaterial (VAU-HSM) wie bei ePA 1x. und 2.x).</li>
+  <li>es semi-statische Schlüsselpaare für ECDH (auf Basis Kurve P-256 [FIPS-186-5]) und Kyber768 [IEFT-Kyber] gibt, deren private Schlüssel, technisch sichergestellt, ausschließlich von VAU-Instanzen verwendbar sind.</li>
+  <li>die privaten Schlüssel in einer VAU-Instanz erzeugt und verarbeitet werden (also nicht im VAU-HSM),</li>
+  <li>die semi-statischen Schlüssel eine maximale Lebensdauer von einem Monat besitzen (Hinweis: die Forward-Secrecy hängt nicht vom Wechselintervall ab, innerhalb eines Verbindungsaufbaus und der Schlüsselaushandlung dabei fließen ephemere Schlüsselwerte von Client und Sever ein).</li>
+  <li>die semi-statischen Schlüssel in einer über die Signatur-Identität authentisierten folgenden Datenstruktur aufgeführt werden.</li>
+</ol>
+ 
+<table id="polarion_wiki macro name=table" class="polarion-Document-table" style="width: 100%;max-width: 1280px;margin-left: 0px;margin-right: auto;border: 1px solid #CCCCCC;empty-cells: show;border-collapse: collapse;max-width: 1280.0px;">
+  <tbody>
+    <tr>
+      <th style="font-weight: bold;background-color: #F0F0F0;text-align: left;vertical-align: top;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Struktur der signierten semi-statischen öffentlichen VAU-Schlüssel</th>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;"><span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">VAU_Keys = {<br/>
+                    <span id="polarion-comment:538"></span>&quot;ECDH_PK&quot; :<br/>
+                      { &quot;crv&quot; : &quot;P-256&quot;,<br/>
+                        &quot;x&quot; : Binärwert-x-Koordinate-32-Bit-big-endian,<br/>
+                        &quot;y&quot; : Binärwert-x-Koordinate-32-Bit-big-endian,<br/>
+                      },<br/>
+                    &quot;Kyber768_PK&quot; : Binärwert-öffentlicher-Schlüssel-nach-keygen-Spec-Kyber768,<br/>
+                    &quot;iat&quot; : Erzeugungszeits-Sekunden-Since-Epoch (integer),<br/>
+                    &quot;exp&quot; : Nicht-mehr-Verwendbar-nach (integer),<br/>
+                    &quot;comment&quot; : &quot;Erzeugt bei VAU-Instanz xyz, Meta-Info abcd&quot;<br/>
+          }<span id="polarion-comment:541"></span></span><br/>
+        <br/>
+        In &quot;comment&quot; KÖNNEN beliebige Text-Daten aufgeführt werden. Es können weitere Attribute hinzugeführt werden. Ein Client MUSS ihm unbekannte Attribute ignorieren.<br/>
+        Diese Struktur wird mittels CBOR [RFC-CBOR] binär kodiert und im Folgenden VAU_Keys_encoded genannt.<br/>
+        <br/>
+        Diese binäre Byte-Folge wird in folgende Datenstruktur eingebracht<br/>
+        <br/>
+        <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">{<br/>
+           &quot;signed_pub_keys&quot; : VAU_Keys_encoded,<br/>
+           &quot;signature-ES256&quot; : ECDSA-Signatur-SHA-256-analog-RFC-7515 (R||S =&gt; 64 Byte) binär,<br/>
+           &quot;cert_hash&quot;       : SHA-256-Wert des &quot;signierenden&quot; AUT-VAU-Zertifikats,<br/>
+           &quot;cdv&quot;             : Cert-Data-Version (natürliche Zahl, beginnend mit 1, vgl. A_24957-*),<br/>
+           &quot;ocsp_response&quot;   : OCSP-Response-für-das-VAU-Signaturzertifikat-nicht-älter-als-24-Stunden-DER-Kodierung<br/>
+          }</span><br/>
+        <br/>
+        Diese Datenstruktur wird mittels CBOR binär kodiert (serialisiert). Das Ergebnis der Kodierung wird &quot;signierte öffentliche VAU-Schlüssel&quot; (Plural) genannt.</td>
+    </tr>
+  </tbody>
+</table>
+ <br/>]]></description_html>
+      <sourceDocumentId>gemSpec_Krypt</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24428" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[VAU-Protokoll: VAU-Client: Nachricht 1]]></title>
+      <description><![CDATA[Ein VAU-Client MUSS für die Erzeugung folgende Schritte durchlaufen. 
+ Ein VAU-Client MUSS 
+
+ * ein ECC-Schlüsselpaar auf der Kurve P-256 [FIPS-186-5] erzeugen. 
+ * ein Kyber768-Schlüsselpaar [IETF-Kyber] erzeugen.  Anschließend MUSS er die 
+öffentlichen Schlüssel in folgende Datenstruktur überführen
+ {
+     "MessageType" : "M1",
+     "ECDH_PK"    :  { "crv" : "P-256",
+                       "x" : analog A_24425-*,
+                       "y" : analog A_24425-* },
+     "Kyber768_PK" : analog zu A_24425-*
+ }
+
+ Diese Datenstruktur MUSS er mittels CBOR [RFC-CBOR] in eine Bytefolge 
+kodieren (serialisieren).
+ Diese Bytefolge ist die Nachricht 1.
+
+ Diese Nachricht 1 MUSS der VAU-Client an die HTTPS-Schnittstelle des 
+Aktensystem per POST auf den Pfad /VAU senden, wobei er den Mime-Type 
+"application/cbor" [RFC-CBOR] (HTTP Content-Type) verwendet und die Nachricht 1 
+im Request-Body aufführt.
+
+ Vgl. auch A_24757-*]]></description>
+      <description_html><![CDATA[Ein VAU-Client MUSS für die Erzeugung folgende Schritte durchlaufen. <br/>
+Ein VAU-Client MUSS <br/>
+ 
+<ol>
+  <li>ein ECC-Schlüsselpaar auf der Kurve P-256 [FIPS-186-5] erzeugen.</li>
+  <li>ein Kyber768-Schlüsselpaar [IETF-Kyber] erzeugen.</li>
+</ol>
+Anschließend MUSS er die öffentlichen Schlüssel in folgende Datenstruktur überführen<br/>
+ <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;"> {<br/>
+      &quot;MessageType&quot; : &quot;M1&quot;,<br/>
+      &quot;ECDH_PK&quot;    :  { &quot;crv&quot; : &quot;P-256&quot;,<br/>
+                        &quot;x&quot; : analog A_24425-*,<br/>
+                        &quot;y&quot; : analog A_24425-* },<br/>
+      &quot;Kyber768_PK&quot; : analog zu A_24425-*<br/>
+  }</span><br/>
+ <br/>
+Diese Datenstruktur MUSS er mittels CBOR [RFC-CBOR] in eine Bytefolge kodieren (serialisieren).<br/>
+Diese Bytefolge ist die Nachricht 1.<br/>
+ <br/>
+Diese Nachricht 1 MUSS der VAU-Client an die HTTPS-Schnittstelle des Aktensystem per POST auf den Pfad /VAU senden, wobei er den Mime-Type &quot;application/cbor&quot; [RFC-CBOR] (HTTP Content-Type) verwendet und die Nachricht 1 im Request-Body aufführt.<br/>
+<br/>
+Vgl. auch A_24757-*<br/>]]></description_html>
+      <sourceDocumentId>gemSpec_Krypt</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24477" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[VAU-Client, Nichtproduktivumgebung, Offenlegung von symmetrischen Verbindungsschlüsseln]]></title>
+      <description><![CDATA[Ein VAU-Client in einer Nichtproduktivumgebung MUSS nach einer erfolgreichen 
+Schlüsselaushandlung mit dem VAU-Protokoll die ausgehandelten symmetrischen 
+Schlüssel K2_c2s_app_data und K2_s2c_app_data base64-kodiert innerhalb einer 
+HTTP-Request-Header-Variable "VAU-nonPU-Tracing" bei jedem äußeren HTTP-Request 
+aufführen. Dabei sind die beiden Base64-kodierten Schlüsselwerte durch 
+Leerzeichen zu trennen. Beispiel:
+     VAU-nonPU-Tracing: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA= 
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=
+
+ Als erstes ist der Wert von Schlüssel K2_c2s_app_data aufzuführen, als 
+zweiter Wert ist der Wert von Schlüssel K2_s2c_app_data aufzuführen.]]></description>
+      <description_html><![CDATA[Ein VAU-Client in einer Nichtproduktivumgebung MUSS nach einer erfolgreichen Schlüsselaushandlung mit dem VAU-Protokoll die ausgehandelten symmetrischen Schlüssel K2_c2s_app_data und K2_s2c_app_data base64-kodiert innerhalb einer HTTP-Request-Header-Variable &quot;VAU-nonPU-Tracing&quot; bei jedem äußeren HTTP-Request aufführen. Dabei sind die beiden Base64-kodierten Schlüsselwerte durch Leerzeichen zu trennen. Beispiel:<br/>
+    <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">VAU-nonPU-Tracing: <span style="font-size: 10pt;line-height: 1.5;">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA= AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</span></span><span style="font-size: 10pt;line-height: 1.5;"><br/>
+  <br/>
+  Als erstes ist der Wert von Schlüssel K2_c2s_app_data aufzuführen, als zweiter Wert ist der Wert von Schlüssel K2_s2c_app_data aufzuführen.</span>]]></description_html>
+      <sourceDocumentId>gemSpec_Krypt</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24608" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[VAU-Protokoll: VAU-Instanz: Nachricht 2]]></title>
+      <description><![CDATA[Eine VAU-Instanz (Server im VAU-Protokoll) MUSS die beiden öffentlichen 
+Schlüssel aus Nachricht 1 (vgl. A_24428-*) prüfen (korrekte ECC-Kurve 
+("crv":"P-256"), öffentlicher Punkt liegt auf der Kurve P-256 [FIPS-186-5], der 
+öffentliche Kyber768-Schlüssel ist valide [IETF-Kyber]).
+ Sie MUSS für ECDH und Kyber768 jeweils die KEM-Encapsulate-Funktion verwenden 
+und erhält dabei zwei Geheimnisse (ss_e_ecdh, ss_e_kyber768) und zwei 
+Ciphertexte (ECDH_ct, Kyber768_ct).
+ Sie MUSS für die beiden Geheimnisse zusammenfügen: ss_e = ss_e_ecdh || 
+ss_e_kyber768 und das Ergebnis mittels der HKDF [RFC-5859] auf Basis von 
+SHA-256 verwenden (info = '' (leere Zeichenkette)), um 64 Byte abzuleiten. Die 
+ersten 32 Byte (=256 Bit) heißen K1_c2s und die letzten 32 Byte heißen K1_s2c.
+
+ Mit dem Schlüssel K1_s2c mittels AES/CGM (vgl. A_24619) MÜSSEN die  
+"signierten öffentlichen VAU-Schlüssel" (vgl. A_24425-*) verschlüsselt werden. 
+Das Ergebnis (vgl. A_2416) heißt aed_ciphertext_msg_2.
+
+ Sie MUSS folgende Datenstruktur erzeugen:
+{
+     "MessageType" : "M2",
+     "ECDH_ct"     :  ... analog ECDH_PK aus A_24488-* ...,
+     "Kyber768_ct" : Kyber768-Ciphertext analog [IETF-Kyber768], vgl. 
+Referenz-Implementierung Kyber768,
+     "AEAD_ct"     : aead_ciphertext_msg_2
+ }
+
+ Diese Datenstruktur MUSS sie mittels CBOR [RFC-CBOR] serialisieren. Diese 
+Bytefolge ist Nachricht 2.
+
+ Sie MUSS einen ID erzeugen, kodiert aus der Zeichenmenge 
+ A-Za-z0-9-/ 
+ die maximal 200 Zeichen lang ist. Die ID MUSS mit "/" (Slash) beginnen und 
+MUSS ein gültiger URL-Pfadname sein. Diese ID MUSS es dem Aktensystem 
+ermöglichen, die VAU-Instanz und den aktuellen Handshake bei Eintreffen der 
+Nachricht-3 des ePA-Clients, der diese ID mitsendet, zu identifizieren. Das 
+Aktensystem kann die Struktur der ID selbst definieren. Ein ePA-Client MUSS die 
+ID als opake Zeichenkette behandeln.
+ Sie MUSS die Nachricht 2 inkl. ID an die HTTPS-Schnittstelle des Aktensystem 
+übergeben (die Art der Verbindung zwischen VAU-Instanz und HTTPS-Schnittstelle 
+des Aktensystems kann ein Hersteller frei wählen). Das Aktensystem (bzw. die 
+äußere HTTPS-Schnittstelle) MUSS als Antwort auf den HTTPS-Request, über den 
+die Nachricht 1 eingetroffen ist, die Nachricht 2 als Antwort im Response-Body 
+senden. Der zu verwendende Mime-Type MUSS "application/cbor" (HTTP 
+Content-Type) für die Response sein. Im Response-Header MUSS mit der 
+HTTP-Header-Variable "VAU-CID" die ID aufgeführt werden.]]></description>
+      <description_html><![CDATA[Eine VAU-Instanz (Server im VAU-Protokoll) MUSS die beiden öffentlichen Schlüssel aus Nachricht 1 (vgl. A_24428-*) prüfen (korrekte ECC-Kurve (&quot;crv&quot;:&quot;P-256&quot;), öffentlicher Punkt liegt auf der Kurve P-256 [FIPS-186-5], der öffentliche Kyber768-Schlüssel ist valide [IETF-Kyber]).<br/>
+Sie MUSS für ECDH und Kyber768 jeweils die KEM-Encapsulate-Funktion verwenden und erhält dabei zwei Geheimnisse (ss_e_ecdh, ss_e_kyber768) und zwei Ciphertexte (ECDH_ct, Kyber768_ct). <br/>
+Sie MUSS für die beiden Geheimnisse zusammenfügen: ss_e = ss_e_ecdh || ss_e_kyber768 und das Ergebnis mittels der HKDF [RFC-5859] auf Basis von SHA-256 verwenden (info = &#39;&#39; (leere Zeichenkette)), um 64 Byte abzuleiten. Die ersten 32 Byte (=256 Bit) heißen K1_c2s und die letzten 32 Byte heißen K1_s2c.<br/>
+ <br/>
+Mit dem Schlüssel K1_s2c mittels AES/CGM (vgl. A_24619) MÜSSEN die  &quot;signierten öffentlichen VAU-Schlüssel&quot; (vgl. A_24425-*) verschlüsselt werden. Das Ergebnis (vgl. A_2416) heißt aed_ciphertext_msg_2.<br/>
+ <br/>
+Sie MUSS folgende Datenstruktur erzeugen:<br/>
+ <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">{<br/>
+      &quot;MessageType&quot; : &quot;M2&quot;,<br/>
+      &quot;ECDH_ct&quot;     :  ... analog ECDH_PK aus A_24488-* ...,<br/>
+      &quot;Kyber768_ct&quot; : Kyber768-Ciphertext analog [IETF-Kyber768], vgl. Referenz-Implementierung Kyber768,<br/>
+      &quot;AEAD_ct&quot;     : aead_ciphertext_msg_2<br/>
+  }</span><br/>
+ <br/>
+Diese Datenstruktur MUSS sie mittels CBOR [RFC-CBOR] serialisieren. Diese Bytefolge ist Nachricht 2.<br/>
+ <br/>
+Sie MUSS einen ID erzeugen, kodiert aus der Zeichenmenge <br/>
+A-Za-z0-9-/ <br/>
+die maximal 200 Zeichen lang ist. Die ID MUSS mit &quot;/&quot; (Slash) beginnen und MUSS ein gültiger URL-Pfadname sein. Diese ID MUSS es dem Aktensystem ermöglichen, die VAU-Instanz und den aktuellen Handshake bei Eintreffen der Nachricht-3 des ePA-Clients, der diese ID mitsendet, zu identifizieren. Das Aktensystem kann die Struktur der ID selbst definieren. Ein ePA-Client MUSS die ID als opake Zeichenkette behandeln.<br/>
+Sie MUSS die Nachricht 2 inkl. ID an die HTTPS-Schnittstelle des Aktensystem übergeben (die Art der Verbindung zwischen VAU-Instanz und HTTPS-Schnittstelle des Aktensystems kann ein Hersteller frei wählen). Das Aktensystem (bzw. die äußere HTTPS-Schnittstelle) MUSS als Antwort auf den HTTPS-Request, über den die Nachricht 1 eingetroffen ist, die Nachricht 2 als Antwort im Response-Body senden. Der zu verwendende Mime-Type MUSS &quot;application/cbor&quot; (HTTP Content-Type) für die Response sein. Im Response-Header MUSS mit der HTTP-Header-Variable &quot;VAU-CID&quot; die ID aufgeführt werden.]]></description_html>
+      <sourceDocumentId>gemSpec_Krypt</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24619" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[VAU-Protokoll: AES/GCM-Verschlüsselung im Handshake]]></title>
+      <description><![CDATA[Eine VAU-Instanz und ein ePA-Client verschlüsseln im Rahmen des Handshakes des 
+VAU-Protokolls verschiedene Nachrichten-Teile mittels AES/GCM. Dabei MÜSSEN sie 
+pro Verschlüsselung den IV jeweils zufällig als 96-Bit-Wert erzeugen. Der 
+Authentication-Tag MUSS 128 Bit lang sein. Das Ergebnis der Verschlüsselung 
+MUSS dann in der folgenden Kodierung aufgeführt werden:
+ IV || eigentliche AES-GCM-Chiffrat || 128-Bit langer Authentication-Tag.]]></description>
+      <description_html><![CDATA[Eine VAU-Instanz und ein ePA-Client verschlüsseln im Rahmen des Handshakes des VAU-Protokolls verschiedene Nachrichten-Teile mittels AES/GCM. Dabei MÜSSEN sie pro Verschlüsselung den IV jeweils zufällig als 96-Bit-Wert erzeugen. Der Authentication-Tag MUSS 128 Bit lang sein. Das Ergebnis der Verschlüsselung MUSS dann in der folgenden Kodierung aufgeführt werden:<br/>
+IV || eigentliche AES-GCM-Chiffrat || 128-Bit langer Authentication-Tag.]]></description_html>
+      <sourceDocumentId>gemSpec_Krypt</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24622" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[VAU-Protokoll: VAU-Client: Erhalt von Nachricht 2]]></title>
+      <description><![CDATA[Ein VAU-Client MUSS die für Nachricht 2 erzeugten Datenobjekte nach A_24608-* 
+verarbeiten können.
+ Er MUSS prüfen, ob 
+
+ * im HTTP-Response-Header die Variable "VAU-CID" enthalten ist, falls nicht 
+Abbruch. 
+ * der Wert der Variable eine Bytefolge ist, dessen Länge maximal 200 Byte 
+lang ist und die nur die Zeichen 
+ A-Za-z0-9-/ 
+ enthält und mit "/" (Slash) beginnt. Falls nicht Abbruch.  Er MUSS den Wert 
+als Pfad für das Versenden der Nachricht 3 (vgl. A_24623) und aller weiteren 
+Nachrichten -- also auch nach dem erfolgreichen Handshake -- im Kontext dieser 
+Verbindung verwenden.]]></description>
+      <description_html><![CDATA[Ein VAU-Client MUSS die für Nachricht 2 erzeugten Datenobjekte nach A_24608-* verarbeiten können.<br/>
+Er MUSS prüfen, ob <br/>
+ 
+<ol>
+  <li>im HTTP-Response-Header die Variable &quot;VAU-CID&quot; enthalten ist, falls nicht Abbruch.</li>
+  <li>der Wert der Variable eine Bytefolge ist, dessen Länge maximal 200 Byte lang ist und die nur die Zeichen <br/>
+    A-Za-z0-9-/ <br/>
+    enthält und mit &quot;/&quot; (Slash) beginnt. Falls nicht Abbruch.</li>
+</ol>
+Er MUSS den Wert als Pfad für das Versenden der Nachricht 3 (vgl. A_24623) und aller weiteren Nachrichten -- also auch nach dem erfolgreichen Handshake -- im Kontext dieser Verbindung verwenden.]]></description_html>
+      <sourceDocumentId>gemSpec_Krypt</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24623" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[VAU-Protokoll: VAU-Client: Nachricht 3]]></title>
+      <description><![CDATA[Ein VAU-Client MUSS aus der Nachricht 2 (vgl. A_24622-*) der VAU-Instanz 
+mittels der Ciphertexte ECDH_ct und Kyber768_ct und den privaten ephemeren 
+Client-Schlüsseln aus A_24488 (Nachricht 1) und der jeweiligen 
+KEM-Decapsulation-Funktionen zwei Geheimnisse berechnen: ss_e_ecdh und 
+ss_e_kyber768. Er MUSS die beiden Geheimnisse zusammenfügen: ss_e = ss_e_ecdh 
+|| ss_e_kyber768 und das Ergebnis mittels der HKDF [RFC-5859] auf Basis von 
+SHA-256 verwenden (info = '' (leere Zeichenkette), um 64 Byte abzuleiten. Die 
+ersten 32 Byte (=256 Bit) heißen K1_c2s und die letzten 32 Byte heißen K1_s2c.
+
+ Mit dem Schlüssel K1_s2c mittels AES/CGM (vgl. A_24619-*) MUSS der Ciphertext 
+"AEAD_ct" entschlüsselt werden: die "signierten öffentlichen VAU-Schlüssel" 
+(vgl. A_24425-*) werden so als Klartext erhalten. Diese VAU-Schlüssel MUSS er 
+nach A_24624-* prüfen. Mittels der öffentlichen Schlüssel (ECDH_PK, 
+Kyber768_PK) MUSS er jeweils die KEM-Encapsulation-Funktion ausführen und er 
+erhält zwei Geheimnisse: ss_s_ecdh und ss_s_kyber768. Diese führt er zusammen: 
+ss_s = ss_s_ecdh || ss_s_kyber768. Weiter berechnet er ss = ss_e || ss_s.
+ Dieses Geheimnis verwendet die HKDF [RFC-5859] auf Basis von SHA-256 (info = 
+'' (leere Zeichenkette)), um 160 Byte (=5 * 32 Byte) abzuleiten. Er MUSS diese 
+160 Byte in 32 Byte-Blöcke (von offset 0 bis zum Ende) auf folgende fünf 
+Variablen (vier Schlüssel + eine KeyID) verteilen:
+
+ * K2_c2s_key_confirmation, 
+ * K2_c2s_app_data, 
+ * K2_s2c_key_confirmation, 
+ * K2_s2c_app_data  und
+
+ * KeyID (nicht vertraulich).  Diese ersten vier sind vertrauliche 
+Schlüsselwerte für AES/GCM. Die KeyID wird nach dem Handshake als eindeutige ID 
+für die K2*_app_data Schlüssel dienen.
+
+ Er MUSS eine Datenstruktur wie folgt erzeugen:
+
+{
+     "ECDH_ct"    : client_kem_result_2["ECDH_ct"],
+     "Kyber768_ct" : client_kem_result_2["Kyber768_ct"],
+     "ERP" : False,
+     "ESO" : False
+ }
+
+ ERP steht für "Enforce Replay Protection" und ESO steht für "Enforce Sequence 
+Order". Innerhalb der Spezifikation heißt diese Datenstruktur 
+Nachricht_3_inner_Layer. Diese Datenstruktur MUSS er per CBOR [CBOR] 
+serialisieren/kodieren. Diese Serialisierung MUSS er mittels K1_c2s 
+verschlüsseln (vgl. A_24619) (= "ciphertext_msg_3).
+ Er MUSS die komplette Nachricht-1 (CBOR-Kodierung), die Nachricht-2 und 
+ciphertext_msg_3 konkatenieren (= Transskript des Client) und davon den 
+SHA-256-Hashwert berechnen. Diesen Hashwert MUSS er mittels 
+K2_c2s_key_confirmation verschlüsseln (vgl. A_24619), das Chiffrat sei 
+als aead_ciphertext_msg_3_key_confirmation hier bezeichnet.
+
+ Dann MUSS er folgende Datenstruktur erzeugen:
+
+{
+      "MessageType" : "M3",
+      "AEAD_ct"     : ciphertext_msg_3,
+      "AEAD_ct_key_confirmation" : aead_ciphertext_msg_3_key_confirmation
+ }            
+
+ Diese Datenstruktur MUSS er per CBOR serialisieren, das Ergebnis ist 
+Nachricht 3.
+ Er MUSS die Nachricht 3 per äußeren HTTP-Request an das Aktensystem senden 
+und dabei den Wert der VAU-CID (vgl. A_24622) als URL-Pfadnamen verwenden, 
+unter Verwendung der HTTP-POST-Methode.]]></description>
+      <description_html><![CDATA[Ein VAU-Client MUSS aus der Nachricht 2 (vgl. A_24622-*) der VAU-Instanz mittels der Ciphertexte ECDH_ct und Kyber768_ct und den privaten ephemeren Client-Schlüsseln aus A_24488 (Nachricht 1) und der jeweiligen KEM-Decapsulation-Funktionen zwei Geheimnisse berechnen: ss_e_ecdh und ss_e_kyber768. Er MUSS die beiden Geheimnisse zusammenfügen: ss_e = ss_e_ecdh || ss_e_kyber768 und das Ergebnis mittels der HKDF [RFC-5859] auf Basis von SHA-256 verwenden (info = &#39;&#39; (leere Zeichenkette), um 64 Byte abzuleiten. Die ersten 32 Byte (=256 Bit) heißen K1_c2s und die letzten 32 Byte heißen K1_s2c.<br/>
+ <br/>
+Mit dem Schlüssel K1_s2c mittels AES/CGM (vgl. A_24619-*) MUSS der Ciphertext &quot;AEAD_ct&quot; entschlüsselt werden: die &quot;signierten öffentlichen VAU-Schlüssel&quot; (vgl. A_24425-*) werden so als Klartext erhalten. Diese VAU-Schlüssel MUSS er nach A_24624-* prüfen. Mittels der öffentlichen Schlüssel (ECDH_PK, Kyber768_PK) MUSS er jeweils die KEM-Encapsulation-Funktion ausführen und er erhält zwei Geheimnisse: ss_s_ecdh und ss_s_kyber768. Diese führt er zusammen: ss_s = ss_s_ecdh || ss_s_kyber768. Weiter berechnet er ss = ss_e || ss_s.<br/>
+Dieses Geheimnis verwendet die HKDF [RFC-5859] auf Basis von SHA-256 (info = &#39;&#39; (leere Zeichenkette)), um 160 Byte (=5 * 32 Byte) abzuleiten. Er MUSS diese 160 Byte in 32 Byte-Blöcke (von offset 0 bis zum Ende) auf folgende fünf Variablen (vier Schlüssel + eine KeyID) verteilen:<br/>
+ 
+<ul>
+  <li>K2_c2s_key_confirmation,</li>
+  <li>K2_c2s_app_data,</li>
+  <li>K2_s2c_key_confirmation,</li>
+  <li>K2_s2c_app_data</li>
+</ul>
+und<br/>
+ 
+<ul>
+  <li>KeyID (nicht vertraulich).</li>
+</ul>
+Diese ersten vier sind vertrauliche Schlüsselwerte für AES/GCM. Die KeyID wird nach dem Handshake als eindeutige ID für die K2*_app_data Schlüssel dienen.<br/>
+ <br/>
+Er MUSS eine Datenstruktur wie folgt erzeugen:<br/>
+ <br/>
+ <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">{<br/>
+      &quot;ECDH_ct&quot;    : client_kem_result_2[&quot;ECDH_ct&quot;],<br/>
+      &quot;Kyber768_ct&quot; : client_kem_result_2[&quot;Kyber768_ct&quot;],<br/>
+      &quot;ERP&quot; : False,<br/>
+      &quot;ESO&quot; : False<br/>
+  }</span><br/>
+ <br/>
+ERP steht für &quot;Enforce Replay Protection&quot; und ESO steht für &quot;Enforce Sequence Order&quot;. Innerhalb der Spezifikation heißt diese Datenstruktur Nachricht_3_inner_Layer. Diese Datenstruktur MUSS er per CBOR [CBOR] serialisieren/kodieren. Diese Serialisierung MUSS er mittels K1_c2s verschlüsseln (vgl. A_24619) (= &quot;ciphertext_msg_3). <br/>
+Er MUSS die komplette Nachricht-1 (CBOR-Kodierung), die Nachricht-2 und ciphertext_msg_3 konkatenieren (= Transskript des Client) und davon den SHA-256-Hashwert berechnen. Diesen Hashwert MUSS er mittels K2_c2s_key_confirmation verschlüsseln (vgl. A_24619), das Chiffrat sei als aead_ciphertext_msg_3_key_confirmation hier bezeichnet.<br/>
+ <br/>
+Dann MUSS er folgende Datenstruktur erzeugen:<br/>
+ <br/>
+ <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">{<br/>
+       &quot;MessageType&quot; : &quot;M3&quot;,<br/>
+       &quot;AEAD_ct&quot;     : ciphertext_msg_3,<br/>
+       &quot;AEAD_ct_key_confirmation&quot; : aead_ciphertext_msg_3_key_confirmation<br/>
+  }  </span>          <br/>
+ <br/>
+Diese Datenstruktur MUSS er per CBOR serialisieren, das Ergebnis ist Nachricht 3.<br/>
+Er MUSS die Nachricht 3 per äußeren HTTP-Request an das Aktensystem senden und dabei den Wert der VAU-CID (vgl. A_24622) als URL-Pfadnamen verwenden, unter Verwendung der HTTP-POST-Methode.<br/>]]></description_html>
+      <sourceDocumentId>gemSpec_Krypt</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24624-01" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-27">
+      <title><![CDATA[VAU-Protokoll: VAU-Client: Prüfung der "signierten öffentlichen VAU-Schlüssel"]]></title>
+      <description><![CDATA[Ein VAU-Client MUSS die "signierten öffentlichen VAU-Schlüssel" (vgl. 
+A_24425-*) bei der Verarbeitung von Nachricht 3 (vgl. A_24623-*) wie folgt 
+prüfen. Erhält er bei einem der folgenden Prüfpunkte kein positives 
+Prüfergebnis, so MUSS er die Verarbeitung (Handshake) abbrechen.
+
+ * Prüfung des TI-Zertifikats, das den Hashwert aus dem "cert_hash"-Datenfeld 
+besitzt (Bezug des Zertifikats vgl. A_24957-*), u. a. unter der Verwendung der 
+OCSP-Response aus "ocsp_response" für die Prüfung des Sperrstatus (Prüfung ob 
+"good"). Die OCSP-Response darf dabei nicht älter als 24 Stunden sein. 
+ * Das VAU/TI-Zertifikat MUSS zeitlich gültig sein. Es MUSS kryptographisch in 
+einer Zertifikats-/Signaturprüfungskette rückführbar auf eine 
+X.509-Root-Version der TI-PKI sein. 
+ * Das TI-Zertifikat MUSS aus der Komponenten-PKI der TI stammt (vgl. 
+Implementierungshinweis A_25192-*#Punkt-2) und die Rollen-OID "oid_epa_vau" 
+besitzt. 
+ * Die Signatur im "signature-ES256"-Datenfeld MUSS eine valide Signatur für 
+die Daten im Datenfeld "signed_pub_keys" (Signaturprüfung ergibt 
+"valid/accept") sein, unter Verwendung des öffentlichen Signatur-Schlüssels aus 
+dem VAU/TI-Zertifikats bei der Signaturprüfung. 
+ * Der ECC-Schlüssel in signed_pub_keys (vgl. Erzeugung bei A_24425) MUSS ein 
+gültiger Punkt der Kurve P-256 [FIPS-186-5] sein. Der öffentliche Schlüssel in 
+"Kyber768_PK"-Datenfeld MUSS ein gültiger Kyber-768-Schlüssel [IEFT-Kyber] sein.
+ * Die Zeit in "signed_pub_keys.exp" MUSS größer als die aktuelle Systemzeit 
+(Seconds since epoch) sein, d. h. die beiden Schlüssel (ECDH_PK und 
+Kyber768_PK) sind noch zeitlich gültig.]]></description>
+      <description_html><![CDATA[Ein VAU-Client MUSS die &quot;signierten öffentlichen VAU-Schlüssel&quot; (vgl. A_24425-*) bei der Verarbeitung von Nachricht 3 (vgl. A_24623-*) wie folgt prüfen. Erhält er bei einem der folgenden Prüfpunkte kein positives Prüfergebnis, so MUSS er die Verarbeitung (Handshake) abbrechen.<span id="polarion-comment:589"></span><br/>
+ 
+<ol>
+  <li><span style="font-size: 10pt;line-height: 1.5;">Prüfung des TI-Zertifikats, das den Hashwert aus dem &quot;cert_hash&quot;-Datenfeld besitzt (Bezug des Zertifikats vgl. A_24957-*), u. a. unter der Verwendung der OCSP-Response aus &quot;ocsp_response&quot; für die Prüfung des Sperrstatus (Prüfung ob &quot;good&quot;). Die OCSP-Response darf dabei nicht älter als 24 Stunden sein.</span></li>
+  <li><span style="font-size: 10pt;line-height: 1.5;">Das VAU/TI-Zertifikat MUSS zeitlich gültig sein. Es MUSS kryptographisch in einer Zertifikats-/Signaturprüfungskette rückführbar auf eine X.509-Root-Version der TI-PKI sein.</span></li>
+  <li><span style="font-size: 10pt;line-height: 1.5;">Das TI-Zertifikat MUSS aus der Komponenten-PKI der TI stammt (vgl. Implementierungshinweis A_25192-*#Punkt-2) und die Rollen-OID &quot;oid_epa_vau&quot; besitzt.</span></li>
+  <li><span style="font-size: 10pt;line-height: 1.5;">Die Signatur im &quot;signature-ES256&quot;-Datenfeld MUSS eine valide Signatur für die Daten im Datenfeld &quot;signed_pub_keys&quot; (Signaturprüfung ergibt &quot;valid/accept&quot;) sein, unter Verwendung des öffentlichen Signatur-Schlüssels aus dem VAU/TI-Zertifikats bei der Signaturprüfung.</span></li>
+  <li><span style="font-size: 10pt;line-height: 1.5;">Der ECC-Schlüssel in signed_pub_keys (vgl. Erzeugung bei A_24425) MUSS ein gültiger Punkt der Kurve P-256 [FIPS-186-5] sein. Der öffentliche Schlüssel in &quot;Kyber768_PK&quot;-Datenfeld MUSS ein gültiger Kyber-768-Schlüssel [IEFT-Kyber] sein.</span></li>
+  <li><span style="font-size: 10pt;line-height: 1.5;">Die Zeit in &quot;signed_pub_keys.exp&quot; MUSS größer als die aktuelle Systemzeit (Seconds since epoch) sein, d. h. die beiden Schlüssel (ECDH_PK und Kyber768_PK) sind noch zeitlich gültig.</span></li>
+</ol>]]></description_html>
+      <sourceDocumentId>gemSpec_Krypt</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24627" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[VAU-Protokoll: VAU-Client: Erhalt von Nachricht 4]]></title>
+      <description><![CDATA[Ein VAU-Client MUSS die für Nachricht 4 erzeugten Datenobjekte nach A_24626-* 
+verarbeiten können.
+
+ Er MUSS die Nachrichten 1, 2 und 3 konkatenieren und den SHA-256-Hashwert 
+erzeugen. Dies ist der Transskript-Hashwert. Er MUSS mittels 
+K2_s2c_key_confirmation das Chiffrat "AEAD_ct_key_confirmation" entschlüsseln 
+(vgl. A_24619-*).
+ Der erhaltene Klartext ist der gesendete Transskript-Server-Hashwert. 
+ Schlägt die Entschlüsselung fehl oder wird eine Ungleichheit zwischen eben 
+berechneten Transskript-Hashwert und gesendeten Transskript-Server-Hashwert 
+(Klartext des Chiffrats) festgestellt, MUSS er den Handshake mit einem Fehler 
+abbrechen.]]></description>
+      <description_html><![CDATA[Ein VAU-Client MUSS die für Nachricht 4 erzeugten Datenobjekte nach A_24626-* verarbeiten können.<br/>
+ <br/>
+Er MUSS die Nachrichten 1, 2 und 3 konkatenieren und den SHA-256-Hashwert erzeugen. Dies ist der Transskript-Hashwert. Er MUSS mittels K2_s2c_key_confirmation das Chiffrat &quot;AEAD_ct_key_confirmation&quot; entschlüsseln (vgl. A_24619-*).<br/>
+Der erhaltene Klartext ist der gesendete Transskript-Server-Hashwert. <br/>
+Schlägt die Entschlüsselung fehl oder wird eine Ungleichheit zwischen eben berechneten Transskript-Hashwert und gesendeten Transskript-Server-Hashwert (Klartext des Chiffrats) festgestellt, MUSS er den Handshake mit einem Fehler abbrechen.]]></description_html>
+      <sourceDocumentId>gemSpec_Krypt</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24628" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[VAU-Protokoll: VAU-Client: Request erzeugen/verschlüsseln]]></title>
+      <description><![CDATA[Ein VAU-Client MUSS einen inneren HTTP-Request als Klartext erzeugen. 
+
+ Er MUSS den Klartext mittels AES/GCM und dem Schlüssel K2_c2s_app_data 
+verschlüsseln (siehe AAD weiter unten).
+ Dafür wird ein 32-Bit Zufallswert a erzeugt. Nach A_24629-* wird der mit 
+K2_c2s_app_data verbundene Zähler um eins erhöht. Es wird der IV mit IV=a || 
+Zähler erzeugt. Dieser IV wird für die AES/GCM-Verschlüsselung verwendet.
+
+ Er MUSS einen Request-Counter pflegen, der verbunden ist mit der KeyID. Für 
+jeden Request MUSS der VAU-Client diesen Request-Counter erhöhen, bei Empfang 
+einer Antwort ist es dem Client möglich, die Response zum zuvor gestellten 
+Request sicher zuzuordnen (vgl. A_24633). (vgl. Erläuterungen zu A_24628-*).
+
+ Es wird folgender Header erzeugt:
+
+Name Länge Beschreibung bzw. Vorgabe des Werts 
+Version (=0x02) 1 Byte Versionsnummer, wird auf den Wert 2 gesetzt 
+PU/nonPU 1 Byte Wird das Chiffrat in der PU erzeugt, so MUSS der Wert 1 sein. 
+Anderenfalls hat das Byte den Wert 0. 
+Response/Request 1 Byte Für eine Nachricht des ePA-Clients an eine VAU-Instanz 
+wird der Wert auf 1 gesetzt.
+ In der Kodierung des Response-Chiffrat hat dieses Byte den Wert 2, was 
+markiert, dass es sich um eine Response handelt. 
+Request-Counter 8 Byte Eindeutige Zählernummer für diesen Request
+ Für jeden neuen Request wird vom Client dieser Wert um eins erhöht. 
+KeyID 32 Byte KeyID aus dem Handshake (vgl. A_24623-*) 
+ Dieser Header stellt die "Additional Associated Data" dar, die in die 
+Berechnung des Authentication-Tag bei der AES/GCM-Verschlüsselung einfließen 
+MÜSSEN. Der Authentication-Tag MUSS 128 Bit lang sein.
+
+ Das erweitere Chiffrat (also inkl. Header) MUSS folgende Struktur haben:
+
+Name Länge Beschreibung bzw. Vorgabe des Werts 
+Version (=0x02) 1 Byte Versionsnummer, wird auf den Wert 2 gesetzt 
+PU/nonPU 1 Byte Wird das Chiffrat in der PU erzeugt, so MUSS der Wert 1 sein. 
+Anderenfalls hat das Byte den Wert 0. 
+Response/Request 1 Byte Für eine Nachricht des ePA-Clients an eine VAU-Instanz 
+wird der Wert auf 1 gesetzt.
+ In der Kodierung des Response-Chiffrat wird es auf den Wert 2 gesetzt, was 
+markiert, dass es sich um eine Response handelt. 
+Request-Counter 8 Byte Eindeutige Zählernummer für diesen Request, für jeden 
+neuen Request wird vom Client dieser Wert um eins erhöht. 
+KeyID 32 Byte KeyID aus dem Handshake (vgl. A_24623-*) 
+IV 12 Byte
+ (= 96 Bit) IV für die AES/GCM-Verschlüsselung (32 Bit Zufall + 64 Bit 
+Verschlüsselungszähler, s. o. in A_24628-*) 
+CT variabel eigentliche AES/GCM-Chiffrat, dessen Länge gleich der Länge des 
+Klartextes ist 
+GMAC-Wert 16 Byte
+ (= 128 Bit) Authentication-Tag, der während der AES/GCM-Verschlüsselung inkl. 
+der Associated Data (Daten aus der Header-Tabelle, s. o.) berechnet wird. 
+ Der VAU-Client MUSS diese Datenstruktur per HTTP-POST an die VAU-Instanz 
+senden und als URL-Pfadnamen dabei den Wert der VAU-CID (vgl. A_24622-*) 
+verwenden. Dabei MUSS er den Media-Type 'application/octet-stream' 
+(HTTP Content-Type) verwenden.]]></description>
+      <description_html><![CDATA[Ein VAU-Client MUSS einen inneren HTTP-Request als Klartext erzeugen. <br/>
+ <br/>
+Er MUSS den Klartext mittels AES/GCM und dem Schlüssel K2_c2s_app_data verschlüsseln (siehe AAD weiter unten).<br/>
+Dafür wird ein 32-Bit Zufallswert a erzeugt. Nach A_24629-* wird der mit K2_c2s_app_data verbundene Zähler um eins erhöht. Es wird der IV mit IV=a || Zähler erzeugt. Dieser IV wird für die AES/GCM-Verschlüsselung verwendet.<br/>
+ <br/>
+Er MUSS einen Request-Counter pflegen, der verbunden ist mit der KeyID. Für jeden Request MUSS der VAU-Client diesen Request-Counter erhöhen, bei Empfang einer Antwort ist es dem Client möglich, die Response zum zuvor gestellten Request sicher zuzuordnen (vgl. A_24633). (vgl. Erläuterungen zu A_24628-*).<br/>
+ <br/>
+Es wird folgender Header erzeugt:<br/>
+ 
+<table id="polarion_wiki macro name=table" class="polarion-Document-table" style="width: 100%;max-width: 1280px;margin-left: 0px;margin-right: auto;border: 1px solid #CCCCCC;empty-cells: show;border-collapse: collapse;max-width: 1280.0px;">
+  <tbody>
+    <tr>
+      <th style="font-weight: bold;background-color: #F0F0F0;text-align: left;vertical-align: top;width: 134px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Name</th>
+      <th style="font-weight: bold;background-color: #F0F0F0;text-align: left;vertical-align: top;width: 69px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Länge</th>
+      <th style="font-weight: bold;background-color: #F0F0F0;text-align: left;vertical-align: top;width: 518px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Beschreibung bzw. Vorgabe des Werts</th>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 134px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Version (=0x02)</td>
+      <td style="text-align: left;vertical-align: top;width: 69px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">1 Byte</td>
+      <td style="text-align: left;vertical-align: top;width: 518px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Versionsnummer, wird auf den Wert 2 gesetzt</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 134px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">PU/nonPU</td>
+      <td style="text-align: left;vertical-align: top;width: 69px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">1 Byte</td>
+      <td style="text-align: left;vertical-align: top;width: 518px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Wird das Chiffrat in der PU erzeugt, so MUSS der Wert 1 sein. Anderenfalls hat das Byte den Wert 0.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 134px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Response/Request</td>
+      <td style="text-align: left;vertical-align: top;width: 69px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">1 Byte</td>
+      <td style="text-align: left;vertical-align: top;width: 518px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Für eine Nachricht des ePA-Clients an eine VAU-Instanz wird der Wert auf 1 gesetzt.<br/>
+        In der Kodierung des Response-Chiffrat hat dieses Byte den Wert 2, was markiert, dass es sich um eine Response handelt.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 134px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Request-Counter</td>
+      <td style="text-align: left;vertical-align: top;width: 69px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">8 Byte</td>
+      <td style="text-align: left;vertical-align: top;width: 518px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Eindeutige Zählernummer für diesen Request<br/>
+        Für jeden neuen Request wird vom Client dieser Wert um eins erhöht.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 134px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">KeyID</td>
+      <td style="text-align: left;vertical-align: top;width: 69px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">32 Byte</td>
+      <td style="text-align: left;vertical-align: top;width: 518px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">KeyID aus dem Handshake (vgl. A_24623-*)</td>
+    </tr>
+  </tbody>
+</table>
+ <br/>
+Dieser Header stellt die &quot;Additional Associated Data&quot; dar, die in die Berechnung des Authentication-Tag bei der AES/GCM-Verschlüsselung einfließen MÜSSEN. Der Authentication-Tag MUSS 128 Bit lang sein.<br/>
+ <br/>
+Das erweitere Chiffrat (also inkl. Header) MUSS folgende Struktur haben:<br/>
+ 
+<table id="polarion_wiki macro name=table;params=uid=client2" class="polarion-Document-table" style="width: 100%;max-width: 1280px;margin-left: 0px;margin-right: auto;border: 1px solid #CCCCCC;empty-cells: show;max-width: 1280.0px;">
+  <tbody>
+    <tr>
+      <th style="background-color: #F0F0F0;text-align: left;vertical-align: top;width: 134px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Name</th>
+      <th style="background-color: #F0F0F0;text-align: left;vertical-align: top;width: 69px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Länge</th>
+      <th style="background-color: #F0F0F0;text-align: left;vertical-align: top;width: 518px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Beschreibung bzw. Vorgabe des Werts</th>
+    </tr>
+    <tr>
+      <td style="width: 134px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Version (=0x02)</td>
+      <td style="width: 69px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">1 Byte</td>
+      <td style="width: 518px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Versionsnummer, wird auf den Wert 2 gesetzt</td>
+    </tr>
+    <tr>
+      <td style="width: 134px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">PU/nonPU</td>
+      <td style="width: 69px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">1 Byte</td>
+      <td style="width: 518px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Wird das Chiffrat in der PU erzeugt, so MUSS der Wert 1 sein. Anderenfalls hat das Byte den Wert 0.</td>
+    </tr>
+    <tr>
+      <td style="width: 134px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Response/Request</td>
+      <td style="width: 69px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">1 Byte</td>
+      <td style="width: 518px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Für eine Nachricht des ePA-Clients an eine VAU-Instanz wird der Wert auf 1 gesetzt.<br/>
+        In der Kodierung des Response-Chiffrat wird es auf den Wert 2 gesetzt, was markiert, dass es sich um eine Response handelt.</td>
+    </tr>
+    <tr>
+      <td style="width: 134px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Request-Counter</td>
+      <td style="width: 69px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">8 Byte</td>
+      <td style="width: 518px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Eindeutige Zählernummer für diesen Request, für jeden neuen Request wird vom Client dieser Wert um eins erhöht.</td>
+    </tr>
+    <tr>
+      <td style="width: 134px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">KeyID</td>
+      <td style="width: 69px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">32 Byte</td>
+      <td style="width: 518px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">KeyID aus dem Handshake (vgl. A_24623-*)</td>
+    </tr>
+    <tr>
+      <td style="width: 134px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">IV</td>
+      <td style="width: 69px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">12 Byte<br/>
+        (= 96 Bit)</td>
+      <td style="width: 518px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">IV für die AES/GCM-Verschlüsselung (32 Bit Zufall + 64 Bit Verschlüsselungszähler, s. o. in A_24628-*)</td>
+    </tr>
+    <tr>
+      <td style="width: 134px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">CT</td>
+      <td style="width: 69px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">variabel</td>
+      <td style="width: 518px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">eigentliche AES/GCM-Chiffrat, dessen Länge gleich der Länge des Klartextes ist</td>
+    </tr>
+    <tr>
+      <td style="width: 134px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">GMAC-Wert</td>
+      <td style="width: 69px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">16 Byte<br/>
+        (= 128 Bit)</td>
+      <td style="width: 518px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Authentication-Tag, der während der AES/GCM-Verschlüsselung inkl. der Associated Data (Daten aus der Header-Tabelle, s. o.) berechnet wird.</td>
+    </tr>
+  </tbody>
+</table>
+ <br/>
+Der VAU-Client MUSS diese Datenstruktur per HTTP-POST an die VAU-Instanz senden und als URL-Pfadnamen dabei den Wert der VAU-CID (vgl. A_24622-*) verwenden. Dabei MUSS er den Media-Type &#39;<span style="font-size: 10pt;line-height: 1.5;">application/octet-stream&#39; (HTTP Content-Type) verwenden.</span><br/>]]></description_html>
+      <sourceDocumentId>gemSpec_Krypt</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24629" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[VAU-Protokoll: VAU-Client: Verschlüsselungszähler]]></title>
+      <description><![CDATA[Ein VAU-Client MUSS sicherstellen, dass der Schlüssel K2_c2s_app_data als 
+Attribut einen 64-Bit-Zähler besitzt. Dieser Zähler MUSS initial 0 sein. Der 
+VAU-Client MUSS sicherstellen, dass bei jeder Verwendung des Schlüssels bei der 
+Verschlüsselung einer Nachricht der Zähler um eins erhöht wird. Der erste 
+verwendete Zählerwert ist also 1. Es spielt dabei keine Rolle, ob die Nachricht 
+(Chiffrat) ggf. nicht übermittelt werden konnte, der Zähler MUSS bei jeder 
+neuen Nutzung um eins erhöht werden.]]></description>
+      <description_html><![CDATA[Ein VAU-Client MUSS sicherstellen, dass der Schlüssel K2_c2s_app_data als Attribut einen 64-Bit-Zähler besitzt. Dieser Zähler MUSS initial 0 sein. Der VAU-Client MUSS sicherstellen, dass bei jeder Verwendung des Schlüssels bei der Verschlüsselung einer Nachricht der Zähler um eins erhöht wird. Der erste verwendete Zählerwert ist also 1. Es spielt dabei keine Rolle, ob die Nachricht (Chiffrat) ggf. nicht übermittelt werden konnte, der Zähler MUSS bei jeder neuen Nutzung um eins erhöht werden.]]></description_html>
+      <sourceDocumentId>gemSpec_Krypt</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24633" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[VAU-Protokoll: VAU-Client: Response entschlüsseln/auswerten]]></title>
+      <description><![CDATA[Ein VAU-Client MUSS bei Erhalt einer Antwort gemäß A_24632-* auf einen Request 
+gemäß A_24628-* folgendes prüfen: 
+ * Ist die Länge der Datenstruktur (erweiterte Chiffrat) mindestens 72 Byte 
+lang. 
+ * Ist die "PU/nonPU" Byte korrekt, i. sS v. korrekte Umgebung, in der auch 
+der VAU-Client arbeitet. 
+ * Ist das Request/Response-Byte gleich 2. 
+ * Hat der Response-Counter den von Client erwarteten Wert. 
+ * Ist die KeyID bekannt.  Ergibt eine der Prüfungen ein nicht-positives 
+Ergebnis, MUSS der Client die Verarbeitung der Response abbrechen.
+ Er MUSS das Chiffrat mit dem mit der KeyID verbundenen Schlüssel 
+K2_s2c_app_data mittels AES/GCM entschlüsseln und dabei den Header als 
+"Additional Associated Data" in die Entschlüsselung mit einfließen 
+lassen. Ergibt die Entschlüsselung das Symbol "FAIL", so MUSS er die 
+Verarbeitung des Chiffrats/Response abbrechen.]]></description>
+      <description_html><![CDATA[Ein VAU-Client MUSS bei Erhalt einer Antwort gemäß A_24632-* auf einen Request gemäß A_24628-* folgendes prüfen: 
+<ol>
+  <li>Ist die Länge der Datenstruktur (erweiterte Chiffrat) mindestens 72 Byte lang.</li>
+  <li>Ist die &quot;PU/nonPU&quot; Byte korrekt, i. sS v. korrekte Umgebung, in der auch der VAU-Client arbeitet.</li>
+  <li>Ist das Request/Response-Byte gleich 2.</li>
+  <li>Hat der Response-Counter den von Client erwarteten Wert.</li>
+  <li>Ist die KeyID bekannt.</li>
+</ol>
+Ergibt eine der Prüfungen ein nicht-positives Ergebnis, MUSS der Client die Verarbeitung der Response abbrechen.<br/>
+ Er MUSS das Chiffrat mit dem mit der KeyID verbundenen Schlüssel K2_s2c_app_data mittels AES/GCM entschlüsseln und dabei den Header als &quot;Additional Associated Data&quot; in die Entschlüsselung mit einfließen lassen. Ergibt die Entschlüsselung das Symbol &quot;FAIL&quot;, so MUSS er die Verarbeitung des Chiffrats/Response abbrechen. <br/>]]></description_html>
+      <sourceDocumentId>gemSpec_Krypt</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24656" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-29">
+      <title><![CDATA[ePA, Unabhängigkeit von TLS-Ebene und VAU-Protoll-Ebene]]></title>
+      <description><![CDATA[Ein ePA-Aktensystem und ein ePA-Client MÜSSEN sicherstellen, dass die TLS-Ebene 
+unabhängig zur VAU-Protokoll-Ebene ist, i. S. v. es gibt keine Bindung zwischen 
+TLS-Session und VAU-Protokoll-Verbindung.
+ Es MUSS möglich sein, die TLS-Verbindung, über die erfolgreich ein 
+VAU-Protoll-Handshake stattgefunden hat, zu beenden und auf einer neuen 
+unabhängigen TLS-Verbindung weiter das VAU-Protokoll mit schon ausgehandelten 
+Verbindungsschlüsseln zu verwenden.]]></description>
+      <description_html><![CDATA[Ein ePA-Aktensystem und ein ePA-Client MÜSSEN sicherstellen, dass die TLS-Ebene unabhängig zur VAU-Protokoll-Ebene ist, i. S. v. es gibt keine Bindung zwischen TLS-Session und VAU-Protokoll-Verbindung.<br/>
+Es MUSS möglich sein, die TLS-Verbindung, über die erfolgreich ein VAU-Protoll-Handshake stattgefunden hat, zu beenden und auf einer neuen unabhängigen TLS-Verbindung weiter das VAU-Protokoll mit schon ausgehandelten Verbindungsschlüsseln zu verwenden.]]></description_html>
+      <sourceDocumentId>gemSpec_Krypt</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24757" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-29">
+      <title><![CDATA[VAU-Protokoll: Nutzerpseudonym]]></title>
+      <description><![CDATA[Ein VAU-Client MUSS die HTTP-Variable "VAU-NP" aus vorherigen 
+VAU-Protokoll-Verbindungen speichern und bei den folgenden 
+VAU-Protokoll-Handshakes bei der Nachricht 1 (vgl. A_24428-*) im 
+HTTP-Request-Header aufführen (Hinweis: zu dem Zeitpunkt kann es noch keine 
+inneren HTTP-Request geben / Verbindungsaufbau). Initial hat ein Client diesen 
+Wert noch nicht, dann führt er die Variable nicht im Request-Header auf.
+ Ein VAU-Client MUSS nach einer erfolgreichen Client-Authentisierung (vgl. 
+[gemSpec_Krypt#7.3 und 7.4]) den inneren HTTP-Response-Header prüfen, ob die 
+Variable "VAU-NP" aufgeführt ist, falls ja MUSS er einen lokal gespeicherten 
+Wert ggf. aktualisieren (i. S. v. ein Aktensystem (VAU-Instanz) wird dieses 
+Nutzerpseudonym auch wechseln).]]></description>
+      <description_html><![CDATA[Ein VAU-Client MUSS die HTTP-Variable &quot;VAU-NP&quot; aus vorherigen VAU-Protokoll-Verbindungen speichern und bei den folgenden VAU-Protokoll-Handshakes bei der Nachricht 1 (vgl. A_24428-*) im HTTP-Request-Header aufführen (Hinweis: zu dem Zeitpunkt kann es noch keine inneren HTTP-Request geben / Verbindungsaufbau). Initial hat ein Client diesen Wert noch nicht, dann führt er die Variable nicht im Request-Header auf.<br/>
+Ein VAU-Client MUSS nach einer erfolgreichen Client-Authentisierung (vgl. [gemSpec_Krypt#7.3 und 7.4]) den inneren HTTP-Response-Header prüfen, ob die Variable &quot;VAU-NP&quot; aufgeführt ist, falls ja MUSS er einen lokal gespeicherten Wert ggf. aktualisieren (i. S. v. ein Aktensystem (VAU-Instanz) wird dieses Nutzerpseudonym auch wechseln).<br/>]]></description_html>
+      <sourceDocumentId>gemSpec_Krypt</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24767" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[VAU-Protokoll, Fehlerverarbeitung im VAU-Client]]></title>
+      <description><![CDATA[Ein VAU-Client MUSS die Fehlermeldungen nach A_24635-* verarbeiten können.]]></description>
+      <description_html><![CDATA[Ein VAU-Client MUSS die Fehlermeldungen nach A_24635-* verarbeiten können.]]></description_html>
+      <sourceDocumentId>gemSpec_Krypt</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24773" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[VAU-Protokoll: Clients: Neustart/Wiederholung des Verbindungsaufbaus]]></title>
+      <description><![CDATA[Ein VAU-Client MUSS Restart-Nachrichten nach A_24772-* verarbeiten können, und 
+bei Erhalt einer solchen Nachricht die aktuelle VAU-Protokoll-Verbindung, die 
+mit der aufgeführten KeyID verbunden ist, beenden, indem es die mit der KeyID 
+verbundenen symmetrischen Schlüssel sicher löscht. Anschließend MUSS es einen 
+neuen VAU-Protoll-Verbindungsaufbau durchlaufen (inkl. Nutzer-Authentisierung 
+gegenüber der VAU-Instanz).]]></description>
+      <description_html><![CDATA[Ein VAU-Client MUSS Restart-Nachrichten nach A_24772-* verarbeiten können, und bei Erhalt einer solchen Nachricht die aktuelle VAU-Protokoll-Verbindung, die mit der aufgeführten KeyID verbunden ist, beenden, indem es die mit der KeyID verbundenen symmetrischen Schlüssel sicher löscht. Anschließend MUSS es einen neuen VAU-Protoll-Verbindungsaufbau durchlaufen (inkl. Nutzer-Authentisierung gegenüber der VAU-Instanz).]]></description_html>
+      <sourceDocumentId>gemSpec_Krypt</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24913" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-29">
+      <title><![CDATA[ePA: TLS-Verbindungen, OCSP-Stapling]]></title>
+      <description><![CDATA[Ein ePA-Aktensystem MUSS bei allen seinen ePA-spezifischen HTTPS-Schnittstellen 
+(Rolle TLS-Server) TLS-OCSP-Stapling [RFC-6066] verwenden (aktivieren). Es MUSS 
+sicherstellen, dass die im TLS-Handshake mit gesendeten OCSP-Responses max. 50 
+Minuten alt sind. Sollte vom entsprechenden OCSP-Responder für den Bezug der 
+OCSP-Responses trotz regelmäßigen Versuchens keine OCSP-Response bezogen werden 
+können, so MUSS das Aktensystem die jüngste ihm zur Verfügung stehende 
+OCSP-Response verwenden, und es regelmäßig weiter probieren (bspw. im 5'-Takt).
+
+ Ein ePA-Client MUSS in seiner TLS-Implementierung OCSP-Stapling unterstützen 
+und die dort aufgeführten OCSP-Responses verwenden. Sollte diese zu alt sein 
+(vgl. [gemILF_PS_ePA#A_24900]), so MUSS der ePA-Client versuchen, selbst 
+OCSP-Responses einzuholen, wobei er die Client-seitiges OCSP-Response-Caching 
+nach [gemSpec_PKI#A_23225] umsetzen MUSS.]]></description>
+      <description_html><![CDATA[Ein ePA-Aktensystem MUSS bei allen seinen ePA-spezifischen HTTPS-Schnittstellen (Rolle TLS-Server) TLS-OCSP-Stapling [RFC-6066] verwenden (aktivieren). Es MUSS sicherstellen, dass die im TLS-Handshake mit gesendeten OCSP-Responses max. 50 Minuten alt sind. Sollte vom entsprechenden OCSP-Responder für den Bezug der OCSP-Responses trotz regelmäßigen Versuchens keine OCSP-Response bezogen werden können, so MUSS das Aktensystem die jüngste ihm zur Verfügung stehende OCSP-Response verwenden, und es regelmäßig weiter probieren (bspw. im 5&#39;-Takt).<br/>
+ <br/>
+Ein ePA-Client MUSS in seiner TLS-Implementierung OCSP-Stapling unterstützen und die dort aufgeführten OCSP-Responses verwenden. Sollte diese zu alt sein (vgl. [gemILF_PS_ePA#A_24900]), so MUSS der ePA-Client versuchen, selbst OCSP-Responses einzuholen, wobei er die Client-seitiges OCSP-Response-Caching nach [gemSpec_PKI#A_23225] umsetzen MUSS.]]></description_html>
+      <sourceDocumentId>gemSpec_Krypt</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+    <requirement id="A_24958" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25">
+      <title><![CDATA[VAU-Protokoll: VAU-Client Prüfbasis Zertifikatsprüfung]]></title>
+      <description><![CDATA[Ein VAU-Client (PVS, ePA-FdV etc.) MUSS als Prüfbasis eine Root-Version 
+(X.509-Root-TI-Zeritifikat), die mindestens 2 Jahre alt ist, verwenden oder die 
+TSL. Der VAU-Client MUSS die Operation nach A_24957-* verwenden, um die für die 
+Zertifikatsprüfung von A_24425-* notwendigen Zertifikate zu beziehen. Die 
+bezogenen Zertifikatsdaten MUSS der VAU-Client lokal (zeitlich unbegrenzt) 
+vorhalten (Caching). Bei Erhalt einer Nachricht 2 (A_24608-*) MUSS er zunächst 
+prüfen, ob er die für die Zertifikatsprüfung notwendigen Zertifikate im lokalen 
+Cache vorrätig hat, und falls ja MUSS er diese verwenden.]]></description>
+      <description_html><![CDATA[Ein VAU-Client (PVS, ePA-FdV etc.) MUSS als Prüfbasis eine Root-Version (X.509-Root-TI-Zeritifikat), die mindestens 2 Jahre alt<span id="polarion-comment:554"></span> ist, verwenden oder die TSL. Der VAU-Client MUSS die Operation nach A_24957-* verwenden, um die für die Zertifikatsprüfung von A_24425-* notwendigen Zertifikate zu beziehen. Die bezogenen Zertifikatsdaten MUSS der VAU-Client lokal (zeitlich unbegrenzt) vorhalten (Caching). Bei Erhalt einer Nachricht 2 (A_24608-*) MUSS er zunächst prüfen, ob er die für die Zertifikatsprüfung notwendigen Zertifikate im lokalen Cache vorrätig hat, und falls ja MUSS er diese verwenden.<br/>]]></description_html>
+      <sourceDocumentId>gemSpec_Krypt</sourceDocumentId>
+      <testProcedure>funktionalen Eignung "Konformitätsbestätigung"</testProcedure>
+    </requirement>
+  </requirements>
+  <specificAttributes />
+</characteristics>

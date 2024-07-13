@@ -1,0 +1,1421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<requirements>
+  <requirement id="A_24680" type="leafRequirement" severity="MUSS" lastUpdate="2024-02-06" technicalID="ML-146970" revision="875845">
+    <title><![CDATA[User Agent im Nachrichtenheader]]></title>
+    <description><![CDATA[Das PS MUSS die HTTP Header Elemente "ClientID" und "Versionsnummer" bei jedem 
+Request sowohl im HTTP-Header der VAU-Nachricht, als auch im HTTP-Header der 
+Nachricht an den Service einfügen gemäß [gemSpec_Aktensystem_ePAfuerAlle#2].]]></description>
+    <description_html><![CDATA[Das PS MUSS die HTTP Header Elemente &quot;ClientID&quot; und &quot;Versionsnummer&quot; <span id="polarion-comment:771"></span>bei jedem Request sowohl im HTTP-Header der VAU-Nachricht, als auch im HTTP-Header der Nachricht an den Service einfügen gemäß [gemSpec_Aktensystem_ePAfuerAlle#2].]]></description_html>
+  </requirement>
+  <requirement id="A_24500" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-146076" revision="875845">
+    <title><![CDATA[Kommunikation über TLS-Verbindung]]></title>
+    <description><![CDATA[Das PS MUSS für die Anwendungsfälle der ePA für alle mit den Diensten der TI 
+ausschließlich über TLS mit serverseitiger Authentisierung kommunizieren.]]></description>
+    <description_html><![CDATA[Das PS MUSS für die Anwendungsfälle der ePA für alle mit den Diensten der TI ausschließlich über TLS mit serverseitiger Authentisierung kommunizieren.]]></description_html>
+  </requirement>
+  <requirement id="A_24502" type="leafRequirement" severity="MUSS" lastUpdate="2024-02-06" technicalID="ML-146082" revision="875845">
+    <title><![CDATA[Vorgaben für TLS-Verbindungen]]></title>
+    <description><![CDATA[Das PS MUSS als ePA-Client für die TLS-Kommunikation die Vorgaben aus 
+[gemSpec_Krypt#3.15.3] umsetzen.]]></description>
+    <description_html><![CDATA[Das PS MUSS als ePA-Client für die TLS-Kommunikation die Vorgaben aus [gemSpec_Krypt#3.15.3] umsetzen.]]></description_html>
+  </requirement>
+  <requirement id="A_24447" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-145846" revision="875845">
+    <title><![CDATA[Domänen als konfigurierbarer Wert]]></title>
+    <description><![CDATA[Das PS MUSS die Domänen für die DNS-Service Discovery als einen 
+konfigurierbaren Wert umsetzen, damit ein Wechsel der Umgebungen einfach 
+möglich ist.]]></description>
+    <description_html><![CDATA[Das PS MUSS die Domänen für die DNS-Service Discovery als einen konfigurierbaren Wert umsetzen, damit ein Wechsel der Umgebungen einfach möglich ist.]]></description_html>
+  </requirement>
+  <requirement id="A_24448" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-145845" revision="875845">
+    <title><![CDATA[DNS-Service Discovery täglich für Service-Endpunkte der ePA]]></title>
+    <description><![CDATA[Das PS MUSS die DNS-Service Discovery für die Service-Endpunkte der ePA beim 
+Start und einmal täglich ausführen, die Ergebnisse lokal speichern und diese 
+Informationen nutzen.]]></description>
+    <description_html><![CDATA[Das PS MUSS die DNS-Service Discovery für die Service-Endpunkte der ePA beim Start und einmal täglich ausführen, die Ergebnisse lokal speichern und diese Informationen nutzen.]]></description_html>
+  </requirement>
+  <requirement id="A_24380" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-145260" revision="875845">
+    <title><![CDATA[Endpunkt Schnittstelle ePA-Aktensysteme]]></title>
+    <description><![CDATA[Das Primärsystem MUSS die URL für die Kommunikation mit den ePA-Aktensystemen 
+gemäßhttps://<FQDN aus DNS Lookup>:443/ bilden.]]></description>
+    <description_html><![CDATA[Das Primärsystem MUSS die URL für die Kommunikation mit den ePA-Aktensystemen gemäß <span style="font-family: 'Courier New', Courier, monospace, HanWangKanTan;">https://&lt;FQDN aus DNS Lookup&gt;:443/</span> bilden.]]></description_html>
+  </requirement>
+  <requirement id="A_24499" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-146074" revision="875845">
+    <title><![CDATA[Nutzung der Schnittstelle I_Information_Service]]></title>
+    <description><![CDATA[Das PS MUSS die Operation getRecordStatus nutzen gemäß [I_Information_Service].]]></description>
+    <description_html><![CDATA[Das PS MUSS die Operation getRecordStatus nutzen gemäß [I_Information_Service].]]></description_html>
+  </requirement>
+  <requirement id="A_24435" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-145828" revision="875845">
+    <title><![CDATA[Ermitteln des zuständigen Service-Endpunkts zu einem Aktenkonto]]></title>
+    <description><![CDATA[Das PS MUSS die Abfrage der Existenz eines Aktenkontos zu einer KVNR gegen die 
+bekannten Aktensysteme wiederholen, bis diese erfolgreich ist oder alle 
+Aktensysteme angefragt wurden.]]></description>
+    <description_html><![CDATA[Das PS MUSS die Abfrage der Existenz eines Aktenkontos zu einer KVNR gegen die bekannten Aktensysteme wiederholen, bis diese erfolgreich ist oder alle Aktensysteme angefragt wurden.]]></description_html>
+  </requirement>
+  <requirement id="A_25146" type="leafRequirement" severity="MUSS" lastUpdate="2024-02-06" technicalID="ML-149139" revision="875845">
+    <title><![CDATA[Aktenlokalisierung als Hintergrundprozess]]></title>
+    <description><![CDATA[Das PS MUSS die Lokalisierung der Akte ohne Nutzeraktion im Rahmen eines 
+ePA-Zugriffs durchführen, wenn noch kein Service-Endpunkt zur Akte vorliegt. 
+Dieses soll im Hintergrund ablaufen und darf nicht die Weiterarbeit behindern.]]></description>
+    <description_html><![CDATA[Das PS MUSS die Lokalisierung der Akte ohne Nutzeraktion im Rahmen eines ePA-Zugriffs durchführen, wenn noch kein Service-Endpunkt zur Akte vorliegt. Dieses soll im Hintergrund ablaufen und darf nicht die Weiterarbeit behindern.]]></description_html>
+  </requirement>
+  <requirement id="A_24439-01" type="leafRequirement" severity="SOLL" lastUpdate="2024-03-27" technicalID="ML-151044" revision="875845">
+    <title><![CDATA[Speichern und Nutzen des zuständigen Service-Endpunkts zu einem Aktenkonto]]></title>
+    <description><![CDATA[Das PS SOLL den zuständigen Service-Endpunkt zu einem Aktenkonto speichern und 
+verwenden. Nur wenn der Status "Unknown" vom Aktensystem zurückgegeben wurde, 
+darf es den Service-Endpunkt neu ermitteln.]]></description>
+    <description_html><![CDATA[Das PS SOLL den zuständigen Service-Endpunkt zu einem Aktenkonto speichern und verwenden. Nur wenn der Status &quot;Unknown&quot; vom Aktensystem zurückgegeben wurde, darf es den Service-Endpunkt neu ermitteln.<span id="polarion-comment:870"></span>]]></description_html>
+  </requirement>
+  <requirement id="A_24445" type="leafRequirement" severity="MUSS" lastUpdate="2024-02-06" technicalID="ML-145838" revision="875845">
+    <title><![CDATA[Fehlermeldung Akte existiert nicht]]></title>
+    <description><![CDATA[Das PS MUSS dem Nutzer eine verständliche Fehlermeldung oder eine eindeutige 
+Statusinformation anzeigen, wenn alle verfügbaren Aktensysteme angefragt wurden 
+und alle den Status "Unknown" zurückgeben.]]></description>
+    <description_html><![CDATA[Das PS MUSS dem Nutzer eine verständliche Fehlermeldung <span style="font-size: 10pt;line-height: 1.5;">oder eine eindeutige Statusinformation </span>anzeigen, wenn alle verfügbaren Aktensysteme angefragt wurden und alle den Status &quot;Unknown&quot; zurückgeben.]]></description_html>
+  </requirement>
+  <requirement id="A_24494" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-146066" revision="875845">
+    <title><![CDATA[Kommunikation mit der Vertrauenswürdigen Ausführungsumgebung (VAU)]]></title>
+    <description><![CDATA[Das PS MUSS als ePA-Client für die Kommunikation mit der Vertrauenswürdigen 
+Ausführungsumgebung (VAU) die Vorgaben aus [gemSpec_Krypt#7,3.15] umsetzen.]]></description>
+    <description_html><![CDATA[Das PS MUSS als ePA-Client für die Kommunikation mit der Vertrauenswürdigen Ausführungsumgebung (VAU) die Vorgaben aus [gemSpec_Krypt#7,3.15] umsetzen.]]></description_html>
+  </requirement>
+  <requirement id="A_24926" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-148134" revision="875845">
+    <title><![CDATA[Umsetzung sicherer Kanal zur Aktenkontoverwaltung]]></title>
+    <description><![CDATA[Das PS MUSS die im Rahmen des sicheren Verbindungsaufbaus zur 
+Aktenkontoverwaltung ausgehandelten Sitzungsschlüssel verwenden, um den HTTP 
+Body aller über den sicheren Kanal zu sendenden Requests an die 
+Aktenkontoverwaltung zu verschlüsseln und alle über den sicheren Kanal 
+gesendeten Responses von der Aktenkontoverwaltung zu entschlüsseln.]]></description>
+    <description_html><![CDATA[Das PS MUSS die im Rahmen des sicheren Verbindungsaufbaus zur Aktenkontoverwaltung ausgehandelten Sitzungsschlüssel verwenden, um den HTTP Body aller über den sicheren Kanal zu sendenden Requests an die Aktenkontoverwaltung zu verschlüsseln und alle über den sicheren Kanal gesendeten Responses von der Aktenkontoverwaltung zu entschlüsseln.]]></description_html>
+  </requirement>
+  <requirement id="A_24881" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-148050" revision="875845">
+    <title><![CDATA[Nonce anfordern für Erstellung "Attestation der Umgebung"]]></title>
+    <description><![CDATA[Das PS MUSS, um die Nutzerauthentifizierung zu starten, die Operation getNonce 
+nutzen gemäß [I_Authorization_Service].]]></description>
+    <description_html><![CDATA[Das PS MUSS, um die Nutzerauthentifizierung zu starten, die Operation <span style="font-style: italic;">getNonce </span>nutzen gemäß [I_Authorization_Service].]]></description_html>
+  </requirement>
+  <requirement id="A_24882-01" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-27" technicalID="ML-153317" revision="875845">
+    <title><![CDATA[Signatur clientAttest]]></title>
+    <description><![CDATA[Das PS MUSS zum Signieren des clientAttest-JWT mit der SMC-B die 
+KonnektorschnittstelleAuthSignatureService::ExternalAuthenticate nutzen gemäß 
+[gemSpec_Kon] und als zu signierende Daten den BinaryString den 
+SHA-256-Hashwert des clientAttest-JWT in Base64-Codierung übergeben. ]]></description>
+    <description_html><![CDATA[Das PS MUSS zum Signieren des clientAttest-JWT mit der SMC-B die Konnektorschnittstelle <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">AuthSignatureService::ExternalAuthenticate</span> nutzen gemäß [gemSpec_Kon] und als zu signierende Daten den BinaryString den SHA-256-Hashwert des clientAttest-JWT in Base64-Codierung übergeben. ]]></description_html>
+  </requirement>
+  <requirement id="A_24883-02" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-27" technicalID="ML-153319" revision="875845">
+    <title><![CDATA[clientAttest als ECDSA-Signatur]]></title>
+    <description><![CDATA[Das PS MUSS beim Signieren des clientAttest-JWT mit Operation 
+ExternalAuthenticate den Signatur-Typ  ECDSA-Signatur verwenden. Dazu MUSS im 
+Elementdss:SignatureType die URI urn:bsi:tr:03111:ecdsa übergeben werden. Nur 
+wenn der Signaturversuch scheitert, weil noch eine SMC-B G2 vorliegt, darf das 
+PS auf eine PKCS#1-Signatur ausweichen.]]></description>
+    <description_html><![CDATA[Das PS MUSS beim Signieren des clientAttest-JWT mit Operation <span style="font-style: italic;">ExternalAuthenticate</span> den Signatur-Typ  ECDSA-Signatur verwenden. Dazu MUSS im Element <span style="font-size: 10pt;font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;line-height: 1.5;">dss:SignatureType</span> die URI urn:bsi:tr:03111:ecdsa übergeben werden. Nur wenn der Signaturversuch scheitert, weil noch eine SMC-B G2 vorliegt, darf das PS auf eine PKCS#1-Signatur ausweichen.]]></description_html>
+  </requirement>
+  <requirement id="A_24884-01" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-27" technicalID="ML-153320" revision="875845">
+    <title><![CDATA[clientAttest signieren als PKCS#1-Signatur]]></title>
+    <description><![CDATA[Das PS MUSS beim Signieren des clientAttest-JWT nach einem gescheiterten 
+Versuch eine ECDSA-Signatur zu erzeugen, eine PKCS#1-Signatur erzeugen. Dazu 
+MUSS im Elementdss:SignatureType die URI urn:ietf:rfc:3447 übergeben werden. 
+Als Signatur-Schema MUSS der Default-Wert fürSIG:SignatureSchemes RSASSA-PSS 
+genutzt werden.]]></description>
+    <description_html><![CDATA[Das PS MUSS beim Signieren des clientAttest-JWT nach einem gescheiterten Versuch eine ECDSA-Signatur zu erzeugen, eine PKCS#1-Signatur erzeugen. Dazu MUSS im Element <span style="font-size: 10pt;font-family: 'Courier New', Courier, monospace, HanWangKanTan;line-height: 1.5;">dss:SignatureType</span> die URI urn:ietf:rfc:3447 übergeben werden. Als Signatur-Schema MUSS der Default-Wert für <span style="font-size: 10pt;font-family: 'Courier New', Courier, monospace, HanWangKanTan;line-height: 1.5;">SIG:SignatureSchemes</span> RSASSA-PSS genutzt werden.]]></description_html>
+  </requirement>
+  <requirement id="A_24886-02" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-27" technicalID="ML-153322" revision="875845">
+    <title><![CDATA[clientAttest als ClientAttest]]></title>
+    <description><![CDATA[Das PS MUSS die signierte clientAttest-JWT als Parameter ClientAttest im 
+sendAuthCodeSC setzen.]]></description>
+    <description_html><![CDATA[Das PS MUSS die signierte clientAttest-JWT als Parameter ClientAttest im sendAuthCodeSC setzen.]]></description_html>
+  </requirement>
+  <requirement id="A_20666-02" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-27" technicalID="ML-153526" revision="875845">
+    <title><![CDATA[Auslesen des Authentisierungszertifikates]]></title>
+    <description><![CDATA[Das Primärsystem MUSS das Zertifikat C.HCI.AUT der SM-B über die Operation 
+ReadCardCertificatedes Konnektors gemäß [gemSpec_Kon#4.1.9.5.2] bzw. 
+[gemILF_PS#4.4.4.2] auslesen.]]></description>
+    <description_html><![CDATA[<span style="font-size: 10pt;line-height: 1.5;">Das Primärsystem MUSS das Zertifikat <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">C.HCI.AUT </span>der SM-B über die Operation <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">ReadCardCertificate </span>des Konnektors gemäß [gemSpec_Kon#4.1.9.5.2] bzw. [gemILF_PS#4.4.4.2] auslesen.</span><span id="polarion-comment:883"></span>]]></description_html>
+  </requirement>
+  <requirement id="A_25720" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-27" technicalID="ML-153525" revision="875845">
+    <title><![CDATA[Auslesen des Authentisierungszertifikates aus einem HSM]]></title>
+    <description><![CDATA[Das CS des Kostenträgers MUSS MUSS das Zertifikat ID.HCI.AUT der SM-B über die 
+OperationCardCertificate des Basis-Consumers gemäß 
+[gemSpec_Basis_KTR_Consumer#4.1.9.5.2] auslesen. ]]></description>
+    <description_html><![CDATA[Das CS des Kostenträgers MUSS <span style="font-size: 10pt;line-height: 1.5;">MUSS das Zertifikat<span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;"> ID.HCI.AUT </span>der SM-B über die Operation <span style="font-style: normal;font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">CardCertificate </span>des Basis-Consumers gemäß [gemSpec_Basis_KTR_Consumer#4.1.9.5.2] auslesen. </span>]]></description_html>
+  </requirement>
+  <requirement id="A_24760" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-27" technicalID="ML-147716" revision="875845">
+    <title><![CDATA[Start der Nutzerauthentifizierung]]></title>
+    <description><![CDATA[Das PS MUSS, um die Nutzerauthentifizierung zu starten, die Operation 
+sendAuthorizationRequestSCnutzen gemäß [I_Authorization_Service].]]></description>
+    <description_html><![CDATA[Das PS MUSS, um die Nutzerauthentifizierung zu starten, die Operation <span style="font-style: italic;">sendAuthorizationRequestSC </span>nutzen gemäß [I_Authorization_Service].]]></description_html>
+  </requirement>
+  <requirement id="A_24944-01" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-27" technicalID="ML-152104" revision="875845">
+    <title><![CDATA[Anfrage des "AUTHORIZATION_CODE" für ein "ID_TOKEN"]]></title>
+    <description><![CDATA[Das Primärsystem MUSS in Form eines HTTP/1.1 GET AuthorizationRequest beim 
+Authorization-Endpunkt (URI_AUTH) den Antrag zum Erhalt eines 
+"AUTHORIZATION_CODE" für ein "ID_TOKEN" stellen. Dabei übermittelt es die 
+folgenden Attribute, die aus der Response von send_Authorization_Request 
+stammen: 
+
+ * "response_type" 
+ * "scope" 
+ * "nonce" 
+ * "client_id" 
+ * "redirect_uri" 
+ * "code_challenge" (Hashwert des "code_verifier") [RFC7636 # section-4.2] 
+ * "code_challenge_method" HASH-Algorithmus (S256) [RFC7636 # section-4.3] 
+ * "state"]]></description>
+    <description_html><![CDATA[<span style="font-size: 10pt;line-height: 1.5;">Das Primärsystem MUSS in Form eines HTTP/1.1 GET AuthorizationRequest beim Authorization-Endpunkt (URI_AUTH) </span> den A<span style="font-size: 10pt;line-height: 1.5;">ntrag zum Erhalt eines &quot;AUTHORIZATION_CODE&quot; für ein &quot;ID_TOKEN&quot; stellen. Dabei übermittelt es die folgenden Attribute, die aus der Response von send_Authorization_Request stammen: </span><br/>
+ 
+<ul>
+  <li><span style="font-size: 10pt;line-height: 1.5;">&quot;response_type&quot;</span></li>
+  <li><span style="font-size: 10pt;line-height: 1.5;">&quot;scope&quot;</span></li>
+  <li><span style="font-size: 10pt;line-height: 1.5;">&quot;nonce&quot;</span></li>
+  <li><span style="font-size: 10pt;line-height: 1.5;">&quot;client_id&quot;</span></li>
+  <li><span style="font-size: 10pt;line-height: 1.5;">&quot;redirect_uri&quot;</span></li>
+  <li><span style="font-size: 10pt;line-height: 1.5;">&quot;code_challenge&quot; (Hashwert des &quot;code_verifier&quot;) [RFC7636 # section-4.2]</span></li>
+  <li><span style="font-size: 10pt;line-height: 1.5;">&quot;code_challenge_method&quot; HASH-Algorithmus (S256) [RFC7636 # section-4.3]</span></li>
+  <li><span style="font-size: 10pt;line-height: 1.5;">&quot;state&quot;</span></li>
+</ul>
+ <span id="polarion-comment:880"></span>]]></description_html>
+  </requirement>
+  <requirement id="A_20662" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-18" technicalID="ML-111619" revision="875845">
+    <title><![CDATA[Annahme des "user_consent" und des "CHALLENGE_TOKEN"]]></title>
+    <description><![CDATA[Das Primärsystem MUSS den "user_consent" und den "CHALLENGE_TOKEN" vom 
+Authorization-Endpunkt des IDP-Dienstes annehmen. Der Authorization-Endpunkt 
+liefert diese als Antwort auf den Authorization-Request des Primärsystems.]]></description>
+    <description_html><![CDATA[Das Primärsystem MUSS den &quot;user_consent&quot; und den &quot;CHALLENGE_TOKEN&quot; vom Authorization-Endpunkt des IDP-Dienstes annehmen. Der Authorization-Endpunkt liefert diese als Antwort auf den Authorization-Request des Primärsystems.]]></description_html>
+  </requirement>
+  <requirement id="A_20663-01" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-18" technicalID="ML-118103" revision="875845">
+    <title><![CDATA[Prüfung der Signatur des CHALLENGE_TOKEN]]></title>
+    <description><![CDATA[Das Primärsystem MUSS die Signatur des "CHALLENGE_TOKEN" gegen den aktuellen 
+öffentlichen Schlüssel des Authorization-Endpunktes "PUK_IDP_SIG" prüfen. Liegt 
+dem Primärsystem der öffentliche Schlüssel des Authorization-Endpunktes noch 
+nicht vor, MUSS es diesen gemäß dem "kid"-Parameter "puk_idp_sig" aus dem 
+Discovery Document abrufen.]]></description>
+    <description_html><![CDATA[Das Primärsystem MUSS die Signatur des &quot;CHALLENGE_TOKEN&quot; gegen den aktuellen öffentlichen Schlüssel des Authorization-Endpunktes &quot;PUK_IDP_SIG&quot; prüfen. Liegt dem Primärsystem der öffentliche Schlüssel des Authorization-Endpunktes noch nicht vor, MUSS es diesen gemäß dem &quot;kid&quot;-Parameter &quot;puk_idp_sig&quot; aus dem Discovery Document abrufen.]]></description_html>
+  </requirement>
+  <requirement id="A_20665-01" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-18" technicalID="ML-116716" revision="875845">
+    <title><![CDATA[Signatur der Challenge des IdP-Dienstes]]></title>
+    <description><![CDATA[Das Primärsystem MUSS für das Signieren des CHALLENGE_TOKEN des IdP-Dienstes 
+mit der Identität ID.HCI.AUT der SM-B die Operation ExternalAuthenticate des 
+Konnektors gemäß [gemSpec_Kon#4.1.13.4] bzw. [gemILF_PS#4.4.6.1] verwenden und 
+als zu signierende DatenBinaryString den SHA-256-Hashwert des CHALLENGE_TOKEN 
+in Base64-Codierung übergeben.]]></description>
+    <description_html><![CDATA[<span style="font-size: 10pt;line-height: 1.5;">Das Primärsystem MUSS für das Signieren des CHALLENGE_TOKEN des IdP-Dienstes mit der Identität ID.HCI.AUT der SM-B die Operation ExternalAuthenticate des Konnektors gemäß [gemSpec_Kon#4.1.13.4] bzw. [gemILF_PS#4.4.6.1] verwenden und als zu signierende Daten <span style="font-family: 'Courier New', Courier, monospace, HanWangKanTan;">BinaryString</span> den SHA-256-Hashwert des CHALLENGE_TOKEN in Base64-Codierung übergeben.</span><br/>]]></description_html>
+  </requirement>
+  <requirement id="A_24751" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-147695" revision="875845">
+    <title><![CDATA[Challenge signieren als ECDSA-Signatur]]></title>
+    <description><![CDATA[Das PS MUSS beim Signieren der Challenge mit Operation ExternalAuthenticate den 
+Signatur-Typ  ECDSA-Signatur verwenden. Dazu MUSS im Elementdss:SignatureType 
+die URI urn:bsi:tr:03111:ecdsa übergeben werden. Nur wenn der Signaturversuch 
+scheitert, weil noch eine SMC-B G2 vorliegt, darf das PS auf eine 
+PKCS#1-Signatur ausweichen.]]></description>
+    <description_html><![CDATA[Das PS MUSS beim Signieren der Challenge mit Operation <span style="font-style: italic;">ExternalAuthenticate</span> den Signatur-Typ  ECDSA-Signatur verwenden. Dazu MUSS im Element <span style="font-size: 10pt;font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;line-height: 1.5;">dss:SignatureType</span> die URI urn:bsi:tr:03111:ecdsa übergeben werden. Nur wenn der Signaturversuch scheitert, weil noch eine SMC-B G2 vorliegt, darf das PS auf eine PKCS#1-Signatur ausweichen.]]></description_html>
+  </requirement>
+  <requirement id="A_24752" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-147694" revision="875845">
+    <title><![CDATA[Challenge signieren als PKCS#1-Signatur]]></title>
+    <description><![CDATA[Das PS muss beim Signieren der Challenge nach einem gescheiterten Versuch eine 
+ECDSA-Signatur zu erzeugen, eine PKCS#1-Signatur erzeugen. Dazu MUSS im Element
+dss:SignatureType die URI urn:ietf:rfc:3447 übergeben werden. Als 
+Signatur-Schema MUSS der Default-Wert fürSIG:SignatureSchemes RSASSA-PSS 
+genutzt werden.]]></description>
+    <description_html><![CDATA[Das PS muss beim Signieren der Challenge nach einem gescheiterten Versuch eine ECDSA-Signatur zu erzeugen, eine PKCS#1-Signatur erzeugen. Dazu MUSS im Element <span style="font-size: 10pt;font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;line-height: 1.5;">dss:SignatureType</span> die URI urn:ietf:rfc:3447 übergeben werden. Als Signatur-Schema MUSS der Default-Wert für <span style="font-size: 10pt;font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;line-height: 1.5;">SIG:SignatureSchemes</span> RSASSA-PSS genutzt werden.]]></description_html>
+  </requirement>
+  <requirement id="A_20667-01" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-18" technicalID="ML-116718" revision="875845">
+    <title><![CDATA[Response auf die Challenge des Authorization-Endpunktes]]></title>
+    <description><![CDATA[Das Primärsystem MUSS das eingereichte "CHALLENGE_TOKEN" zusammen mit der von 
+der Smartcard signierten Challenge-Signatur "signed_challenge" (siehe A_20665) 
+und dem Authentifizierungszertifikat der Smartcard (siehe A_20666), mit dem 
+öffentlichen Schlüssel des Authorization-Endpunktes "PUK_IDP_ENC" 
+verschlüsselt, an diesen in Form eines HTTP-POST-Requests senden.]]></description>
+    <description_html><![CDATA[<span style="font-size: 10pt;line-height: 1.5;">Das Primärsystem MUSS das eingereichte &quot;CHALLENGE_TOKEN&quot; zusammen mit der von der Smartcard signierten Challenge-Signatur &quot;signed_challenge&quot; (siehe A_20665) und dem Authentifizierungszertifikat der Smartcard (siehe A_20666), mit dem öffentlichen Schlüssel des Authorization-Endpunktes &quot;PUK_IDP_ENC&quot; verschlüsselt, an diesen in Form eines HTTP-POST-Requests senden.</span>]]></description_html>
+  </requirement>
+  <requirement id="A_20668" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-18" technicalID="ML-111628" revision="875845">
+    <title><![CDATA[Annahme des "AUTHORIZATION_CODE"]]></title>
+    <description><![CDATA[Das Primärsystem MUSS den vom Authorization-Endpunkt als Antwort auf die 
+signierte Challenge gesendeten "AUTHORIZATION_CODE" verarbeiten. Das 
+Primärsystem MUSS das "AUTHORIZATION_CODE" ablehnen, wenn dieser außerhalb der 
+mit dem Authorization-Endpunkt etablierten TLS-Verbindung übertragen wird.]]></description>
+    <description_html><![CDATA[<span style="font-size: 10pt;line-height: 1.5;">Das Primärsystem MUSS den vom Authorization-Endpunkt als Antwort auf die signierte Challenge gesendeten &quot;AUTHORIZATION_CODE&quot; verarbeiten. Das Primärsystem MUSS das &quot;AUTHORIZATION_CODE&quot; ablehnen, wenn dieser außerhalb der mit dem Authorization-Endpunkt etablierten TLS-Verbindung übertragen wird.</span>]]></description_html>
+  </requirement>
+  <requirement id="A_24766" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-27" technicalID="ML-147722" revision="875845">
+    <title><![CDATA[Abschluss der Nutzerauthentifizierung]]></title>
+    <description><![CDATA[Das PS MUSS, um die Nutzerauthentifizierung abzuschließen, die Operation 
+sendAuthCode nutzen gemäß [I_Authorization_Service].]]></description>
+    <description_html><![CDATA[Das PS MUSS, um die Nutzerauthentifizierung abzuschließen, die Operation <span style="font-style: italic;">sendAuthCode </span>nutzen gemäß [I_Authorization_Service].<br/>]]></description_html>
+  </requirement>
+  <requirement id="A_20655" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-18" technicalID="ML-111612" revision="875845">
+    <title><![CDATA[Regelmäßiges Einlesen des Discovery Document]]></title>
+    <description><![CDATA[Das Primärsystem MUSS das Discovery Document (DD) [RFC8414] regelmäßig alle 24 
+Stunden einlesen und auswerten, und danach die darin aufgeführten URI zu den 
+benötigten öffentlichen Schlüsseln (PUKs) und Diensten verwenden. 
+Der Downloadpunkt wird als Teil der organisatorischen Registrierung des 
+Primärsystems beim IDP-Dienst übergeben. 
+Das Primärsystem MUSS den Downloadpunkt des Discovery Document als 
+konfigurierbaren Parameter speichern.   ]]></description>
+    <description_html><![CDATA[<span style="font-size: 10pt;line-height: 1.5;">Das Primärsystem MUSS das Discovery Document (DD) [RFC8414] regelmäßig alle 24 Stunden einlesen und auswerten, und danach die darin aufgeführten URI zu den benötigten öffentlichen Schlüsseln (PUKs) und Diensten verwenden.  </span><br/>
+ <span style="font-size: 10pt;line-height: 1.5;">Der Downloadpunkt wird als Teil der organisatorischen Registrierung des Primärsystems beim IDP-Dienst übergeben.  </span><br/>
+ <span style="font-size: 10pt;line-height: 1.5;">Das Primärsystem MUSS den Downloadpunkt des Discovery Document als konfigurierbaren Parameter speichern.   </span>]]></description_html>
+  </requirement>
+  <requirement id="A_20656-01" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-18" technicalID="ML-116713" revision="875845">
+    <title><![CDATA[Prüfung der Signatur des Discovery Document]]></title>
+    <description><![CDATA[Das Primärsystem MUSS die JWS (JSON Web Signature) [RFC7515 # section-3 - 
+Compact Serialization] Signatur des Discovery Document auf mathematische 
+Korrektheit sowie über die Funktion "VerifyCertificate" des Konnektors gemäß 
+[gemSpec_Kon#4.1.9.5.3] bzw. [gemILF_PS#4.4.4.3] auf Gültigkeit des 
+ausstellenden Zertifikates innerhalb der TI prüfen.]]></description>
+    <description_html><![CDATA[<span style="font-size: 10pt;line-height: 1.5;">Das Primärsystem MUSS die JWS (JSON Web Signature) [RFC7515 # section-3 - Compact Serialization] Signatur des Discovery Document auf mathematische Korrektheit sowie über die Funktion &quot;VerifyCertificate&quot; des Konnektors gemäß [gemSpec_Kon#4.1.9.5.3] bzw. [gemILF_PS#4.4.4.3] auf Gültigkeit des ausstellenden Zertifikates innerhalb der TI prüfen.<br/></span>]]></description_html>
+  </requirement>
+  <requirement id="A_20657" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-18" technicalID="ML-111615" revision="875845">
+    <title><![CDATA[Prüfung der Signatur des Discovery Document]]></title>
+    <description><![CDATA[Das Primärsystem MUSS die Signatur des Discovery Document auf ein zeitlich 
+gültiges C.FD.SIG-Zertifikat mit der Rollen-OID "oid_idpd" zurückführen können.]]></description>
+    <description_html><![CDATA[<span style="font-size: 10pt;line-height: 1.5;">Das Primärsystem MUSS die Signatur des Discovery Document auf ein zeitlich gültiges C.FD.SIG-Zertifikat mit der Rollen-OID &quot;oid_idpd&quot; zurückführen können.</span>]]></description_html>
+  </requirement>
+  <requirement id="A_24998" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-148379" revision="875845">
+    <title><![CDATA[InsurantID im Nachrichtenheader]]></title>
+    <description><![CDATA[Das PS MUSS bei Aufrufen innerhalb der VAU ein HTTP Header Element mit dem 
+Namen "x-insurantId" senden, um das Aktenkonto zu adressieren.]]></description>
+    <description_html><![CDATA[Das PS MUSS bei Aufrufen innerhalb der VAU ein HTTP Header Element mit dem Namen &quot;x-insurantId&quot; senden, um das Aktenkonto zu adressieren.<span id="polarion-comment:795"></span>]]></description_html>
+  </requirement>
+  <requirement id="A_24578" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-146574" revision="875845">
+    <title><![CDATA[Kryptografische Vorgaben für TLS- und VAU-Clients]]></title>
+    <description><![CDATA[Das PS MUSS alle Anforderungen zur Benutzung von Zertifikaten bei den 
+Kommunikationsprotokollen TLS und VAU-Protokoll für die Kommunikation mit dem 
+ePA-Aktensystem umsetzen, die in [gemSpec_Krypt#3.15.3] (ePA-spezifische 
+TLS-Vorgaben) und in [gemSpec_Krypt#7] (VAU-Protokoll für ePA-für-alle) für 
+einen ePA-Client definiert sind.]]></description>
+    <description_html><![CDATA[Das<span id="polarion-comment:722"></span> PS MUSS alle Anforderungen zur Benutzung von Zertifikaten bei den Kommunikationsprotokollen TLS und VAU-Protokoll für die Kommunikation mit dem ePA-Aktensystem umsetzen, die in [gemSpec_Krypt#3.15.3] (ePA-spezifische TLS-Vorgaben) und in [gemSpec_Krypt#7] (VAU-Protokoll für ePA-für-alle) für einen ePA-Client definiert sind. <br/>]]></description_html>
+  </requirement>
+  <requirement id="A_24556" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-146425" revision="875845">
+    <title><![CDATA[Verpflichtende Zertifikatsprüfung]]></title>
+    <description><![CDATA[Das PS MUSS als ePA-Client alle Zertifikate der Tabelle TAB_ILF_Zertifikate, 
+die es aktiv verwendet (bspw. TLS-Verbindungsaufbau), auf Integrität und 
+Authentizität prüfen. Falls die Prüfung kein positives Ergebnis ("gültig") 
+liefert, so MUSS es die von dem Zertifikat und den darin enthaltenen Attributen 
+(bspw. öffentliche Schlüssel) abhängenden Arbeitsabläufe ablehnen.
+Das Primärsystem MUSS alle öffentlichen Schlüssel, die es verwenden will, auf 
+eine positiv verlaufene Zertifikatsprüfung zurückführen können.]]></description>
+    <description_html><![CDATA[Das PS MUSS als ePA-Client alle Zertifikate der Tabelle TAB_ILF_Zertifikate, die es aktiv verwendet (bspw. TLS-Verbindungsaufbau), auf Integrität und Authentizität prüfen. Falls die Prüfung kein positives Ergebnis (&quot;gültig&quot;) liefert, so MUSS es die von dem Zertifikat und den darin enthaltenen Attributen (bspw. öffentliche Schlüssel) abhängenden Arbeitsabläufe ablehnen.<br/>Das Primärsystem MUSS alle öffentlichen Schlüssel, die es verwenden will, auf eine positiv verlaufene Zertifikatsprüfung zurückführen können.]]></description_html>
+  </requirement>
+  <requirement id="A_24900" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-148071" revision="875845">
+    <title><![CDATA[Prüfung TI-Zertifikate]]></title>
+    <description><![CDATA[Das Primärsystem MUSS X.509-Zertifikate der TI auf eine der beiden folgenden 
+beiden Arten prüfen:
+
+ * Verwenden des CertificateService des Konnektors mit der Operation 
+VerifyCertificate gemäß [gemSpec_Kon#4.1.9.5.3], wobei das zu prüfende 
+Zertifikat als Parameter X509Certificate und die aktuelle Systemzeit als 
+Parameter VerificationTime verwendet werden. Das Primärsystem MUSS bei Prüfung 
+von TI-Zertifikaten der TAB_ILF_Zertifikate den Rückgabewert in RoleList gegen 
+die erwartete Rollen-OID prüfen. 
+ * Das Primärsystem prüft die TI-Zertifikate selbst ohne Nutzung des 
+Konnektors nach [gemSpec_PKI#TUC_PKI_018] mit folgenden Parametern: 
+Parameter Wert
+
+Zertifikat C.FD.TLS-S (für TLS) bzw. C.FD.AUT (für VAU-Kanal)
+
+PolicyList oid_epa_dvw  bzw. oid_epa_vau
+
+intendedKeyUsage digitalSignature  
+intendedExtendedKeyUsage id-kp-serverAuth  bzw. leer
+
+OCSP-Graceperiod 60 Minuten 
+Offline-Modus nein 
+Prüfmodus OCSP  Ist die Zertifikatsprüfung nicht erfolgreich, ist 
+der Verbindungsaufbau abzulehnen.]]></description>
+    <description_html><![CDATA[Das Primärsystem MUSS X.509-Zertifikate der TI auf eine der beiden folgenden beiden Arten prüfen:<br/>
+ 
+<ol>
+  <li>Verwenden des <span style="font-size: 10pt;font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;line-height: 1.5;">CertificateService</span> des Konnektors mit der Operation <span style="font-size: 10pt;line-height: 1.5;"><span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">VerifyCertificate</span> </span>gemäß [gemSpec_Kon#4.1.9.5.3], wobei das zu prüfende Zertifikat als Parameter <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">X509Certificate </span>und die aktuelle Systemzeit als Parameter <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">VerificationTime </span>verwendet werden. Das Primärsystem MUSS bei Prüfung von TI-Zertifikaten der TAB_ILF_Zertifikate den Rückgabewert in <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">RoleList </span>gegen die erwartete Rollen-OID prüfen.</li>
+  <li>Das Primärsystem prüft die TI-Zertifikate selbst ohne Nutzung des Konnektors nach [gemSpec_PKI#TUC_PKI_018] mit folgenden Parametern:</li>
+</ol>
+ 
+<table id="polarion_wiki macro name=table;params=width=100%|uid=client1" class="polarion-Document-table" style="width: 100%;max-width: 1280px;margin-left: auto;margin-right: auto;border: 1px solid #CCCCCC;empty-cells: show;border-collapse: collapse;max-width: 1280.0px;">
+  <tbody>
+    <tr>
+      <th style="font-weight: bold;background-color: #F0F0F0;text-align: left;vertical-align: top;width: 225px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Parameter</th>
+      <th style="font-weight: bold;background-color: #F0F0F0;text-align: left;vertical-align: top;width: 508px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Wert<br/>
+        </th>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 225px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Zertifikat</td>
+      <td style="text-align: left;vertical-align: top;width: 508px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">C.FD.TLS-S (für TLS) bzw. C.FD.AUT (für VAU-Kanal)<br/>
+        </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 225px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">PolicyList</td>
+      <td style="text-align: left;vertical-align: top;width: 508px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">oid_epa_dvw  bzw. oid_epa_vau<br/>
+        </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 225px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">intendedKeyUsage</td>
+      <td style="text-align: left;vertical-align: top;width: 508px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">digitalSignature </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 225px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">intendedExtendedKeyUsage</td>
+      <td style="text-align: left;vertical-align: top;width: 508px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">id-kp-serverAuth  bzw. leer<br/>
+        </td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 225px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">OCSP-Graceperiod</td>
+      <td style="text-align: left;vertical-align: top;width: 508px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">60 Minuten</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 225px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Offline-Modus</td>
+      <td style="text-align: left;vertical-align: top;width: 508px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">nein</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 225px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Prüfmodus</td>
+      <td style="text-align: left;vertical-align: top;width: 508px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">OCSP</td>
+    </tr>
+  </tbody>
+</table>
+ Ist die Zertifikatsprüfung nicht erfolgreich, ist der Verbindungsaufbau abzulehnen.]]></description_html>
+  </requirement>
+  <requirement id="A_24906" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-148081" revision="875845">
+    <title><![CDATA[lokales Caching von Sperrinformationen und Toleranzzeiten]]></title>
+    <description><![CDATA[Das Primärsystem, welches im Rahmen von Zertifikatsprüfungen Sperrinformation 
+für nonQES-Zertifikate einholt, MUSS folgende Vorgaben umsetzen:
+
+ * Die Sperrinformationen (bspw. OCSP-Responses) müssen lokal gespeichert 
+werden (caching), solange sie noch zeitlich gültig sind.
+ * Definition zeitliche Gültigkeit: Sei p die Zeit zu der die Sperrinformation 
+vom TSP erzeugt wurde. Im Fall von OCSP-Responses ist diese Zeit die 
+productedAt-Angabe [RFC-6960]. Sei s die lokale Systemzeit des prüfenden 
+Systems. Eine Sperrinformation ist zeitlich gültig, wenn gilt s - D <= p <= s + 
+5 Minuten, wobei D im default-Fall eine Stunde beträgt.
+ (Es gibt anwendungsspezifische Verlängerungen der Gültigkeitsdauer D, die 
+dann explizit in den entsprechenden Spezifikationen definiert werden.
+ D. h. die Sperrinformation können im default-Fall maximal eine Stunde alt 
+sein und maximal für fünf Minuten "aus der Zukunft kommen". (Da nicht alle 
+Produkttypen ihre Systemzeit in der TI synchronisieren, erlauben wir hier eine 
+fünfminutige fehlerhafte Abweichung der lokalen Zeit.)
+ * Das prüfende System muss, bevor es Sperrinformationen (bspw. für ein 
+Zertifikat) einholt, prüfen, ob im Cache (vgl. Punkt 1) zeitlich gültige 
+Sperrinformationen schon vorliegen. Falls ja, muss es diese Informationen 
+verwenden und darf diese nicht neu beziehen.
+ * Bei einer evtl. Abarbeitung von TUC_PKI_006 muss der optionale 
+Eingabeparameter "OCSP-Graceperiod" ignoriert werden und für die zeitliche 
+Gültigkeit ist Punkt 2 maßgeblich. Bei OCSP-Antworten ist in diesem Kontext die 
+Konsistenzprüfung, wie in TUC_PKI_006 in Schritt 6 aufgeführt, fachlich unnötig 
+und deshalb nicht durchzuführen.
+ * Zeitlich ungültige Sperrinformation im Cache dürfen nicht für 
+Zertifikatsprüfvorgänge verwendet werden und müssen mindestens alle 24h aus dem 
+Cache aktiv entfernt werden.]]></description>
+    <description_html><![CDATA[Das Primärsystem, welches im Rahmen von Zertifikatsprüfungen Sperrinformation für nonQES-Zertifikate einholt, MUSS folgende Vorgaben umsetzen:<span style="background-color: #33FFFF;"><br/></span> <ol><li>Die Sperrinformationen (bspw. OCSP-Responses) müssen lokal gespeichert werden (caching), solange sie noch zeitlich gültig sind.<span id="polarion-comment:772"></span></li><li>Definition zeitliche Gültigkeit: Sei p die Zeit zu der die Sperrinformation vom TSP erzeugt wurde. Im Fall von OCSP-Responses ist diese Zeit die productedAt-Angabe [RFC-6960]. Sei s die lokale Systemzeit des prüfenden Systems. Eine Sperrinformation ist zeitlich gültig, wenn gilt s - D &lt;= p &lt;= s + 5 Minuten, wobei D im default-Fall eine Stunde beträgt.<br/> (Es gibt anwendungsspezifische Verlängerungen der Gültigkeitsdauer D, die dann explizit in den entsprechenden Spezifikationen definiert werden.<br/> D. h. die Sperrinformation können im default-Fall maximal eine Stunde alt sein und maximal für fünf Minuten &quot;aus der Zukunft kommen&quot;. (Da nicht alle Produkttypen ihre Systemzeit in der TI synchronisieren, erlauben wir hier eine fünfminutige fehlerhafte Abweichung der lokalen Zeit.)</li><li>Das prüfende System muss, bevor es Sperrinformationen (bspw. für ein Zertifikat) einholt, prüfen, ob im Cache (vgl. Punkt 1) zeitlich gültige Sperrinformationen schon vorliegen. Falls ja, muss es diese Informationen verwenden und darf diese nicht neu beziehen.</li><li>Bei einer evtl. Abarbeitung von TUC_PKI_006 muss der optionale Eingabeparameter &quot;OCSP-Graceperiod&quot; ignoriert werden und für die zeitliche Gültigkeit ist Punkt 2 maßgeblich. Bei OCSP-Antworten ist in diesem Kontext die Konsistenzprüfung, wie in TUC_PKI_006 in Schritt 6 aufgeführt, fachlich unnötig und deshalb nicht durchzuführen.</li><li>Zeitlich ungültige Sperrinformation im Cache dürfen nicht für Zertifikatsprüfvorgänge verwendet werden und müssen mindestens alle 24h aus dem Cache aktiv entfernt werden.</li></ol>]]></description_html>
+  </requirement>
+  <requirement id="A_14510" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-18" technicalID="ML-88087" revision="875845">
+    <title><![CDATA[Setzen erforderlicher Parameter im SOAP-Header]]></title>
+    <description><![CDATA[Das PS MUSS Parameter im SOAP-Header setzen, wenn diese in der jeweiligen 
+Signatur der Operation gefordert sind.]]></description>
+    <description_html><![CDATA[Das PS MUSS Parameter im SOAP-Header setzen, wenn diese in der jeweiligen Signatur der Operation gefordert sind.]]></description_html>
+  </requirement>
+  <requirement id="A_15569" type="leafRequirement" severity="KANN" lastUpdate="2024-01-18" technicalID="ML-88089" revision="875845">
+    <title><![CDATA[Verwendung von Byte Order Mark in SOAP-Nachrichten]]></title>
+    <description><![CDATA[Das PS KANN einen UTF-8 Unicode Byte Order Mark (BOM) gemäß 
+[BasicProfile1.2#3.1.2] setzen.]]></description>
+    <description_html><![CDATA[Das PS KANN einen UTF-8 Unicode Byte Order Mark (BOM) gemäß [BasicProfile1.2#3.1.2] setzen.]]></description_html>
+  </requirement>
+  <requirement id="A_15570-02" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-18" technicalID="ML-129519" revision="875845">
+    <title><![CDATA[Content-Type und Charset im http-Header]]></title>
+    <description><![CDATA[Das PS MUSS abweichend von R1012 in [BasicProfile1.2] und [BasicProfile2.0] 
+ausschließlich das Character Encoding UTF-8 in der Nachricht benutzen und das 
+charset im http-Header auf UTF-8 setzen.]]></description>
+    <description_html><![CDATA[Das PS MUSS abweichend von R1012 in [BasicProfile1.2] und [BasicProfile2.0] ausschließlich das Character Encoding UTF-8 in der Nachricht benutzen und das charset im http-Header auf UTF-8 setzen.]]></description_html>
+  </requirement>
+  <requirement id="A_24401" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-145538" revision="875845">
+    <title><![CDATA[Mandantenweite Verwendung der korrekten SMC-B]]></title>
+    <description><![CDATA[Das PS MUSS sicherstellen, dass bei Vorhandensein mehrerer Mandanten in einer 
+LEI jeder Mandant nur seine eigene SMC-B für den Aufbau der VAU, die Erstellung 
+der Befugnis-Signatur und das IDP-Token verwendet.]]></description>
+    <description_html><![CDATA[Das PS MUSS sicherstellen, dass bei Vorhandensein mehrerer Mandanten in einer LEI jeder Mandant nur seine eigene SMC-B für den Aufbau der VAU, die Erstellung der Befugnis-Signatur und das IDP-Token verwendet.]]></description_html>
+  </requirement>
+  <requirement id="A_15090" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-18" technicalID="ML-88103" revision="875845">
+    <title><![CDATA[Protokollierung Dokumententransfer im Übertragungsprotokoll]]></title>
+    <description><![CDATA[Jeder Dokumententransfer (Dokumente einstellen, laden, löschen) MUSS im 
+Übertragungsprotokoll vermerkt werden.]]></description>
+    <description_html><![CDATA[Jeder Dokumententransfer (Dokumente einstellen, laden, löschen) MUSS im Übertragungsprotokoll vermerkt werden.]]></description_html>
+  </requirement>
+  <requirement id="A_24388" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-145493" revision="875845">
+    <title><![CDATA[Einstellen der LEI-Befugnis in die ePA für alle]]></title>
+    <description><![CDATA[Das PS MUSS für das Einstellen einer Befugnis die Operation setEntitlementPs 
+nutzen gemäß [I_Entitlement_Management].]]></description>
+    <description_html><![CDATA[Das PS MUSS für das Einstellen einer Befugnis die Operation <span style="font-style: italic;">setEntitlementPs</span> nutzen gemäß [I_Entitlement_Management].]]></description_html>
+  </requirement>
+  <requirement id="A_24398" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-145510" revision="875845">
+    <title><![CDATA[Prüfung auf Durchführbarkeit der Befugnis-Erstellung]]></title>
+    <description><![CDATA[Das PS MUSS den Prüfungsnachweis daraufhin prüfen, ob ein Prüfergebnis 1 oder 2 
+vorliegt und anderenfalls den UseCaseErstellen einer Befugnis abbrechen.]]></description>
+    <description_html><![CDATA[Das PS MUSS den Prüfungsnachweis daraufhin prüfen, ob ein Prüfergebnis 1 oder 2 vorliegt und anderenfalls den UseCase <span style="font-style: italic;">Erstellen einer Befugnis</span> abbrechen.]]></description_html>
+  </requirement>
+  <requirement id="A_24391" type="leafRequirement" severity="MUSS" lastUpdate="2024-02-06" technicalID="ML-145496" revision="875845">
+    <title><![CDATA[Das Entitlement in zeitnahem Kontext der VSDM-Prüfung in die ePA hochladen]]></title>
+    <description><![CDATA[Nach Erzeugen eines VSDM-Prüfungsnachweises für einen bestimmten Versicherten 
+MUSS das PS die signierte Prüfziffer innerhalb von 20 Minuten alsEntitlement 
+für einen Zugriff auf seine Akte über die SchnittstelleI_Entitlement_Management 
+in die ePA einstellen.]]></description>
+    <description_html><![CDATA[Nach Erzeugen eines VSDM-Prüfungsnachweises für einen bestimmten Versicherten MUSS das PS die signierte Prüfziffer innerhalb von 20 Minuten als <span style="font-family: 'Courier New', Courier, monospace, HanWangKanTan;">Entitlement</span> für einen Zugriff auf seine Akte über die Schnittstelle <span style="font-family: 'Courier New', Courier, monospace, HanWangKanTan;">I_Entitlement_Management</span> in die ePA einstellen.]]></description_html>
+  </requirement>
+  <requirement id="A_24528" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-146249" revision="875845">
+    <title><![CDATA[Einstellen einer Befugnis ohne Nutzeraktion]]></title>
+    <description><![CDATA[Das PS MUSS das Einstellen der Befugnis so implementieren, dass dazu keine 
+eigene Nutzeraktion notwendig ist.]]></description>
+    <description_html><![CDATA[Das PS MUSS das Einstellen der Befugnis so implementieren, dass dazu keine eigene Nutzeraktion notwendig ist.]]></description_html>
+  </requirement>
+  <requirement id="A_24400" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-145536" revision="875845">
+    <title><![CDATA[Prüfziffer als JWS signieren mit ExternalAuthenticate]]></title>
+    <description><![CDATA[Das PS MUSS zum Signieren der Prüfziffer mit der SMC-B des ePA-Mandanten die 
+KonnektorschnittstelleAuthSignatureService::ExternalAuthenticate nutzen gemäß 
+[gemSpec_Kon].]]></description>
+    <description_html><![CDATA[Das PS MUSS zum Signieren der Prüfziffer mit der SMC-B des ePA-Mandanten die Konnektorschnittstelle <span style="font-family: 'Courier New', Courier, monospace, HanWangKanTan;">AuthSignatureService::ExternalAuthenticate</span> nutzen gemäß [gemSpec_Kon].<span id="polarion-comment:705"></span>]]></description_html>
+  </requirement>
+  <requirement id="A_24540" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-146370" revision="875845">
+    <title><![CDATA[Prüfziffer als JWS signieren als ECDSA-Signatur]]></title>
+    <description><![CDATA[Das PS MUSS beim Signieren des JWS mit Operation ExternalAuthenticate den 
+Signatur-Typ ECDSA-Signatur verwenden. Dazu MUSS im Elementdss:SignatureType 
+die URI urn:bsi:tr:03111:ecdsa übergeben werden. Nur wenn der Signaturversuch 
+scheitert, weil noch eine SMC-B G2 vorliegt, darf das PS auf eine 
+PKCS#1-Signatur ausweichen.]]></description>
+    <description_html><![CDATA[Das PS MUSS beim Signieren des JWS mit Operation <span style="font-style: italic;">ExternalAuthenticate</span> den Signatur-Typ ECDSA-Signatur verwenden. Dazu MUSS im Element <span style="font-size: 10pt;font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;line-height: 1.5;">dss:SignatureType</span> die URI urn:bsi:tr:03111:ecdsa übergeben werden. Nur wenn der Signaturversuch scheitert, weil noch eine SMC-B G2 vorliegt, darf das PS auf eine PKCS#1-Signatur ausweichen.]]></description_html>
+  </requirement>
+  <requirement id="A_24542" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-146373" revision="875845">
+    <title><![CDATA[Prüfziffer als JWS signieren als PKCS#1-Signatur]]></title>
+    <description><![CDATA[Das PS MUSS beim Signieren des JWS nach einem gescheiterten Versuch eine 
+ECDSA-Signatur zu erzeugen, eine PKCS#1-Signatur erzeugen. Dazu MUSS im Element
+dss:SignatureType die URI urn:ietf:rfc:3447 übergeben werden. Als 
+Signatur-Schema MUSS der Default-Wert fürSIG:SignatureSchemes RSASSA-PSS 
+genutzt werden.]]></description>
+    <description_html><![CDATA[Das PS MUSS beim Signieren des JWS nach einem gescheiterten Versuch eine ECDSA-Signatur zu erzeugen, eine PKCS#1-Signatur erzeugen. Dazu MUSS im Element <span style="font-size: 10pt;font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;line-height: 1.5;">dss:SignatureType</span> die URI urn:ietf:rfc:3447 übergeben werden. Als Signatur-Schema MUSS der Default-Wert für <span style="font-size: 10pt;font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;line-height: 1.5;">SIG:SignatureSchemes</span> RSASSA-PSS genutzt werden.]]></description_html>
+  </requirement>
+  <requirement id="A_24493" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-146065" revision="875845">
+    <title><![CDATA[Nutzung der Schnittstelle I_Information_Service]]></title>
+    <description><![CDATA[Das PS MUSS es dem Nutzer ermöglichen, die Entscheidung zur Teilnahme an 
+Versorgungsprozessen abzufragen unter der Verwendung der Operation
+getConsentDecisionInformation gemäß [I_Information_Service].]]></description>
+    <description_html><![CDATA[Das PS MUSS es dem Nutzer ermöglichen, die Entscheidung zur Teilnahme an Versorgungsprozessen abzufragen unter der Verwendung der Operation <span style="font-style: italic;">getConsentDecisionInformation</span> gemäß [I_Information_Service].]]></description_html>
+  </requirement>
+  <requirement id="A_24368" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-145176" revision="875845">
+    <title><![CDATA[Persistieren der Information zur Teilnahme an Versorgungsprozessen]]></title>
+    <description><![CDATA[Das PS MUSS die erhaltenen Informationen zur Teilnahme an Versorgungsprozessen 
+persistieren.]]></description>
+    <description_html><![CDATA[Das PS MUSS die erhaltenen Informationen zur Teilnahme an Versorgungsprozessen persistieren.<span id="polarion-comment:780"></span>]]></description_html>
+  </requirement>
+  <requirement id="A_24559" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-146432" revision="875845">
+    <title><![CDATA[Abruf und Darstellung der elektronischen Medikationsliste im Medikationsprozess]]></title>
+    <description><![CDATA[Das PS MUSS mindestens eine Möglichkeit des Abrufs der eML umsetzen gemäß 
+[I_Medication_Service_FHIR] oder [I_Medication_Service_eML_Render].]]></description>
+    <description_html><![CDATA[Das PS MUSS mindestens eine Möglichkeit des Abrufs der eML umsetzen gemäß [I_Medication_Service_FHIR] oder [I_Medication_Service_eML_Render].]]></description_html>
+  </requirement>
+  <requirement id="A_24661" type="leafRequirement" severity="MUSS" lastUpdate="2024-02-06" technicalID="ML-146881" revision="875845">
+    <title><![CDATA[Nutzung der Dokumentenmanagement-Schnittstelle I_Document_Management]]></title>
+    <description><![CDATA[Das PS MUSS die Aktensystemschnittstelle Schnittstelle I_Document_Management am 
+Aktensystem der ePA für alle [gemSpec_Aktensystem_ePAfuerAll#5.11.6.1] 
+implementieren.]]></description>
+    <description_html><![CDATA[Das PS MUSS die Aktensystemschnittstelle Schnittstelle I_Document_Management am Aktensystem der ePA für alle [<span style="font-size: 10pt;line-height: 1.5;">gemSpec_Aktensystem_ePAfuerAll#5.11.6.1</span>] implementieren.]]></description_html>
+  </requirement>
+  <requirement id="A_14418-01" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-145489" revision="875845">
+    <title><![CDATA[MTOM-Pflicht bei Verwendung von [ITI-41] und [ITI-43]]]></title>
+    <description><![CDATA[Das PS MUSS bei der Umsetzung der IHE XDS-Transaktionen [ITI-41] und [ITI-43] 
+zur Übertragung von Dokumenten eine Kodierung mittels MTOM/XOP [MTOM] 
+gemäß [IHE-ITI-TF-2b#3.39.5] mit Verweis auf [IHE-ITI-TF-2b#3.43.5] verwenden. ]]></description>
+    <description_html><![CDATA[Das PS MUSS bei der Umsetzung der IHE XDS-Transaktionen [ITI-41] und [ITI-43] zur Übertragung von Dokumenten eine Kodierung mittels MTOM/XOP [MTOM] gemäß [IHE-ITI-TF-2b#<span style="font-size: 10pt;line-height: 1.5;">3.39.5</span>] mit Verweis auf [IHE-ITI-TF-2b#<span style="font-size: 10pt;line-height: 1.5;">3.43.5</span>] verwenden. ]]></description_html>
+  </requirement>
+  <requirement id="A_15084" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-88134" revision="875845">
+    <title><![CDATA[SOAP-Header nach [SOAP]]]></title>
+    <description><![CDATA[Das PS MUSS in der Kommunikation mit dem Aktensystem der ePA für alle die 
+SOAP-Nachricht konform zu [SOAP] bilden. ]]></description>
+    <description_html><![CDATA[Das PS MUSS in der Kommunikation mit dem Aktensystem der ePA für alle die SOAP-Nachricht konform zu [SOAP] bilden. ]]></description_html>
+  </requirement>
+  <requirement id="A_14253-01" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-127780" revision="875845">
+    <title><![CDATA[Metadaten-Pflicht für Dokumente]]></title>
+    <description><![CDATA[Das PS MUSS Metadaten ausschließlich aus der in [gemSpec_Aktensystem_ePAfuerAlle
+] aufgeführten Menge von Metadaten entnehmen. Das Primärsystem MUSS Dokumente, 
+denen es keine passenden Metadaten zuweisen kann, von der Auswahl der 
+einzustellenden Dokumente ausschließen. Das PS MUSS das Metadatenobjekt
+XDSDocumentEntry entsprechend den Vorgaben aus dem Datenmodell [
+gemSpec_Aktensystem_ePAfuerAlle#Tabelle Nutzungsvorgaben für Metadatenattribute 
+XDS.b] befüllen. Das PS MUSS alle mit der Kardinalität [1..1] markierten 
+Metadatenfelder setzen.]]></description>
+    <description_html><![CDATA[Das PS MUSS Metadaten ausschließlich aus der in [<span style="font-size: 10pt;line-height: 1.5;">gemSpec_Aktensystem_ePAfuerAlle</span>] aufgeführten Menge von Metadaten entnehmen. Das Primärsystem MUSS Dokumente, denen es keine passenden Metadaten zuweisen kann, von der Auswahl der einzustellenden Dokumente ausschließen. Das PS MUSS das Metadatenobjekt <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">XDSDocumentEntry</span> entsprechend den Vorgaben aus dem Datenmodell [<span style="font-size: 10pt;line-height: 1.5;">gemSpec_Aktensystem_ePAfuerAlle</span>#Tabelle Nutzungsvorgaben für Metadatenattribute XDS.b] befüllen. Das PS MUSS alle mit der Kardinalität [1..1] markierten Metadatenfelder setzen.]]></description_html>
+  </requirement>
+  <requirement id="A_16194" type="leafRequirement" severity="SOLL" lastUpdate="2024-01-25" technicalID="ML-88145" revision="875845">
+    <title><![CDATA[Änderbarkeit der Metadaten - Auswahllisten]]></title>
+    <description><![CDATA[Bei der Auswahl der Metadaten zum Zwecke des Einstellens von Dokumenten SOLL 
+das PS insbesondere im Falle erforderlicher Auswahldialoge beachten: 
+ * die Bildung von Auswahllisten erfolgt gemäß Anhang B, 
+ * Auswahllisten sind konfigurativ änderbar, 
+ * Metadaten werden weitestgehend automatisch vorbefüllt, 
+ * Nutzer können Metadaten editieren.]]></description>
+    <description_html><![CDATA[Bei der Auswahl der Metadaten zum Zwecke des Einstellens von Dokumenten SOLL das PS insbesondere im Falle erforderlicher Auswahldialoge beachten: 
+<ul>
+  <li>die Bildung von Auswahllisten erfolgt gemäß Anhang B,</li>
+  <li>Auswahllisten sind konfigurativ änderbar,</li>
+  <li>Metadaten werden weitestgehend automatisch vorbefüllt,</li>
+  <li>Nutzer können Metadaten editieren.</li>
+</ul>]]></description_html>
+  </requirement>
+  <requirement id="A_20517-02" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-121728" revision="875845">
+    <title><![CDATA[Exklusivität der Dokumentenkategorien]]></title>
+    <description><![CDATA[Das PS MUSS beim Einstellen von Dokumenten die Kategorien beachten, zu denen 
+Dokumente gehören. Dabei werden Kategorien durch zwei Arten von Foldern 
+umgesetzt: 
+ * Statische Folder. Die Zuordnung zu den Kategorien/Foldern erfolgt am 
+Aktensystem aufgrund der vom PS gesetzten Metadaten. Die Angabe einer 
+FolderUUID beim Hochladen von Dokumenten DARF NICHT erfolgen.  
+
+ * Dynamische Folder. Dynamische Folder werden gemäß A_21610-* (
+pregnancy_childbirth) vom PS angelegt und die entsprechenden Dokumente dort 
+eingestellt. Beim Hochladen von Dokumenten MUSS die FolderUUID angegeben werden.]]></description>
+    <description_html><![CDATA[Das PS MUSS beim Einstellen von Dokumenten die Kategorien beachten, zu denen Dokumente gehören. Dabei werden Kategorien durch zwei Arten von Foldern umgesetzt: 
+<ul>
+  <li>Statische Folder. Die Zuordnung zu den Kategorien/Foldern erfolgt am Aktensystem aufgrund der vom PS gesetzten Metadaten. Die Angabe einer FolderUUID beim Hochladen von Dokumenten DARF NICHT erfolgen.  <br/>
+  </li>
+  <li>Dynamische Folder. Dynamische Folder werden gemäß A_21610-* (<span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">pregnancy_childbirth</span>) vom PS angelegt und die entsprechenden Dokumente dort eingestellt. Beim Hochladen von Dokumenten MUSS die FolderUUID angegeben werden.</li>
+</ul>]]></description_html>
+  </requirement>
+  <requirement id="A_22515-02" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-148048" revision="875845">
+    <title><![CDATA[Pflicht zum Setzen von Dokumenten-Titeln]]></title>
+    <description><![CDATA[Das PS MUSS beim Einstellen von Dokumenten documentEntry.title belegen. Der 
+Titel des Dokumentes MUSS eine fachliche Beschreibung des Dokumentes enthalten.]]></description>
+    <description_html><![CDATA[Das PS MUSS beim Einstellen von Dokumenten <span style="font-family: 'Courier New', Courier, monospace, HanWangKanTan;">documentEntry.title</span> belegen. Der Titel des Dokumentes MUSS eine fachliche Beschreibung des Dokumentes enthalten.]]></description_html>
+  </requirement>
+  <requirement id="A_22514-03" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-146991" revision="875845">
+    <title><![CDATA[Titel dynamischer Ordner für Schwangerschaften]]></title>
+    <description><![CDATA[Der Leistungserbringer legt bei Bedarf dynamische Ordner für 
+pregnancy_childbirth an. Bei der Anlage dynamischer Ordner MUSS das PS das 
+MetadatumFolder.title folgendermaßen setzen: 
+ * Der dynamische Ordner der Kategorie pregnancy_childbirth identifiziert eine 
+Schwangerschaft. Folder.title MUSS mit dem (ggf. prognostizierten) 
+Entbindungstermin belegt werden. 
+ * Bildungsregel: "Errechneter EBT: " + Datum im Format TT.MM.YYYY Beispiel: 
+"Errechneter EBT: 03.03.2017"]]></description>
+    <description_html><![CDATA[Der Leistungserbringer legt bei Bedarf dynamische Ordner für <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">pregnancy_childbirth</span> an. Bei der Anlage dynamischer Ordner MUSS das PS das Metadatum <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">Folder.title </span>folgendermaßen setzen: 
+<ul>
+  <li>Der dynamische Ordner der Kategorie <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">pregnancy_childbirth</span> identifiziert eine Schwangerschaft. Folder.title MUSS mit dem (ggf. prognostizierten) Entbindungstermin belegt werden. </li>
+  <li>Bildungsregel: &quot;Errechneter EBT: &quot; + Datum im Format TT.MM.YYYY Beispiel: &quot;Errechneter EBT: 03.03.2017&quot;</li>
+</ul>]]></description_html>
+  </requirement>
+  <requirement id="A_20180-04" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-146992" revision="875845">
+    <title><![CDATA[Für pregnancy_childbirth dynamischen Ordner auswählen]]></title>
+    <description><![CDATA[Falls das hochzuladende Dokument zur Kategorie pregnancy_childbirth gehört, 
+MUSS das PS das hochzuladende Dokument genau einem der dynamischen Ordner
+pregnancy_childbirth zuweisen, indem es das Dokument in den entsprechenden 
+Ordner hochlädt. Dazu MUSS das PS beim Einstellen im SubmissionSet mit dem
+DocumentEntry eine zusätzliche Association (FD-DE-HasMember) hinterlegen, die 
+denDocumentEntry mit dem für die gewünschte Unterkategorie bereits 
+existierenden Ordner über ihre jeweiligeentryUUID verbindet, vgl. u.a. 
+[IHE-ITI-TF3#4.2.1.3].]]></description>
+    <description_html><![CDATA[Falls das hochzuladende Dokument zur Kategorie <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">pregnancy_childbirth</span> gehört, MUSS das PS das hochzuladende Dokument genau einem der dynamischen Ordner <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">pregnancy_childbirth</span> zuweisen, indem es das Dokument in den entsprechenden Ordner hochlädt. Dazu MUSS das PS beim Einstellen im SubmissionSet mit dem <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">DocumentEntry</span> eine zusätzliche Association (FD-DE-HasMember) hinterlegen, die den <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">DocumentEntry</span> mit dem für die gewünschte Unterkategorie bereits existierenden Ordner über ihre jeweilige <span style="font-size: 11pt;font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;color: #242424;line-height: 1.5;">entryUUID </span>verbindet, vgl. u.a. [IHE-ITI-TF3#4.2.1.3].]]></description_html>
+  </requirement>
+  <requirement id="A_25127" type="leafRequirement" severity="DARF NICHT" lastUpdate="2024-02-06" technicalID="ML-149045" revision="875845">
+    <title><![CDATA[Keine Verdoppelung dynamischer Ordner]]></title>
+    <description><![CDATA[Dynamische Ordner zu einem Anwendungsfall (z.B. zu einer Schwangerschaft) 
+DÜRFEN NICHT doppelt angelegt werden.]]></description>
+    <description_html><![CDATA[Dynamische Ordner zu einem Anwendungsfall (z.B. zu einer Schwangerschaft) DÜRFEN NICHT doppelt angelegt werden.]]></description_html>
+  </requirement>
+  <requirement id="A_14932" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-18" technicalID="ML-88146" revision="875845">
+    <title><![CDATA[Bildung und Verwendung einer UUID für Dokumente]]></title>
+    <description><![CDATA[Das PS MUSS eine DocumentEntry.UniqueID gemäß [ITI-TF-3#4.2.3.2.26] erstellen. 
+Für den XDS Document Service im ePA-Aktensystem wird dieDocumentEntry.UniqueID 
+in die Metadaten der IHE-Nachrichten eingestellt:  
+ * DocumentEntry.@id 
+ * ExternalIdentifier.@id]]></description>
+    <description_html><![CDATA[Das PS MUSS eine <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">DocumentEntry.UniqueID</span> gemäß [ITI-TF-3#4.2.3.2.26] erstellen. Für den XDS Document Service im ePA-Aktensystem wird die <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">DocumentEntry.UniqueID</span> in die Metadaten der IHE-Nachrichten eingestellt:  
+<ul>
+  <li><span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">DocumentEntry.@id</span></li>
+  <li><span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">ExternalIdentifier.@id</span></li>
+</ul>]]></description_html>
+  </requirement>
+  <requirement id="A_24672" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-146930" revision="875845">
+    <title><![CDATA[Verbergendes Einstellen von Dokumenten]]></title>
+    <description><![CDATA[Auf Wunsch des Versicherten MUSS das PS den confidentialityCode eines 
+Dokumentes auf "CON" im Code System "ePA-Vertraulichkeit" mit der OID "
+1.2.276.0.76.5.491" setzen, um ein Dokument zu verbergen.]]></description>
+    <description_html><![CDATA[Auf Wunsch des Versicherten MUSS das PS den <span style="font-size: 10pt;line-height: 1.5;"><span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">confidentialityCode </span>eines Dokumentes auf &quot;CON&quot; im Code System &quot;ePA-Vertraulichkeit&quot; mit der OID &quot;<span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">1.2.276.0.76.5.491</span>&quot; setzen, um ein Dokument zu verbergen.</span>]]></description_html>
+  </requirement>
+  <requirement id="A_25142-01" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-27" technicalID="ML-151394" revision="875845">
+    <title><![CDATA[Ändern verborgener Dokumente]]></title>
+    <description><![CDATA[Das PS MUSS ein Dokument, das es selbst verborgen eingestellt hat, ändern 
+können, obwohl es verborgen ist. Dazu muss das PS die DocumentEntry.entryUUID 
+des vom PS verborgen in die ePA eingestellen Dokumentes persistieren. Da es die 
+DocumentEntryUUID nicht mehr mittels Find ermitteln kann, muss es die 
+DocumentEntry.entryUUID kennen. Dies wird dadurch möglich, dass das PS gemäß 
+[IHE-ITI-TF-2b#3.42.4.1.3.7] beim Einstellen des Dokumentes 
+die DocumentEntry.entryUUID als valide UUID selber setzt, anstatt eine 
+symbolische ID zu verwenden. Beim nachfolgenden Ersetzen des Dokumentes mit der 
+Option RPLC (replace) wird diese persistierte DocumentEntry.entryUUID verwendet.]]></description>
+    <description_html><![CDATA[<span style="font-size: 10pt;line-height: 1.5;">Das PS MUSS ein Dokument, das es selbst verborgen eingestellt hat, ändern können, obwohl es verborgen ist. Dazu muss das PS die DocumentEntry.entryUUID des vom PS verborgen in die ePA eingestellen Dokumentes persistieren. Da es die DocumentEntryUUID nicht mehr mittels Find ermitteln kann, muss es die <span style="color: #242424;">DocumentEntry.entryUUID kennen. Dies wird dadurch möglich, dass das PS gemäß [IHE-ITI-TF-2b#3.42.4.1.3.7] beim Einstellen des Dokumentes die DocumentEntry.entryUUID als valide UUID selber setzt, anstatt eine symbolische ID zu verwenden. Beim nachfolgenden Ersetzen des Dokumentes mit der Option RPLC (replace) wird diese persistierte DocumentEntry.entryUUID verwendet.<span id="polarion-comment:871"></span></span></span>]]></description_html>
+  </requirement>
+  <requirement id="A_23329-02" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-27" technicalID="ML-153530" revision="875845">
+    <title><![CDATA[Einschränkung der Änderbarkeit von Metadaten beim Hochladen eines Dokumentes unter Verwendung der RPLC-Option]]></title>
+    <description><![CDATA[Das Primärsystem DARF beim Hochladen eines Dokumentes mittels 
+DocumentRepository_ProvideAndRegisterDocumentSet-b bei Nutzung der RPLC-Option 
+an Metadaten des Dokumentes KEINE Veränderung vornehmen, es sei denn, das 
+Ändern spezieller Metadaten ist gemäß [gemSpec_Aktensystem_ePAfuerAlle#A_24797-*
+] erlaubt.]]></description>
+    <description_html><![CDATA[Das Primärsystem DARF beim Hochladen eines Dokumentes mittels DocumentRepository_ProvideAndRegisterDocumentSet-b bei Nutzung der RPLC-Option an Metadaten des Dokumentes KEINE Veränderung vornehmen, es sei denn, das Ändern spezieller Metadaten ist gemäß [<span style="font-size: 10pt;line-height: 1.5;">gemSpec_Aktensystem_ePAfuerAlle#A_24797-*</span>] erlaubt.<span id="polarion-comment:894"></span>]]></description_html>
+  </requirement>
+  <requirement id="A_15621-02" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-115851" revision="875845">
+    <title><![CDATA[Kategorisierung der vom LE eingestellten Dokumente]]></title>
+    <description><![CDATA[Das PS MUSS die von der LEI eingestellten Dokumente kategorisieren:
+
+ * documentEntry.author oder submissionset.author sind gemäß den Vorgaben von [
+gemSpec_Aktensystem_ePAfuerAlle]#Tabelle Nutzungsvorgaben für 
+Metadatenattribute XDS.b] zu befüllen; 
+ * XDSDocumentEntry.author.authorSpecialty wird mit einem die Fachrichtung der 
+LEI beschreibenden Wert der Selbstauskunft der LEI befüllt, es sei denn, der 
+Autor des Dokumentes entstammt nicht der das Dokument einstellenden Institution;
+ * XDSDocumentEntry.healthcareFacilityTypeCode wird mit einem den Typ der LEI 
+beschreibenden Wert der Selbstauskunft der LEI (A_15086-*) befüllt, es sei 
+denn, der Autor des Dokumentes entstammt nicht der das Dokument einstellenden 
+Institution; 
+ * Das PS MUSS sicherstellen, dass der 
+XDSDocumentEntry.healthcareFacilityTypeCode nicht mit den Werten "KTR"  oder 
+"EGA" belegt wird.  DocumentEntry und SubmissionSet enthalten übereinstimmende 
+Werte, wenn der Autor des Dokumentes aus der das Dokument einstellenden 
+Institution stammt. Falls eine LEI ein Dokument hochlädt, das einer Quelle 
+außerhalb der hochladenden LEI entstammt, können diese Wert voneinander 
+abweichen. ]]></description>
+    <description_html><![CDATA[Das PS MUSS die von der LEI eingestellten Dokumente kategorisieren:<br/>
+ 
+<ul>
+  <li><span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">documentEntry.author</span> oder <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">submissionset.author</span> sind gemäß den Vorgaben von [<span style="font-size: 10pt;line-height: 1.5;">gemSpec_Aktensystem_ePAfuerAlle</span>]#Tabelle Nutzungsvorgaben für Metadatenattribute XDS.b] zu befüllen;</li>
+  <li><span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">XDSDocumentEntry.author.authorSpecialty </span>wird mit einem die Fachrichtung der LEI beschreibenden Wert der Selbstauskunft der LEI befüllt, es sei denn, der Autor des Dokumentes entstammt nicht der das Dokument einstellenden Institution;</li>
+  <li><span style="font-family: Arial, Helvetica;"><span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">XDSDocumentEntry.healthcareFacilityTypeCode</span> </span>wird mit einem den Typ der LEI beschreibenden Wert der Selbstauskunft der LEI (A_15086-*) befüllt, es sei denn, der Autor des Dokumentes entstammt nicht der das Dokument einstellenden Institution;</li>
+  <li>Das PS MUSS sicherstellen, dass der <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">XDSDocumentEntry.healthcareFacilityTypeCode</span> nicht mit den Werten &quot;KTR&quot;  oder &quot;EGA&quot; belegt wird.</li>
+</ul>
+DocumentEntry und SubmissionSet enthalten übereinstimmende Werte, wenn der Autor des Dokumentes aus der das Dokument einstellenden Institution stammt. Falls eine LEI ein Dokument hochlädt, das einer Quelle außerhalb der hochladenden LEI entstammt, können diese Wert voneinander abweichen. ]]></description_html>
+  </requirement>
+  <requirement id="A_24967-01" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-27" technicalID="ML-149895" revision="875845">
+    <title><![CDATA[Konvertieren von PDF in PDF/A]]></title>
+    <description><![CDATA[Das PS MUSS Dokumente im PDF-Format, die in das Aktenkonto eingestellt werden 
+sollen,  automatisch in ein erlaubtes PDF/A-Format konvertieren und 
+ausschließlich das konvertierte Dokument im PDF/A-Format in das Aktenkonto 
+übermitteln.]]></description>
+    <description_html><![CDATA[Das<span id="polarion-comment:863"></span> PS MUSS Dokumente im PDF-Format, die in das Aktenkonto eingestellt werden sollen,  automatisch in ein erlaubtes PDF/A-Format konvertieren und ausschließlich das konvertierte Dokument im PDF/A-Format in das Aktenkonto übermitteln.]]></description_html>
+  </requirement>
+  <requirement id="A_16336-01" type="leafRequirement" severity="SOLL" lastUpdate="2023-12-06" technicalID="ML-107224" revision="875845">
+    <title><![CDATA[Eingrenzung von Suchergebnissen]]></title>
+    <description><![CDATA[Das PS SOLL verschiedene Strategien nutzen können, um die Menge der 
+ePA-Dokumente einer Akte auf die für den LE relevanten Dokumente zu reduzieren:
+ * Die Auswahl der Metadaten-Suchstrategie (Wahl eines geeigneten StoredQuery)
+ * Je nach Wahl des Suchtyps und der Ergebnistypen LeafClass oder ObjectRef 
+werden die Dokumente direkt oder nach einem zusätzlichen Auswahlschritt 
+angezeigt:
+ * 
+ * Leafclass: Auswahl anhand der Metadaten-Suchergebnisse
+ * ObjectRef: Direkte Auswahl der anzuzeigenden Dokumente ohne zusätzlich 
+verfügbare Metadaten 
+ * Die Suche kann in einigen StoredQueries bezüglich des Dokumentenstatus (
+DocumentEntry.availabilityStatus) eingeschränkt werden auf  "Deprecated" oder "
+Approved".]]></description>
+    <description_html><![CDATA[Das PS SOLL verschiedene Strategien nutzen können, um die Menge der ePA-Dokumente einer Akte auf die für den LE relevanten Dokumente zu reduzieren: <ul><li>Die Auswahl der Metadaten-Suchstrategie (Wahl eines geeigneten <span style="font-family: 'Courier New', Courier, monospace, HanWangKanTan;">StoredQuery</span>)</li><li>Je nach Wahl des Suchtyps und der Ergebnistypen <span style="font-family: 'Courier New', Courier, monospace, HanWangKanTan;">LeafClass</span> oder <span style="font-family: 'Courier New', Courier, monospace, HanWangKanTan;">ObjectRef</span> werden die Dokumente direkt oder nach einem zusätzlichen Auswahlschritt angezeigt:</li><li style="list-style: none"><ul><li><span style="font-family: 'Courier New', Courier, monospace, HanWangKanTan;">Leafclass</span>: Auswahl anhand der Metadaten-Suchergebnisse</li><li><span style="font-family: 'Courier New', Courier, monospace, HanWangKanTan;">ObjectRef</span>: Direkte Auswahl der anzuzeigenden Dokumente ohne zusätzlich verfügbare Metadaten </li></ul></li><li>Die Suche kann in einigen <span style="font-family: 'Courier New', Courier, monospace, HanWangKanTan;">StoredQueries</span> bezüglich des Dokumentenstatus (<span style="font-family: 'Courier New', Courier, monospace, HanWangKanTan;">DocumentEntry.availabilityStatus</span>) eingeschränkt werden auf  &quot;<span style="font-family: 'Courier New', Courier, monospace, HanWangKanTan;">Deprecated</span>&quot; oder &quot;<span style="font-family: 'Courier New', Courier, monospace, HanWangKanTan;">Approved</span>&quot;.</li></ul>]]></description_html>
+  </requirement>
+  <requirement id="A_17198-02" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-145327" revision="875845">
+    <title><![CDATA[Nutzung des um XDSDocumentEntryTitle erweiterten Registry Stored Query FindDocuments]]></title>
+    <description><![CDATA[Das PS MUSS den in [ITI-18] nicht enthaltenen zusätzlichen Anfragetyp  
+FindDocumentsByTitle mit der Query-ID 
+"urn:uuid:ab474085-82b5-402d-8115-3f37cb1e2405" und denselben 
+Parameternutzungsvorgaben der Registry Stored QueryFindDocuments gemäß 
+[IHE-ITI-TF-2b#3.38] in Verbindung mit dem zusätzlich zu [ITI-38] eingeführten 
+Suchparameter$XDSDocumentEntryTitle nutzen können. Der zusätzliche Parameter 
+$XDSDocumentEntryTitle ist verpflichtend und filtert die Suchergebnismenge über 
+das AttributXDSDocumentEntry.title .]]></description>
+    <description_html><![CDATA[Das PS MUSS den in [ITI-18] nicht enthaltenen zusätzlichen Anfragetyp  <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">FindDocumentsByTitle</span> mit der Query-ID &quot;urn:uuid:ab474085-82b5-402d-8115-3f37cb1e2405&quot; und denselben Parameternutzungsvorgaben der Registry Stored Query <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">FindDocuments</span> gemäß [IHE-ITI-TF-2b#3.38] in Verbindung mit dem zusätzlich zu [ITI-38] eingeführten Suchparameter <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">$XDSDocumentEntryTitle</span> nutzen können. Der zusätzliche Parameter <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">$XDSDocumentEntryTitle</span> ist verpflichtend und filtert die Suchergebnismenge über das Attribut <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">XDSDocumentEntry.title </span>.]]></description_html>
+  </requirement>
+  <requirement id="A_25187" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-149436" revision="875845">
+    <title><![CDATA[Nutzung des um XDSDocumentEntryComment erweiterten Registry Stored Query FindDocuments]]></title>
+    <description><![CDATA[Das PS MUSS den in [ITI-18] nicht enthaltenen zusätzlichen Anfragetyp  
+FindDocumentsByComment mit der Query-ID "urn:uuid:
+2609dda5-2b97-44d5-a795-3e999c24ca99" und denselben Parameternutzungsvorgaben 
+der Registry Stored QueryFindDocuments gemäß [IHE-ITI-TF-2b#3.38] in Verbindung 
+mit dem zusätzlich zu [ITI-38] eingeführten Suchparameter
+$XDSDocumentEntryComment nutzen können. Der zusätzliche Parameter 
+$XDSDocumentEntryComment ist verpflichtend und filtert die Suchergebnismenge 
+über das AttributXDSDocumentEntry.comment]]></description>
+    <description_html><![CDATA[Das PS MUSS den in [ITI-18] nicht enthaltenen zusätzlichen Anfragetyp  <span style="font-size: 10pt;font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;line-height: 1.5;">FindDocumentsByComment </span>mit der Query-ID &quot;urn:uuid:<span style="font-size: 10pt;line-height: 1.5;">2609dda5-2b97-44d5-a795-3e999c24ca99</span>&quot; und denselben Parameternutzungsvorgaben der Registry Stored Query <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">FindDocuments</span> gemäß [IHE-ITI-TF-2b#3.38] in Verbindung mit dem zusätzlich zu [ITI-38] eingeführten Suchparameter <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">$XDSDocumentEntryComment</span> nutzen können. Der zusätzliche Parameter <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">$XDSDocumentEntryComment</span> ist verpflichtend und filtert die Suchergebnismenge über das Attribut <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">XDSDocumentEntry.comment </span>]]></description_html>
+  </requirement>
+  <requirement id="A_24457" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-145922" revision="875845">
+    <title><![CDATA[Unveränderbarkeit des eindeutigen DokumentenIdentifiers in der referenceIdList]]></title>
+    <description><![CDATA[Das Aktensystem hinterlegt beim initialen Einstellen eines Dokumentes in der 
+referenceIdList die DocumentEntry.uniqueId des initial eingestellten Dokumentes 
+alsrootDocumentUniqueId im Format:
+ <DocumentEntry.uniqueId>^^^^urn.gematik.iti.xds.2023.rootDocumentUniqueId.
+ Über alle Versionen des Dokumentes bleibt diese rootDocumentUniqueId 
+erhalten. Das PS DARF dierootDocumentUniqueId NICHT durch ein 
+RestrictedUpdateDocumentSetRequeständern, damit mittels einem Find auf der 
+referenceIdListein Dokument in allen Versionen gefunden werden kann. ]]></description>
+    <description_html><![CDATA[Das Aktensystem hinterlegt beim initialen Einstellen eines Dokumentes in der <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">referenceIdList </span>die <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">DocumentEntry.uniqueId </span>des initial eingestellten Dokumentes als <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">rootDocumentUniqueId</span> im Format:<br/>
+&lt;DocumentEntry.uniqueId&gt;^^^^urn.gematik.iti.xds.2023.rootDocumentUniqueId.<br/>
+Über alle Versionen des Dokumentes bleibt diese <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">rootDocumentUniqueId </span>erhalten. Das PS DARF die <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">rootDocumentUniqueId </span>NICHT durch ein <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">RestrictedUpdateDocumentSetRequest </span>ändern, damit mittels einem <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">Find </span>auf der <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">referenceIdList </span>ein Dokument in allen Versionen gefunden werden kann. ]]></description_html>
+  </requirement>
+  <requirement id="A_15030" type="leafRequirement" severity="MUSS" lastUpdate="2021-07-29" technicalID="ML-88162" revision="875845">
+    <title><![CDATA[Filteroptionen für den Nutzer]]></title>
+    <description><![CDATA[Das PS MUSS mittels der Metadaten aus der StoredQuery-Response Filteroptionen 
+anbieten, mit denen Leistungserbringer die Ergebnismenge für die Anzeige von 
+Dokumenten einschränken können.]]></description>
+    <description_html><![CDATA[Das PS MUSS mittels der Metadaten aus der StoredQuery-Response Filteroptionen anbieten, mit denen Leistungserbringer die Ergebnismenge für die Anzeige von Dokumenten einschränken können.]]></description_html>
+  </requirement>
+  <requirement id="A_17769" type="leafRequirement" severity="SOLL" lastUpdate="2024-01-25" technicalID="ML-94310" revision="875845">
+    <title><![CDATA[Schutzmaßnahmen nach Plausibilitätsprüfungen an heruntergeladenen Dokumenten]]></title>
+    <description><![CDATA[Das PS SOLL Maßnahmen zur Absicherung gegen mögliche Schadsoftware in 
+heruntergeladenen Dokumenten ergreifen, falls:
+
+ * das Format oder der Inhalt des heruntergeladenen Dokumentes nicht mit dem 
+angegebenen Dokumententyp in den Metadaten übereinstimmen; 
+ * das Format oder der Inhalt des heruntergeladenen Dokumentes nicht den 
+zulässigen Dokumententypen im MetadatummimeType gemäß [
+gemSpec_Aktensystem_ePAfuerAlle#Tabelle Nutzungsvorgaben für Metadatenattribute 
+XDS.b] entspricht.]]></description>
+    <description_html><![CDATA[Das PS SOLL Maßnahmen zur Absicherung gegen mögliche Schadsoftware in heruntergeladenen Dokumenten ergreifen, falls:<br/>
+ 
+<ul>
+  <li>das Format oder der Inhalt des heruntergeladenen Dokumentes nicht mit dem angegebenen Dokumententyp in den Metadaten übereinstimmen;</li>
+  <li>das Format oder der Inhalt des heruntergeladenen Dokumentes nicht den zulässigen Dokumententypen im Metadatum <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">mimeType</span> gemäß [<span style="font-size: 10pt;line-height: 1.5;">gemSpec_Aktensystem_ePAfuerAlle</span>#Tabelle Nutzungsvorgaben für Metadatenattribute XDS.b] entspricht.</li>
+</ul>]]></description_html>
+  </requirement>
+  <requirement id="A_17770" type="leafRequirement" severity="MUSS" lastUpdate="2023-03-28" technicalID="ML-94311" revision="875845">
+    <title><![CDATA[Maßnahmen zum Schutz vor heruntergeladenen Dokumenten]]></title>
+    <description><![CDATA[Das PS MUSS bei Anzeige oder persistenter Speicherung eines heruntergeladenen 
+Dokumentes sicherstellen, dass geeignete Maßnahmen zum Schutz von PS und 
+LE-Umgebung durchgeführt werden. ]]></description>
+    <description_html><![CDATA[Das PS MUSS bei Anzeige oder persistenter Speicherung eines heruntergeladenen Dokumentes sicherstellen, dass geeignete Maßnahmen zum Schutz von PS und LE-Umgebung durchgeführt werden. ]]></description_html>
+  </requirement>
+  <requirement id="A_23621-02" type="leafRequirement" severity="MUSS" lastUpdate="2024-02-06" technicalID="ML-149162" revision="875845">
+    <title><![CDATA[Den LE informieren über fehlerhafte medizinische Dokumente]]></title>
+    <description><![CDATA[Das PS MUSS den Nutzer mit einer Fehlermeldung informieren, wenn nach dem 
+Download aus dem Aktensystem fehlerhaftemedizinische Dokumente 
+bzw. Teildokumente einer Sammlung erkannt werden. Sofern es sich um eine 
+fehlerhaftes Teildokument einer Sammlung handelt, MÜSSEN die korrekten 
+Teildokumente der Sammlung trotzdem angezeigt werden, soweit dies möglich ist.]]></description>
+    <description_html><![CDATA[Das PS MUSS den Nutzer mit einer Fehlermeldung informieren, wenn nach dem Download aus dem Aktensystem fehlerhafte <span style="font-size: 10pt;line-height: 1.5;">medizinische </span>Dokumente bzw. Teildokumente einer Sammlung erkannt werden. Sofern es sich um eine fehlerhaftes Teildokument einer Sammlung handelt, MÜSSEN die korrekten Teildokumente der Sammlung trotzdem angezeigt werden, soweit dies möglich ist.<br/>]]></description_html>
+  </requirement>
+  <requirement id="A_15089" type="leafRequirement" severity="MUSS" lastUpdate="2021-07-29" technicalID="ML-88170" revision="875845">
+    <title><![CDATA[Protokollierung einer Dokumentenanzeige im Übertragungsprotokoll]]></title>
+    <description><![CDATA[Das Anzeigen von Dokumenten MUSS als Übertragung eines Dokumentes aus der ePA 
+in das PS im Übertragungsprotokoll vermerkt werden.]]></description>
+    <description_html><![CDATA[Das Anzeigen von Dokumenten MUSS als Übertragung eines Dokumentes aus der ePA in das PS im Übertragungsprotokoll vermerkt werden.]]></description_html>
+  </requirement>
+  <requirement id="A_16198" type="leafRequirement" severity="SOLL" lastUpdate="2021-07-29" technicalID="ML-88171" revision="875845">
+    <title><![CDATA[Prüfung der Zuordnung von Dokument zu Akte]]></title>
+    <description><![CDATA[Die PatientId enthält die Versicherten-ID und SOLL vom PS zur Überprüfung 
+verwendet werden, ob das angezeigte Dokument vor einem möglichen Abspeichern 
+dem richtigen Versicherten bzw. der richtigen lokalen Patientenakte zugeordnet 
+ist. ]]></description>
+    <description_html><![CDATA[Die <span style="font-family: &#39;Courier New&#39;, Courier, monospace;">PatientId</span> enthält die Versicherten-ID und SOLL vom PS zur Überprüfung verwendet werden, ob das angezeigte Dokument vor einem möglichen Abspeichern dem richtigen Versicherten bzw. der richtigen lokalen Patientenakte zugeordnet ist. ]]></description_html>
+  </requirement>
+  <requirement id="A_16196" type="leafRequirement" severity="SOLL" lastUpdate="2024-01-25" technicalID="ML-88172" revision="875845">
+    <title><![CDATA[Verarbeitung strukturierter Inhalte]]></title>
+    <description><![CDATA[Das PS SOLL in der Lage sein, aus ePA-Dokumenten, deren Inhalte strukturiert 
+vorliegen, die strukturierten Inhalte in die Primärdokumentation des 
+Versicherten zu übernehmen. ]]></description>
+    <description_html><![CDATA[Das PS SOLL in der Lage sein, aus ePA-Dokumenten, deren Inhalte strukturiert vorliegen, die strukturierten Inhalte in die Primärdokumentation des Versicherten zu übernehmen. ]]></description_html>
+  </requirement>
+  <requirement id="A_21503-01" type="leafRequirement" severity="SOLL" lastUpdate="2024-03-27" technicalID="ML-149050" revision="875845">
+    <title><![CDATA[Daten digitaler Gesundheitsanwendungen auslesen]]></title>
+    <description><![CDATA[Das Primärsystem MUSS DiGA-Daten, deren Formatvorgabe als Medizinisches 
+Informationsobjekt gemäß [gemSpec_IG_ePA] definiert sind, bei vorliegender 
+Berechtigung aus dem ePA-Aktensystem des Versicherten auslesen können.]]></description>
+    <description_html><![CDATA[Das Primärsystem MUSS DiGA-Daten, deren Formatvorgabe als Medizinisches Informationsobjekt gemäß [<span style="font-size: 10pt;line-height: 1.5;">gemSpec_IG_ePA]</span> definiert sind, bei vorliegender Berechtigung aus dem ePA-Aktensystem des Versicherten auslesen können.]]></description_html>
+  </requirement>
+  <requirement id="A_24386" type="leafRequirement" severity="DARF NICHT" lastUpdate="2024-02-06" technicalID="ML-145339" revision="875845">
+    <title><![CDATA[Aktualisierbare Metadaten]]></title>
+    <description><![CDATA[Das PS MUSS sich beim Anwendungsfall Aktualisieren von Metadaten des 
+DocumentEntry mittels RestrictedUpdateDocumentSet beschränken auf das Ändern 
+der Dokumentmetadaten
+
+ * author
+ * classCode
+ * comments
+ * confidentialityCode (Der UseCase "Metadaten Aktualisieren" kann jedoch 
+nicht für das Verbergen von Dokumenten verwendet werden, sondern nur für 
+Nutzung des Codes außerhalb der ePA)
+ * eventCodeList
+ * formatCode
+ * healthcareFacilityTypeCode
+ * languageCode
+ * legalAuthenticator
+ * practiceSettingCode
+ * referenceIdList
+ * serviceStartTime
+ * serviceStopTime
+ * title
+ * typeCode
+ * URI]]></description>
+    <description_html><![CDATA[Das PS MUSS sich beim Anwendungsfall Aktualisieren von Metadaten des DocumentEntry mittels RestrictedUpdateDocumentSet beschränken auf das Ändern der Dokumentmetadaten<br/> <ul><li>author</li><li>classCode</li><li>comments</li><li><span style="font-size: 10pt;line-height: 1.5;">confidentialityCode (Der UseCase &quot;Metadaten Aktualisieren&quot; kann jedoch nicht für das Verbergen von Dokumenten verwendet werden, sondern nur für Nutzung des Codes außerhalb der ePA)</span></li><li>eventCodeList</li><li>formatCode</li><li>healthcareFacilityTypeCode</li><li>languageCode</li><li>legalAuthenticator</li><li>practiceSettingCode</li><li>referenceIdList</li><li>serviceStartTime</li><li>serviceStopTime</li><li>title</li><li>typeCode</li><li>URI</li></ul>]]></description_html>
+  </requirement>
+  <requirement id="A_25166" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-149328" revision="875845">
+    <title><![CDATA[Keine Änderung von Metadaten von Dokumenten einer mixed- oder uniform-Sammlung]]></title>
+    <description><![CDATA[Das PS MUSS unterbinden, dass Metadaten von Dokumenten einer mixed- oder 
+uniform-Sammlung geändert werden.]]></description>
+    <description_html><![CDATA[Das PS MUSS unterbinden, dass Metadaten von Dokumenten einer mixed- oder uniform-Sammlung geändert werden.]]></description_html>
+  </requirement>
+  <requirement id="A_21651-02" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-146963" revision="875845">
+    <title><![CDATA[Verarbeitung von Dokumenten der gesetzlich vorgegebenen Kategorien]]></title>
+    <description><![CDATA[Das Primärsystem MUSS Dokumente der in [gemSpec_Aktensystem_ePAfuerAlle
+#A_19303-*] aufgeführten Kategorien im Rahmen der dort aufgeführten 
+berufsgruppenspezifischen Zugriffsregeln verarbeiten können.]]></description>
+    <description_html><![CDATA[Das Primärsystem MUSS Dokumente der in [<span style="font-size: 10pt;line-height: 1.5;">gemSpec_Aktensystem_ePAfuerAlle</span>#A_19303-*] aufgeführten Kategorien im Rahmen der dort aufgeführten berufsgruppenspezifischen Zugriffsregeln verarbeiten können.]]></description_html>
+  </requirement>
+  <requirement id="A_14246" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-88231" revision="875845">
+    <title><![CDATA[Verarbeitbarkeit ausgelesener Dokumente und Formate]]></title>
+    <description><![CDATA[Das Primärsystem MUSS anhand der Metadaten eines durch Dokumente Suchen 
+aufgefundenen Dokumentes erkennen, ob es in der Lage ist, diese zu verarbeiten, 
+insbesondere anhand vonmimeType, formatCode, classCode und typeCode des 
+DocumentEntry in [gemSpec_IG_ePA].]]></description>
+    <description_html><![CDATA[Das Primärsystem MUSS anhand der Metadaten eines durch <span style="font-style: italic;">Dokumente Suchen </span>aufgefundenen Dokumentes erkennen, ob es in der Lage ist, diese zu verarbeiten, insbesondere anhand von <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">mimeType, formatCode, classCode </span>und <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">typeCode </span>des <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">DocumentEntry</span> <span style="font-size: 10pt;line-height: 1.5;">in [gemSpec_IG_ePA].</span>]]></description_html>
+  </requirement>
+  <requirement id="A_24505" type="leafRequirement" severity="SOLL" lastUpdate="2024-01-25" technicalID="ML-146140" revision="875845">
+    <title><![CDATA[Automatisiertes Setzen von Metadaten]]></title>
+    <description><![CDATA[Das PS SOLL Metadaten automatisiert aus den Primärdaten der Versicherten 
+übernehmen und erzeugen, ohne dass eine händische Eingabe von Metadaten 
+zwingend erforderlich ist. Die manuelle Belegung der Werte von Metadaten soll 
+auf ein Minimum begrenzt werden. Wertebereiche (Value Sets) für ePA-Dokumente 
+sind je nach Festlegung von [gemSpec_Voc_ePA] zu benutzen. ]]></description>
+    <description_html><![CDATA[Das PS SOLL Metadaten automatisiert aus den Primärdaten der Versicherten übernehmen und erzeugen, ohne dass eine händische Eingabe von Metadaten zwingend erforderlich ist. Die manuelle Belegung<span id="polarion-comment:762"></span> der Werte von Metadaten soll auf ein Minimum begrenzt werden. Wertebereiche (Value Sets) für ePA-Dokumente sind je nach Festlegung von [gemSpec_Voc_ePA] zu benutzen. ]]></description_html>
+  </requirement>
+  <requirement id="A_23556-01" type="leafRequirement" severity="SOLL" lastUpdate="2024-01-25" technicalID="ML-145847" revision="875845">
+    <title><![CDATA[Einheitliche Metadaten-Vorgaben für unstrukturierte Dokumente ohne ImplementationGuide]]></title>
+    <description><![CDATA[Das PS SOLL die Klinische Dokumentenklassen-Liste (KDL) nutzen, um Dokumente zu 
+kennzeichnen. Beispiele für ein Mapping zwischen KDL und IHE auf Basis von 
+[IHE-ITI-VS] und [KDL-ILF] liefert Tab_ILF_ePA_KDL-Mapping. Weitere 
+Dokumententypen sollen entsprechend belegt werden. 
+
+ Tabelle #: Tab_ILF_ePA_KDL-Mapping 
+
+Dokumententyp classCode typeCode eventCodeList (KDL) OID Code System 
+Anzeigename 
+Arztbrief (nicht IG eArztbrief) BRI BERI - - Arztbericht /Arztbrief 
+Krankenhausentlassungsbericht BRI BERI AD010104 1.2.276.0.76.5.533 
+Krankenhausentlassungsbericht 
+Befund/Vorbefund/Altbefund BEF BEFU - - Ergebnisse Diagnostik 
+Röntgenbefund BEF BILD DG020110 1.2.276.0.76.5.533 Ergebnisse bildgebender 
+Diagnostik  (Radiologie) 
+Sonographiebefund BEF BILD DG020111 1.2.276.0.76.5.533 Ergebnisse bildgebender 
+Diagnostik  (Sonographie) 
+EKG-Auswertung BEF FUNK DG060111 1.2.276.0.76.5.533 Ergebnisse 
+Funktionsdiagnostik (EKG) 
+Histologiebefund BEF PATH PT080102 1.2.276.0.76.5.533 Pathologiebefundberichte 
+Lungenfunktionstest  BEF FUNK DG060108  1.2.276.0.76.5.533 Ergebnisse 
+Funktionsdiagnostik (Lunge) 
+Bild BIL BILD - - Ergebnisse bildgebender Diagnostik 
+Foto BIL FOTO - - Fotodokumentation 
+OP-Bericht DUR OPDK OP150103 1.2.276.0.76.5.533 OP-Dokumente (OP-Bericht) 
+OP-Plan/OP-Vorbereitung DUR OPDK - - OP-Dokumente (OP-Vorbereitung) 
+Dialyseprotokoll DUR FPRO VL040202  1.2.276.0.76.5.533 Therapiedokumentation 
+(Dialyse) 
+Überweisung VER AUFN AU050102  1.2.276.0.76.5.533 Überweisung 
+(Überweisunsgschein) 
+Krankenhauseinweisung VER AUFN AU050101 1.2.276.0.76.5.533 Verordnung von 
+Krankenhausbehandlung 
+Anamnese DUR AUFN - - Anamnese 
+Anamnesebogen DUR AUFN AU010101 1.2.276.0.76.5.533 Anamnesebogen 
+Therapievorschlag/Therapiebedarf ANF FPRO - - Therapiedokumentation 
+Histologieanforderung ANF PATH PT080101 1.2.276.0.76.5.533 
+Histologieanforderung 
+Kontaktdaten Angehörige ADM PATD - - Kontaktdaten Angehörige 
+Neugeborenensceening BEF GEBU SD070104  1.2.276.0.76.5.533 
+Neugeborenenscreening   ]]></description>
+    <description_html><![CDATA[Das PS SOLL die <span style="font-size: 11pt;color: #333333;line-height: 1.5;">Klinische Dokumentenklassen-Liste (KDL) </span>nutzen, um Dokumente zu kennzeichnen. Beispiele für ein Mapping zwischen KDL und IHE auf Basis von [IHE-ITI-VS] und [KDL-ILF] liefert Tab_ILF_ePA_KDL-Mapping. Weitere Dokumententypen sollen entsprechend belegt werden. <br/>
+ 
+<p data-keep-next="true" class="polarion-rte-caption-paragraph" style="text-align: left;">
+  Tabelle <span data-sequence="Tabelle" class="polarion-rte-caption">#</span>: Tab_ILF_ePA_KDL-Mapping
+</p>
+ 
+<table id="polarion_wiki macro name=table;params=width=98.12%" class="polarion-Document-table" style="width: 98.12%;max-width: 1255.936px;margin-left: 0px;margin-right: auto;border: 1px solid #CCCCCC;empty-cells: show;border-collapse: collapse;max-width: 1255.9360000000001px;">
+  <tbody>
+    <tr>
+      <th style="font-weight: bold;background-color: #F0F0F0;text-align: left;vertical-align: top;width: 151px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Dokumententyp</th>
+      <th style="font-weight: bold;background-color: #F0F0F0;text-align: left;vertical-align: top;width: 38px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">classCode</th>
+      <th style="font-weight: bold;background-color: #F0F0F0;text-align: left;vertical-align: top;width: 61px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">typeCode</th>
+      <th style="font-weight: bold;background-color: #F0F0F0;text-align: left;vertical-align: top;width: 99px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">eventCodeList (KDL)</th>
+      <th style="font-weight: bold;background-color: #F0F0F0;text-align: left;vertical-align: top;width: 115px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">OID Code System</th>
+      <th style="font-weight: bold;background-color: #F0F0F0;text-align: left;vertical-align: top;width: 210px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Anzeigename</th>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 151px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Arztbrief (nicht IG eArztbrief)</td>
+      <td style="text-align: left;vertical-align: top;width: 38px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">BRI</span></td>
+      <td style="text-align: left;vertical-align: top;width: 61px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">BERI</span></td>
+      <td style="text-align: left;vertical-align: top;width: 99px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">-</td>
+      <td style="text-align: left;vertical-align: top;width: 115px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">-</td>
+      <td style="text-align: left;vertical-align: top;width: 210px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Arztbericht /Arztbrief</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 151px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Krankenhausentlassungsbericht</td>
+      <td style="text-align: left;vertical-align: top;width: 38px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">BRI</span></td>
+      <td style="text-align: left;vertical-align: top;width: 61px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">BERI</span></td>
+      <td style="text-align: left;vertical-align: top;width: 99px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">AD010104</span></td>
+      <td style="text-align: left;vertical-align: top;width: 115px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">1.2.276.0.76.5.533</span></td>
+      <td style="text-align: left;vertical-align: top;width: 210px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Krankenhausentlassungsbericht</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 151px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Befund/Vorbefund/Altbefund</td>
+      <td style="text-align: left;vertical-align: top;width: 38px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">BEF</span></td>
+      <td style="text-align: left;vertical-align: top;width: 61px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">BEFU</span></td>
+      <td style="text-align: left;vertical-align: top;width: 99px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">-</td>
+      <td style="text-align: left;vertical-align: top;width: 115px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">-</td>
+      <td style="text-align: left;vertical-align: top;width: 210px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Ergebnisse Diagnostik</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 151px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Röntgenbefund</td>
+      <td style="text-align: left;vertical-align: top;width: 38px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">BEF</span></td>
+      <td style="text-align: left;vertical-align: top;width: 61px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">BILD</span></td>
+      <td style="text-align: left;vertical-align: top;width: 99px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">DG020110</td>
+      <td style="text-align: left;vertical-align: top;width: 115px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">1.2.276.0.76.5.533</span></td>
+      <td style="text-align: left;vertical-align: top;width: 210px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Ergebnisse bildgebender Diagnostik  (Radiologie)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 151px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Sonographiebefund</td>
+      <td style="text-align: left;vertical-align: top;width: 38px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">BEF</td>
+      <td style="text-align: left;vertical-align: top;width: 61px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">BILD</td>
+      <td style="text-align: left;vertical-align: top;width: 99px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">DG020111</td>
+      <td style="text-align: left;vertical-align: top;width: 115px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">1.2.276.0.76.5.533</span></td>
+      <td style="text-align: left;vertical-align: top;width: 210px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Ergebnisse bildgebender Diagnostik  (Sonographie)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 151px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">EKG-Auswertung</td>
+      <td style="text-align: left;vertical-align: top;width: 38px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">BEF</span></td>
+      <td style="text-align: left;vertical-align: top;width: 61px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">FUNK</span></td>
+      <td style="text-align: left;vertical-align: top;width: 99px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">DG060111</td>
+      <td style="text-align: left;vertical-align: top;width: 115px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">1.2.276.0.76.5.533</span></td>
+      <td style="text-align: left;vertical-align: top;width: 210px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Ergebnisse Funktionsdiagnostik (EKG)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 151px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Histologiebefund</td>
+      <td style="text-align: left;vertical-align: top;width: 38px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">BEF</td>
+      <td style="text-align: left;vertical-align: top;width: 61px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">PATH</td>
+      <td style="text-align: left;vertical-align: top;width: 99px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">PT080102</td>
+      <td style="text-align: left;vertical-align: top;width: 115px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">1.2.276.0.76.5.533</span></td>
+      <td style="text-align: left;vertical-align: top;width: 210px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Pathologiebefundberichte</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 151px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Lungenfunktionstest </td>
+      <td style="text-align: left;vertical-align: top;width: 38px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">BEF</span></td>
+      <td style="text-align: left;vertical-align: top;width: 61px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">FUNK</td>
+      <td style="text-align: left;vertical-align: top;width: 99px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">DG060108<span style="font-size: 11pt;color: #333333;line-height: 1.5;"> </span></td>
+      <td style="text-align: left;vertical-align: top;width: 115px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">1.2.276.0.76.5.533</span></td>
+      <td style="text-align: left;vertical-align: top;width: 210px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Ergebnisse Funktionsdiagnostik (Lunge)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 151px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Bild</td>
+      <td style="text-align: left;vertical-align: top;width: 38px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">BIL</td>
+      <td style="text-align: left;vertical-align: top;width: 61px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">BILD</td>
+      <td style="text-align: left;vertical-align: top;width: 99px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">-</td>
+      <td style="text-align: left;vertical-align: top;width: 115px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">-</td>
+      <td style="text-align: left;vertical-align: top;width: 210px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Ergebnisse bildgebender Diagnostik</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 151px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Foto</td>
+      <td style="text-align: left;vertical-align: top;width: 38px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">BIL</td>
+      <td style="text-align: left;vertical-align: top;width: 61px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">FOTO</td>
+      <td style="text-align: left;vertical-align: top;width: 99px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">-</td>
+      <td style="text-align: left;vertical-align: top;width: 115px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">-</td>
+      <td style="text-align: left;vertical-align: top;width: 210px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Fotodokumentation</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 151px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">OP-Bericht</td>
+      <td style="text-align: left;vertical-align: top;width: 38px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">DUR</span></td>
+      <td style="text-align: left;vertical-align: top;width: 61px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">OPDK</span></td>
+      <td style="text-align: left;vertical-align: top;width: 99px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">OP150103</td>
+      <td style="text-align: left;vertical-align: top;width: 115px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">1.2.276.0.76.5.533</span></td>
+      <td style="text-align: left;vertical-align: top;width: 210px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">OP-Dokumente (OP-Bericht)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 151px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">OP-Plan/OP-Vorbereitung</td>
+      <td style="text-align: left;vertical-align: top;width: 38px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">DUR</td>
+      <td style="text-align: left;vertical-align: top;width: 61px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">OPDK</td>
+      <td style="text-align: left;vertical-align: top;width: 99px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">-</td>
+      <td style="text-align: left;vertical-align: top;width: 115px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">-</td>
+      <td style="text-align: left;vertical-align: top;width: 210px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">OP-Dokumente (OP-Vorbereitung)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 151px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Dialyseprotokoll</td>
+      <td style="text-align: left;vertical-align: top;width: 38px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">DUR</td>
+      <td style="text-align: left;vertical-align: top;width: 61px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">FPRO</td>
+      <td style="text-align: left;vertical-align: top;width: 99px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">VL040202<span style="font-size: 11pt;color: #333333;line-height: 1.5;"> </span></td>
+      <td style="text-align: left;vertical-align: top;width: 115px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">1.2.276.0.76.5.533</span></td>
+      <td style="text-align: left;vertical-align: top;width: 210px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Therapiedokumentation (Dialyse)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 151px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Überweisung</td>
+      <td style="text-align: left;vertical-align: top;width: 38px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">VER</span></td>
+      <td style="text-align: left;vertical-align: top;width: 61px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">AUFN</span></td>
+      <td style="text-align: left;vertical-align: top;width: 99px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">AU050102<span style="font-size: 11pt;color: #333333;line-height: 1.5;"> </span></td>
+      <td style="text-align: left;vertical-align: top;width: 115px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">1.2.276.0.76.5.533</td>
+      <td style="text-align: left;vertical-align: top;width: 210px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Überweisung (Überweisunsgschein)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 151px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Krankenhauseinweisung</td>
+      <td style="text-align: left;vertical-align: top;width: 38px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">VER</td>
+      <td style="text-align: left;vertical-align: top;width: 61px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">AUFN</td>
+      <td style="text-align: left;vertical-align: top;width: 99px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">AU050101</span></td>
+      <td style="text-align: left;vertical-align: top;width: 115px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">1.2.276.0.76.5.533</td>
+      <td style="text-align: left;vertical-align: top;width: 210px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">Verordnung von Krankenhausbehandlung</span></td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 151px;height: 26px;border: 1px solid #CCCCCC;padding: 5px;">Anamnese</td>
+      <td style="text-align: left;vertical-align: top;width: 38px;height: 26px;border: 1px solid #CCCCCC;padding: 5px;">DUR</td>
+      <td style="text-align: left;vertical-align: top;width: 61px;height: 26px;border: 1px solid #CCCCCC;padding: 5px;">AUFN</td>
+      <td style="text-align: left;vertical-align: top;width: 99px;height: 26px;border: 1px solid #CCCCCC;padding: 5px;">-</td>
+      <td style="text-align: left;vertical-align: top;width: 115px;height: 26px;border: 1px solid #CCCCCC;padding: 5px;">-</td>
+      <td style="text-align: left;vertical-align: top;width: 210px;height: 26px;border: 1px solid #CCCCCC;padding: 5px;">Anamnese</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 151px;height: 26px;border: 1px solid #CCCCCC;padding: 5px;">Anamnesebogen</td>
+      <td style="text-align: left;vertical-align: top;width: 38px;height: 26px;border: 1px solid #CCCCCC;padding: 5px;">DUR</td>
+      <td style="text-align: left;vertical-align: top;width: 61px;height: 26px;border: 1px solid #CCCCCC;padding: 5px;">AUFN</td>
+      <td style="text-align: left;vertical-align: top;width: 99px;height: 26px;border: 1px solid #CCCCCC;padding: 5px;">AU010101</td>
+      <td style="text-align: left;vertical-align: top;width: 115px;height: 26px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">1.2.276.0.76.5.533</span></td>
+      <td style="text-align: left;vertical-align: top;width: 210px;height: 26px;border: 1px solid #CCCCCC;padding: 5px;">Anamnesebogen</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 151px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Therapievorschlag/Therapiebedarf</td>
+      <td style="text-align: left;vertical-align: top;width: 38px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">ANF</td>
+      <td style="text-align: left;vertical-align: top;width: 61px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">FPRO</td>
+      <td style="text-align: left;vertical-align: top;width: 99px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">-</td>
+      <td style="text-align: left;vertical-align: top;width: 115px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">-</td>
+      <td style="text-align: left;vertical-align: top;width: 210px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Therapiedokumentation</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 151px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Histologieanforderung</td>
+      <td style="text-align: left;vertical-align: top;width: 38px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">ANF</td>
+      <td style="text-align: left;vertical-align: top;width: 61px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">PATH</td>
+      <td style="text-align: left;vertical-align: top;width: 99px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">PT080101</td>
+      <td style="text-align: left;vertical-align: top;width: 115px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">1.2.276.0.76.5.533</span></td>
+      <td style="text-align: left;vertical-align: top;width: 210px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Histologieanforderung</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 151px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Kontaktdaten Angehörige</td>
+      <td style="text-align: left;vertical-align: top;width: 38px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">ADM</td>
+      <td style="text-align: left;vertical-align: top;width: 61px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">PATD</td>
+      <td style="text-align: left;vertical-align: top;width: 99px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">-</td>
+      <td style="text-align: left;vertical-align: top;width: 115px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">-</td>
+      <td style="text-align: left;vertical-align: top;width: 210px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Kontaktdaten Angehörige</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;vertical-align: top;width: 151px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">Neugeborenensceening</td>
+      <td style="text-align: left;vertical-align: top;width: 38px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">BEF</td>
+      <td style="text-align: left;vertical-align: top;width: 61px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 9pt;color: #333333;line-height: 1.5;">GEBU</span></td>
+      <td style="text-align: left;vertical-align: top;width: 99px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">SD070104 </td>
+      <td style="text-align: left;vertical-align: top;width: 115px;height: 12px;border: 1px solid #CCCCCC;padding: 5px;">1.2.276.0.76.5.533</td>
+      <td style="text-align: left;vertical-align: top;width: 210px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Neugeborenenscreening</td>
+    </tr>
+  </tbody>
+</table>
+  ]]></description_html>
+  </requirement>
+  <requirement id="A_15748-03" type="leafRequirement" severity="KANN" lastUpdate="2024-01-25" technicalID="ML-115716" revision="875845">
+    <title><![CDATA[Metadaten-Vorbelegungen bei Dokumenten, die nicht aus der eigenen LEI stammen]]></title>
+    <description><![CDATA[Für den Fall, dass LE der eigenen LE-Institution nicht die Autoren der 
+einzustellenden Dokumente sind, KANN das PS in seinen Dialogen zur Beschreibung 
+des Dokumenten-Autors und seiner Institution Auswahllisten von Wertebereiche 
+der Metadaten author, authorSpecialty, healthcareFacilityTypeCode und 
+practiceSettingCode in einer verkürzten Form zur Auswahl bringen.]]></description>
+    <description_html><![CDATA[Für den Fall, dass LE der eigenen LE-Institution nicht die Autoren der einzustellenden Dokumente sind, KANN das PS in seinen Dialogen zur Beschreibung des Dokumenten-Autors und seiner Institution Auswahllisten von Wertebereiche der Metadaten <span style="font-family: &#39;Courier New&#39;, Courier, monospace;">author</span>, <span style="font-family: &#39;Courier New&#39;, Courier, monospace;">authorSpecialty</span>, <span style="font-family: &#39;Courier New&#39;, Courier, monospace;">healthcareFacilityTypeCode</span> und <span style="font-family: &#39;Courier New&#39;, Courier, monospace;">practiceSettingCode</span> in einer verkürzten Form zur Auswahl bringen.]]></description_html>
+  </requirement>
+  <requirement id="A_16206-02" type="leafRequirement" severity="SOLL" lastUpdate="2024-01-25" technicalID="ML-117349" revision="875845">
+    <title><![CDATA[Empfehlungen zur sektorspezifischen Reduktion von Auswahllisten]]></title>
+    <description><![CDATA[Beim Einstellen von Dokumenten SOLLEN die in Anhang B aufgeführten 
+sektorspezifische Empfehlungen zur Reduktion von Auswahllisten mögliche Werte 
+für die Metadaten authorRole und typeCode beim Einstellen von Dokumenten 
+beachtet werden. ]]></description>
+    <description_html><![CDATA[Beim Einstellen von Dokumenten SOLLEN die in Anhang B aufgeführten sektorspezifische Empfehlungen zur Reduktion von Auswahllisten mögliche Werte für die Metadaten <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">authorRole</span> und <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">typeCode </span>beim Einstellen von Dokumenten beachtet werden. ]]></description_html>
+  </requirement>
+  <requirement id="A_25008" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-148571" revision="875845">
+    <title><![CDATA[Nutzung des childrecord in der Akte des Kindes]]></title>
+    <description><![CDATA[Das PS MUSS für die Nutzung von Dokumenten der Kategorie child die Akte des 
+Kindes verwenden. Ebenso müssen Zugriffe auf andere Dokumente mit medizinischen 
+Daten von Kindern in deren ePAs durchgeführt werden.]]></description>
+    <description_html><![CDATA[Das PS MUSS für die Nutzung von Dokumenten der Kategorie <span style="font-family: 'Courier New', Courier, monospace, HanWangKanTan;">child</span> die Akte des Kindes verwenden. Ebenso müssen Zugriffe auf andere Dokumente mit medizinischen Daten von Kindern in deren ePAs durchgeführt werden.]]></description_html>
+  </requirement>
+  <requirement id="A_14244-02" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-145637" revision="875845">
+    <title><![CDATA[Verarbeitungsvorschrift für eAB im DischargeLetterContainer-Format]]></title>
+    <description><![CDATA[Falls der eArztbrief im DischargeLetterContainer-Format gemäß [Richtlinie 
+eArztbrief]] in zwei Anteilen vorliegt (einem CDA-Anteil und einem 
+PDF-Anteil), MUSS das PS beide Teile gemeinsam in eine XML-Container-Struktur 
+nach [PHR_Common.xsd] einstellen und diese gemeinsam in einem SubmissionSet in 
+den XDS Document Service der ePA einstellen. In diesem SubmissionSet MÜSSEN die 
+Metadaten konform zu den Vorgaben des Implementation Guides des eArztbriefes 
+ig-eab* in [gemSpec_IG_ePA] gesetzt werden.]]></description>
+    <description_html><![CDATA[Falls der eArztbrief im DischargeLetterContainer-Format gemäß [Richtlinie eArztbrief]] in zwei Anteilen vorliegt (einem CDA-Anteil und einem PDF-Anteil), MUSS das PS beide Teile gemeinsam in eine XML-Container-Struktur nach [PHR_Common.xsd] einstellen und diese gemeinsam in einem SubmissionSet in den XDS Document Service der ePA einstellen. In diesem SubmissionSet MÜSSEN die Metadaten konform zu den Vorgaben des Implementation Guides des eArztbriefes ig-eab* in [gemSpec_IG_ePA] gesetzt werden.]]></description_html>
+  </requirement>
+  <requirement id="A_16246-02" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-136009" revision="875845">
+    <title><![CDATA[Auslesen des eArztbriefes im DischargeLetterContainer-Format]]></title>
+    <description><![CDATA[Beim Auslesen eines eArztbriefes mit formatCode
+="Code=urn:gematik:ig:Arztbrief:r3.1" MUSS das PS die zwei Anteile (den 
+CDA-Anteil und den PDF-Anteil) aus der XML-Container-Struktur 
+DischargeLetterContainer nach [PHR_Common.xsd] aus dem XDS Document Service 
+herauslesen und als eArztbrief im DischargeLetterContainer-Format gemäß 
+[Richtlinie eArztbrief] weiterverarbeiten und den PDF-Anteil zur Anzeige 
+bringen können. ]]></description>
+    <description_html><![CDATA[Beim Auslesen eines eArztbriefes mit <span style="font-family: &#39;Courier New&#39;, Courier, monospace;">formatCode</span>=&quot;Code=urn:gematik:ig:Arztbrief:r3.1&quot; MUSS das PS die zwei Anteile (den CDA-Anteil und den PDF-Anteil) aus der XML-Container-Struktur <span style="font-family: &#39;Courier New&#39;, Courier, monospace;">DischargeLetterContainer</span> nach [PHR_Common.xsd] aus dem XDS Document Service herauslesen und als eArztbrief im DischargeLetterContainer-Format gemäß [Richtlinie eArztbrief] weiterverarbeiten und den PDF-Anteil zur Anzeige bringen können. ]]></description_html>
+  </requirement>
+  <requirement id="A_15086-08" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-136003" revision="875845">
+    <title><![CDATA[Selbstauskunft der LE-Institution mit Belegung von Default-Werten]]></title>
+    <description><![CDATA[Das PS MUSS dem LE die Möglichkeit zur Hinterlegung einer Default-Konfiguration 
+von Metadaten geben. Die Selbstauskunft der LE-Institution MUSS zur Befüllung 
+der Metadaten in Tab_ILF_ePA_Datenfelder_Selbstauskunft automatisiert 
+herangezogen werden können.
+Tabelle #: Tab_ILF_ePA_Datenfelder_Selbstauskunft
+
+Vorkonfigurierbare Werte für DocumentEntry und SubmissionSet
+Default-Konfiguration unter Beachtung von [gemSpec_Aktensystem_ePAfuerAlle] und 
+[IHE-ITI-VS] 
+authorPersonPerson, die im Default-Fall als Autor von Dokumenten innerhalb der 
+LEI fungiert
+authorInstitutionIm Normalfall die Institution, welche die SMC-B beantragt hat
+authorRoleÜbliche Prozessrolle des Autors der LEI, in der das PS installiert 
+ist
+authorSpecialtyFachrichtung des Default-Autors
+authorTelecommunicationTelekommunikationsdaten der LEI, in der das PS 
+installiert ist
+healthcareFacilityTypeCodeArt der Einrichtung, in der das PS installiert ist
+practiceSettingCodeFachrichtung der Einrichtung, in der das PS installiert ist
+languageCodeSprache, in welcher üblicherweise der menschenlesbare Teil des 
+Dokuments abgefasst ist]]></description>
+    <description_html><![CDATA[Das PS MUSS dem LE die Möglichkeit zur Hinterlegung einer Default-Konfiguration von Metadaten geben. Die Selbstauskunft der LE-Institution MUSS zur Befüllung der Metadaten in Tab_ILF_ePA_Datenfelder_Selbstauskunft automatisiert herangezogen werden können. <p class="polarion-rte-caption-paragraph" data-keep-next="true">Tabelle <span class="polarion-rte-caption" data-sequence="Tabelle">#</span>: Tab_ILF_ePA_Datenfelder_Selbstauskunft</p><table style="width: 100%;max-width: 1280px;margin-left: 0px;margin-right: auto;border: 1px solid #CCCCCC;empty-cells: show;border-collapse: collapse;max-width: 1280.0px;" class="polarion-Document-table" id="polarion_wiki macro name=table"><tbody><tr><th style="font-weight: bold;background-color: #F0F0F0;text-align: left;vertical-align: top;width: 197px;height: 58.5px;border: 1px solid #CCCCCC;padding: 5px;">Vorkonfigurierbare Werte für DocumentEntry und SubmissionSet</th><th style="font-weight: bold;background-color: #F0F0F0;text-align: left;vertical-align: top;width: 534px;height: 58.5px;border: 1px solid #CCCCCC;padding: 5px;">Default-Konfiguration unter Beachtung von [<span style="font-size: 10pt;line-height: 1.5;">gemSpec_Aktensystem_ePAfuerAlle]</span> und [IHE-ITI-VS] </th></tr><tr><td style="text-align: left;vertical-align: top;width: 197px;height: 18px;border: 1px solid #CCCCCC;padding: 5px;">authorPerson</td><td style="text-align: left;vertical-align: top;width: 534px;height: 18px;border: 1px solid #CCCCCC;padding: 5px;">Person, die im Default-Fall als Autor von Dokumenten innerhalb der LEI fungiert</td></tr><tr><td style="text-align: left;vertical-align: top;width: 197px;height: 19.5px;border: 1px solid #CCCCCC;padding: 5px;">authorInstitution</td><td style="text-align: left;vertical-align: top;width: 534px;height: 19.5px;border: 1px solid #CCCCCC;padding: 5px;">Im Normalfall die Institution, welche die SMC-B beantragt hat</td></tr><tr><td style="text-align: left;vertical-align: top;width: 197px;height: 19.5px;border: 1px solid #CCCCCC;padding: 5px;">authorRole</td><td style="text-align: left;vertical-align: top;width: 534px;height: 19.5px;border: 1px solid #CCCCCC;padding: 5px;">Übliche Prozessrolle des Autors der LEI, in der das PS installiert ist</td></tr><tr><td style="text-align: left;vertical-align: top;width: 197px;height: 19.5px;border: 1px solid #CCCCCC;padding: 5px;">authorSpecialty</td><td style="text-align: left;vertical-align: top;width: 534px;height: 19.5px;border: 1px solid #CCCCCC;padding: 5px;">Fachrichtung des Default-Autors</td></tr><tr><td style="text-align: left;vertical-align: top;width: 197px;height: 19.5px;border: 1px solid #CCCCCC;padding: 5px;">authorTelecommunication</td><td style="text-align: left;vertical-align: top;width: 534px;height: 19.5px;border: 1px solid #CCCCCC;padding: 5px;">Telekommunikationsdaten der LEI, in der das PS installiert ist</td></tr><tr><td style="text-align: left;vertical-align: top;width: 197px;height: 19.5px;border: 1px solid #CCCCCC;padding: 5px;">healthcareFacilityTypeCode</td><td style="text-align: left;vertical-align: top;width: 534px;height: 19.5px;border: 1px solid #CCCCCC;padding: 5px;">Art der Einrichtung, in der das PS installiert ist</td></tr><tr><td style="text-align: left;vertical-align: top;width: 197px;height: 19.5px;border: 1px solid #CCCCCC;padding: 5px;">practiceSettingCode</td><td style="text-align: left;vertical-align: top;width: 534px;height: 19.5px;border: 1px solid #CCCCCC;padding: 5px;">Fachrichtung der Einrichtung, in der das PS installiert ist</td></tr><tr><td style="text-align: left;vertical-align: top;width: 197px;height: 19.5px;border: 1px solid #CCCCCC;padding: 5px;">languageCode</td><td style="text-align: left;vertical-align: top;width: 534px;height: 19.5px;border: 1px solid #CCCCCC;padding: 5px;">Sprache, in welcher üblicherweise der menschenlesbare Teil des Dokuments abgefasst ist</td></tr></tbody></table>]]></description_html>
+  </requirement>
+  <requirement id="A_19742" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-18" technicalID="ML-107446" revision="875845">
+    <title><![CDATA[strukturiertes Dokument - QES signieren]]></title>
+    <description><![CDATA[Falls eine QES-Signatur für ein strukturiertes Dokument gefordert wird, MUSS 
+das PS vor dem Einstellen eines strukturierten Dokumentes in die Akte des 
+Versicherten eine QES-Signatur als CADES Enveloping Signatur für das 
+strukturierte Dokument durch Aufruf der OperationSignDocument erstellen.]]></description>
+    <description_html><![CDATA[Falls eine QES-Signatur für ein strukturiertes Dokument gefordert wird, MUSS das PS vor dem Einstellen eines strukturierten Dokumentes in die Akte des Versicherten eine QES-Signatur als<span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;"> CADES Enveloping Signatur</span> für das strukturierte Dokument durch Aufruf der Operation <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">SignDocument</span> erstellen.]]></description_html>
+  </requirement>
+  <requirement id="A_19957" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-18" technicalID="ML-108026" revision="875845">
+    <title><![CDATA[strukturiertes Dokument - nonQES signieren]]></title>
+    <description><![CDATA[Falls eine nonQES-Signatur für ein strukturiertes Dokument gefordert wird, MUSS 
+das PS vor dem Einstellen eines strukturierten Dokumentes in die Akte des 
+Versicherten eine nonQES Signatur als CADES Enveloping Signatur für das 
+strukturierte Dokument durch Aufruf der OperationSignDocument erstellen.]]></description>
+    <description_html><![CDATA[Falls eine nonQES-Signatur für ein strukturiertes Dokument gefordert wird, MUSS das PS vor dem Einstellen eines strukturierten Dokumentes in die Akte des Versicherten eine nonQES Signatur als<span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;"> CADES Enveloping Signatur</span> für das strukturierte Dokument durch Aufruf der Operation <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">SignDocument</span> erstellen.]]></description_html>
+  </requirement>
+  <requirement id="A_19743" type="leafRequirement" severity="MUSS" lastUpdate="2021-07-29" technicalID="ML-107445" revision="875845">
+    <title><![CDATA[strukturiertes Dokument - QES-Signatur prüfen]]></title>
+    <description><![CDATA[Falls eine QES-Signatur für ein strukturiertes Dokument gefordert wird MUSS das 
+PS nach dem Laden eines strukturierten Dokumentes aus der Akte des Versicherten 
+die QES des Dokumentes durch Aufruf der OperationVerifyDocument prüfen und das 
+Prüfergebnis zur Anzeige bringen.]]></description>
+    <description_html><![CDATA[Falls eine QES-Signatur für ein strukturiertes Dokument gefordert wird MUSS das PS nach dem Laden eines strukturierten Dokumentes aus der Akte des Versicherten die QES des Dokumentes durch Aufruf der Operation <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">VerifyDocument</span> prüfen und das Prüfergebnis zur Anzeige bringen.]]></description_html>
+  </requirement>
+  <requirement id="A_19958" type="leafRequirement" severity="MUSS" lastUpdate="2021-07-29" technicalID="ML-108027" revision="875845">
+    <title><![CDATA[strukturiertes Dokument - nonQES Signatur prüfen]]></title>
+    <description><![CDATA[Falls eine nonQES-Signatur für ein strukturiertes Dokument gefordert wird, MUSS 
+das PS nach dem Laden eines strukturierten Dokumentes aus der Akte des 
+Versicherten die nonQES des Dokumentes durch Aufruf der OperationVerifyDocument 
+prüfen und das Prüfergebnis zur Anzeige bringen.]]></description>
+    <description_html><![CDATA[Falls eine nonQES-Signatur für ein strukturiertes Dokument gefordert wird, MUSS das PS nach dem Laden eines strukturierten Dokumentes aus der Akte des Versicherten die nonQES des Dokumentes durch Aufruf der Operation <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">VerifyDocument</span> prüfen und das Prüfergebnis zur Anzeige bringen.]]></description_html>
+  </requirement>
+  <requirement id="A_19394-04" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-27" technicalID="ML-151043" revision="875845">
+    <title><![CDATA[Kennzeichnung eines Dokumentes als Kostenträgerinformation]]></title>
+    <description><![CDATA[Das Clientsystem des Kostenträgers MUSS zur Kennzeichnung der Dokumente, die 
+für die ePA des Versicherten eingestellt werden, die in 
+Tab_ILF_ePA_KTR_Metadatenkennzeichnungen für den Dokumententyp aufgeführten 
+Metadaten für DocumentEntry setzen. 
+ Tabelle #: Tab_ILF_ePA_KTR_Metadatenkennzeichnungen 
+
+Dokumententyp Metadaten 
+Dokumente der bei den Krankenkassen gespeicherten Daten über die in Anspruch 
+genommenen Leistungen der Versicherten 
+DocumentEntry.healthcareFacilityTypeCode=VER und
+ DocumentEntry.typeCode=ABRE
+ DocumentEntry.authorRole=105
+ Submissionset.authorRole = 105  
+Eingescannte Dokumente Submissionset.authorRole = 105]]></description>
+    <description_html><![CDATA[Das Clientsystem des Kostenträgers MUSS zur Kennzeichnung der Dokumente, die für die ePA des Versicherten eingestellt werden, die in Tab_ILF_ePA_KTR_Metadatenkennzeichnungen für den Dokumententyp aufgeführten Metadaten für DocumentEntry setzen.  
+<p data-keep-next="true" class="polarion-rte-caption-paragraph">
+  Tabelle <span data-sequence="Tabelle" class="polarion-rte-caption">#</span>: Tab_ILF_ePA_KTR_Metadatenkennzeichnungen 
+</p>
+ 
+<table id="polarion_wiki macro name=table;params=width=88.79%" class="polarion-Document-table" style="width: 88.79%;max-width: 1136.512px;margin-left: 0px;margin-right: auto;border: 1px solid #CCCCCC;empty-cells: show;max-width: 1136.512px;">
+  <tbody>
+    <tr>
+      <th style="background-color: #F0F0F0;text-align: left;vertical-align: top;width: 319px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Dokumententyp</th>
+      <th style="background-color: #F0F0F0;text-align: left;vertical-align: top;width: 328px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Metadaten</th>
+    </tr>
+    <tr>
+      <td style="width: 319px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Dokumente der bei den Krankenkassen gespeicherten Daten über die in Anspruch genommenen Leistungen der Versicherten</td>
+      <td style="width: 328px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">DocumentEntry.healthcareFacilityTypeCode=VER und<br/>
+        DocumentEntry.typeCode=ABRE<br/>
+        DocumentEntry.authorRole=105<br/>
+        Submissionset.authorRole = 105 </td>
+    </tr>
+    <tr>
+      <td style="width: 319px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Eingescannte Dokumente</td>
+      <td style="width: 328px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;"><span style="font-size: 10pt;line-height: 1.5;">Submissionset.authorRole = 105</span></td>
+    </tr>
+  </tbody>
+</table>
+ <span id="polarion-comment:868"></span>]]></description_html>
+  </requirement>
+  <requirement id="A_24683" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-27" technicalID="ML-146983" revision="875845">
+    <title><![CDATA[Anlage eines Exportpakets]]></title>
+    <description><![CDATA[Das Clientsystem des Kostenträgers MUSS die Anlage eines Exportpakets der 
+Inhalte eines Aktenkontos zum Download starten unter Verwendung der Operation
+startPackageCreation gemäß [I_Health_Record_Relocation_Service].]]></description>
+    <description_html><![CDATA[Das Clientsystem des Kostenträgers MUSS die Anlage eines Exportpakets der Inhalte eines Aktenkontos zum Download starten unter Verwendung der Operation <span style="font-style: italic;">startPackageCreation</span> gemäß [I_Health_Record_Relocation_Service].]]></description_html>
+  </requirement>
+  <requirement id="A_24692" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-147011" revision="875845">
+    <title><![CDATA[Import des Exportpakets]]></title>
+    <description><![CDATA[Das Clientsystem des Kostenträgers MUSS den Import eines Exportpakets starten 
+unter Verwendung der OperationstartPackageImport gemäß 
+[I_Health_Record_Relocation_Service].]]></description>
+    <description_html><![CDATA[Das Clientsystem des Kostenträgers MUSS den Import eines Exportpakets starten unter Verwendung der Operation <span style="font-style: italic;">startPackageImport </span>gemäß [I_Health_Record_Relocation_Service].]]></description_html>
+  </requirement>
+  <requirement id="A_25446" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-27" technicalID="ML-152464" revision="875845">
+    <title><![CDATA[Verwaltung von email-Adressen]]></title>
+    <description><![CDATA[Das Clientsystem des Kostenträgers MUSS für die Verwaltung der E-Mail-Adressen 
+der Versicherten, die bei diesem Kostenträger versichert sind, die Operationen 
+getEmails, setEmail, deleteEmail der Schnittstelle I_Email_Management gemäß 
+[I_Email_Management] verwenden.]]></description>
+    <description_html><![CDATA[Das Clientsystem des Kostenträgers MUSS für die Verwaltung der E-Mail-Adressen der Versicherten, die bei diesem Kostenträger versichert sind, die Operationen getEmails, setEmail, deleteEmail der Schnittstelle <span style="font-size: 10pt;font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;line-height: 1.5;">I_Email_Management</span> gemäß [I_Email_Management] verwenden.]]></description_html>
+  </requirement>
+  <requirement id="A_24668" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-146917" revision="875845">
+    <title><![CDATA[Suche nach LEI im Verzeichnisdienst durch Ombudsstelle]]></title>
+    <description><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, eine oder 
+mehrere LEI im VZD-FHIR-Directory zu suchen und für die weitere Verarbeitung 
+auszuwählen.]]></description>
+    <description_html><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, eine oder mehrere LEI im VZD-FHIR-Directory zu suchen und für die weitere Verarbeitung auszuwählen.]]></description_html>
+  </requirement>
+  <requirement id="A_24657" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-146771" revision="875845">
+    <title><![CDATA[Sperren einer spezifischen LEI durch Ombudsstelle]]></title>
+    <description><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, einen 
+Widerspruch gegen die Nutzung der ePA durch eine spezifische LEI zu erteilen 
+unter Verwendung der Operation setBlockedUserPolicyAssignment gemäß 
+[I_Entitlement_Management].]]></description>
+    <description_html><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, einen Widerspruch gegen die Nutzung der ePA durch eine spezifische LEI zu erteilen unter Verwendung der Operation <span style="font-style: italic;">setBlockedUserPolicyAssignment</span> gemäß [I_Entitlement_Management].]]></description_html>
+  </requirement>
+  <requirement id="A_24666" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-146911" revision="875845">
+    <title><![CDATA[Löschen einer Sperrung  einer spezifische LEI durch Ombudsstelle]]></title>
+    <description><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, einen 
+Widerspruch gegen die Nutzung der ePA durch eine spezifische LEI zurückzunehmen 
+unter Verwendung der OperationdeleteBlockedUserPolicyAssignment gemäß 
+[I_Entitlement_Management].]]></description>
+    <description_html><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, einen Widerspruch gegen die Nutzung der ePA durch eine spezifische LEI zurückzunehmen unter Verwendung der Operation <span style="font-style: italic;">deleteBlockedUserPolicyAssignment</span> gemäß [I_Entitlement_Management].]]></description_html>
+  </requirement>
+  <requirement id="A_24931" type="leafRequirement" severity="MUSS" lastUpdate="2024-02-06" technicalID="ML-148152" revision="875845">
+    <title><![CDATA[Einsehbarkeit von Befugnisausschlüssen]]></title>
+    <description><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, alle aktuell 
+vorhandenen Befugnisausschlüsse abzurufen unter Verwendung der Operation
+getBlockedUserPolicyAssignment gemäß [I_Entitlement_Management].]]></description>
+    <description_html><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, alle aktuell vorhandenen Befugnisausschlüsse abzurufen unter Verwendung der Operation <span style="font-style: italic;">getBlockedUserPolicyAssignment </span>gemäß [I_Entitlement_Management].]]></description_html>
+  </requirement>
+  <requirement id="A_24659" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-146776" revision="875845">
+    <title><![CDATA[Entscheidung zum Medikationsprozess setzen durch Ombudsstelle]]></title>
+    <description><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, Widersprüche 
+im Rahmen des Medikationsprozesses zu erteilen bzw. zurückzunehmen unter 
+Verwendung der OperationupdateConsentDecision gemäß 
+[I_Consent_Decision_Management].]]></description>
+    <description_html><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, Widersprüche im Rahmen des Medikationsprozesses zu erteilen bzw. zurückzunehmen unter Verwendung der Operation <span style="font-size: 10pt;font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;line-height: 1.5;">updateConsentDecision </span>gemäß [I_Consent_Decision_Management].]]></description_html>
+  </requirement>
+  <requirement id="A_24927" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-148136" revision="875845">
+    <title><![CDATA[Entscheidungen zu widerspruchsfähigen Funktionen abfragen]]></title>
+    <description><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, den aktuellen 
+Zustand des Widerspruchs gegen die Nutzung von widerspruchsfähigen Funktionen 
+abzufragen unter Verwendung der OperationgetConsentDecision gemäß 
+[I_Consent_Decision_Management].]]></description>
+    <description_html><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, den aktuellen Zustand des Widerspruchs gegen die Nutzung von widerspruchsfähigen Funktionen abzufragen unter Verwendung der Operation <span style="font-size: 10pt;font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;line-height: 1.5;">getConsentDecision</span> gemäß [I_Consent_Decision_Management].]]></description_html>
+  </requirement>
+  <requirement id="A_24660" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-146778" revision="875845">
+    <title><![CDATA[Abruf der Protokolldaten durch Ombudsstelle]]></title>
+    <description><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, 
+Protokolldaten aus einem Aktenkonto herunterzuladen gemäß [I_Audit_Event].]]></description>
+    <description_html><![CDATA[Das Clientsystem der Ombudsstelle MUSS es dem Nutzer ermöglichen, Protokolldaten aus einem Aktenkonto herunterzuladen gemäß [I_Audit_Event].]]></description_html>
+  </requirement>
+  <requirement id="A_25350" type="leafRequirement" severity="KANN" lastUpdate="2024-03-27" technicalID="ML-151503" revision="875845">
+    <title><![CDATA[Abruf der Protokolldaten im Format PDF/A durch Ombudsstelle]]></title>
+    <description><![CDATA[Das Clientsystem der Ombudsstelle KANN es dem Nutzer alternativ auch 
+ermöglichen, gerenderte Protokolldaten aus einem Aktenkonto herunterzuladen 
+gemäß [I_Audit_Event_Render].]]></description>
+    <description_html><![CDATA[Das Clientsystem der Ombudsstelle KANN es dem Nutzer alternativ auch ermöglichen, gerenderte Protokolldaten aus einem Aktenkonto herunterzuladen gemäß [I_Audit_Event_Render].<span id="polarion-comment:875"></span>]]></description_html>
+  </requirement>
+  <requirement id="A_24711-01" type="leafRequirement" severity="MUSS" lastUpdate="2024-03-27" technicalID="ML-151502" revision="875845">
+    <title><![CDATA[Aufbereitung der Protokolldaten für den Versicherten]]></title>
+    <description><![CDATA[Das Clientsystem der Ombudsstelle MUSS die Protokolldaten in für den 
+Versicherten lesbarer Form bereitstellen.]]></description>
+    <description_html><![CDATA[Das Clientsystem der Ombudsstelle MUSS die Protokolldaten in für den Versicherten lesbarer Form bereitstellen.<span id="polarion-comment:874"></span>]]></description_html>
+  </requirement>
+  <requirement id="A_23131-01" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-145490" revision="875845">
+    <title><![CDATA[DiGA-CS: Persistierung der DocumentEntry.entryUUID]]></title>
+    <description><![CDATA[Das DiGA-CS MUSS die DocumentEntry.entryUUID des von ihm in die ePA 
+eingestellen Dokumentes persistieren, falls er die Möglichkeit nutzen möchte, 
+für dieses Dokument Updates durchzuführen.Hierzu ist es gemäß 
+[IHE-ITI-TF-2b#3.42.4.1.3.7] erforderlich, dass ein DiGA-Client beim Einstellen 
+des Dokumentes die DocumentEntry.entryUUID als valide UUID setzt und keine 
+symbolische ID verwendet. Beim nachfolgenden Einstellen von Dokumenten mit der 
+Option RPLC (replace) MUSS die persistierte DocumentEntry.entryUUID verwendet 
+werden.]]></description>
+    <description_html><![CDATA[Das DiGA-CS MUSS die DocumentEntry.entryUUID des von ihm in die ePA eingestellen Dokumentes persistieren, falls er die Möglichkeit nutzen möchte, für dieses Dokument Updates durchzuführen. <span style="font-size: 10pt;color: #242424;line-height: 1.5;">Hierzu ist es gemäß [IHE-ITI-TF-2b#3.42.4.1.3.7] erforderlich, dass ein DiGA-Client beim Einstellen des Dokumentes die DocumentEntry.entryUUID als valide UUID setzt und keine symbolische ID verwendet. Beim nachfolgenden Einstellen von Dokumenten mit der Option RPLC (replace) MUSS die persistierte DocumentEntry.entryUUID verwendet werden.</span>]]></description_html>
+  </requirement>
+  <requirement id="A_24685" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-146987" revision="875845">
+    <title><![CDATA[Messung von Verarbeitungszeiten]]></title>
+    <description><![CDATA[Das PS MUSS bei Durchführung der Anwendungsfälle aus Tab_UX_KPI_Messung_ePA_PS 
+die in der Spalte "Beschreibung" beschriebene Messung von Verarbeitungszeiten 
+durchführen und das Ergebnis in Millisekunden speichern. 
+
+Tabelle #: Tab_UX_KPI_Messung_ePA_PS
+
+UX-AnwendungsfälleBeschreibung
+UX_Login_PSEs wird der Zeitraum gemessen, den ein Nutzer eines Primärsystems 
+nach der Auswahl einer ePA warten muss, bis die angeforderte Akte geöffnet ist. 
+Dabei beginnt die Messung mit der letzten Nutzer-Interaktion (z. B. Anklicken 
+eines Feldes "Patient A12345680") bevor die Akte geöffnet wird und endet mit 
+der Anzeige von Inhalten der Akte (z. B. Dokumentenübersicht oder einer 
+Fehlermeldung bei fehlender Befugnis).
+UX_Doc_Upload_PSEs wird der Zeitraum gemessen, den ein Nutzer eines 
+Primärsystems nach dem Befehl zum Hochladen eines Dokumentes warten muss, bis 
+dieses Dokument im PS angezeigt wird oder die Information über den Erfolg der 
+Operation erfolgt.
+UX_Doc_Download_PSEs wird der Zeitraum gemessen, den ein Nutzer eines 
+Primärsystems nach dem Befehl zum Herunterladen eines Dokumentes warten muss, 
+bis dieses Dokument vollständig heruntergeladen wurde.]]></description>
+    <description_html><![CDATA[Das PS MUSS bei Durchführung der Anwendungsfälle aus Tab_UX_KPI_Messung_ePA_PS die in der Spalte &quot;Beschreibung&quot; beschriebene Messung von Verarbeitungszeiten durchführen und das Ergebnis in Millisekunden speichern. <br/> <p class="polarion-rte-caption-paragraph" data-keep-next="true">Tabelle <span class="polarion-rte-caption" data-sequence="Tabelle">#</span>: Tab_UX_KPI_Messung_ePA_PS</p><table style="width: 100%;max-width: 1280px;margin-left: 0px;margin-right: auto;border: 1px solid #CCCCCC;empty-cells: show;max-width: 1280.0px;" class="polarion-Document-table" id="polarion_wiki macro name=table;params=uid=client43"><tbody><tr><th style="background-color: #F0F0F0;text-align: left;vertical-align: top;width: 166px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">UX-Anwendungsfälle</th><th style="background-color: #F0F0F0;text-align: left;vertical-align: top;width: 565px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Beschreibung</th></tr><tr><td style="width: 166px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">UX_Login_PS</td><td style="width: 565px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Es wird der Zeitraum gemessen, den ein Nutzer eines Primärsystems nach der Auswahl einer ePA warten muss, bis die angeforderte Akte geöffnet ist. Dabei beginnt die Messung mit der letzten Nutzer-Interaktion (z. B. Anklicken eines Feldes &quot;Patient A12345680&quot;) bevor die Akte geöffnet wird und endet mit der Anzeige von Inhalten der Akte (z. B. Dokumentenübersicht oder einer Fehlermeldung bei fehlender Befugnis).</td></tr><tr><td style="width: 166px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">UX_Doc_Upload_PS</td><td style="width: 565px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Es wird der Zeitraum gemessen, den ein Nutzer eines Primärsystems nach dem Befehl zum Hochladen eines Dokumentes warten muss, bis dieses Dokument im PS angezeigt wird oder die Information über den Erfolg der Operation erfolgt.</td></tr><tr><td style="width: 166px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">UX_Doc_Download_PS</td><td style="width: 565px;height: 12px;border: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-bottom: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding: 5px;">Es wird der Zeitraum gemessen, den ein Nutzer eines Primärsystems nach dem Befehl zum Herunterladen eines Dokumentes warten muss, bis dieses Dokument vollständig heruntergeladen wurde.</td></tr></tbody></table>]]></description_html>
+  </requirement>
+  <requirement id="A_24686" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-146986" revision="875845">
+    <title><![CDATA[Übertragung von Verarbeitungszeiten]]></title>
+    <description><![CDATA[Das PS MUSS unmittelbar nach erfolgreicher Durchführung der Messung von 
+Verarbeitungszeiten der Anwendungsfälle aus 
+[gemILF_PS_ePA::Tab_UX_KPI_Messung_ePA_PS] das Messergebnis ohne 
+Nutzerinteraktion im Hintergrund an das gleiche Aktensystem (unter Verwendung 
+der SchnittstelleInformationService.setUserExperienceResult) übermitteln, bei 
+dem der Aktenzugriff erfolgte. Im Anschluss MÜSSEN die gespeicherten Werte 
+gelöscht werden, sofern die Übermittlung erfolgreich war.]]></description>
+    <description_html><![CDATA[Das PS MUSS unmittelbar nach erfolgreicher Durchführung der Messung von Verarbeitungszeiten der Anwendungsfälle aus [gemILF_PS_ePA::Tab_UX_KPI_Messung_ePA_PS] das Messergebnis ohne Nutzerinteraktion im Hintergrund an<span id="polarion-comment:799"></span> das gleiche Aktensystem (unter Verwendung der Schnittstelle <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">InformationService.setUserExperienceResult</span>) übermitteln, bei dem der Aktenzugriff erfolgte. Im Anschluss MÜSSEN die gespeicherten Werte gelöscht werden, sofern die Übermittlung erfolgreich war.]]></description_html>
+  </requirement>
+  <requirement id="A_16434" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-25" technicalID="ML-88206" revision="875845">
+    <title><![CDATA[Übertragungsprotokolle durchsuchbar und einsehbar speichern]]></title>
+    <description><![CDATA[Das PS MUSS Übertragungsprotokolle der Kommunikation mit dem ePA-Aktensystem 
+speichern, durchsuchbar und einsehbar machen.]]></description>
+    <description_html><![CDATA[Das PS MUSS Übertragungsprotokolle der Kommunikation mit dem ePA-Aktensystem speichern, durchsuchbar und einsehbar machen.]]></description_html>
+  </requirement>
+  <requirement id="A_14179" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-18" technicalID="ML-88211" revision="875845">
+    <title><![CDATA[Verständliche Fehlermeldung]]></title>
+    <description><![CDATA[Das PS MUSS im Falle von Fehlern Fehlermeldungen bereitstellen, die es den 
+Mitarbeitern der Leistungserbringerinstitution ermöglichen, die Ursache des 
+Fehlers zu identifizieren und mögliche Gegenmaßnahmen zu ergreifen.]]></description>
+    <description_html><![CDATA[Das PS MUSS im Falle von Fehlern Fehlermeldungen bereitstellen, die es den Mitarbeitern der Leistungserbringerinstitution ermöglichen, die Ursache des Fehlers zu identifizieren und mögliche Gegenmaßnahmen zu ergreifen.]]></description_html>
+  </requirement>
+  <requirement id="A_14691" type="leafRequirement" severity="MUSS" lastUpdate="2024-01-18" technicalID="ML-88209" revision="875845">
+    <title><![CDATA[Meldung über partielle Erfolgsmeldungen]]></title>
+    <description><![CDATA[Das PS MUSS im Falle einer partiellen Erfolgsmeldung (oder eines vorliegenden 
+Warning-Elementes) eine Warnung bereitstellen, die es den Mitarbeitern der 
+Leistungserbringerinstitution ermöglichen, die Ursache des (partiellen) Fehlers 
+zu identifizieren und mögliche Gegenmaßnahmen zu ergreifen und die partiellen 
+Fehler vom partiellen Erfolg unterscheiden helfen. ]]></description>
+    <description_html><![CDATA[Das PS MUSS im Falle einer partiellen Erfolgsmeldung (oder eines vorliegenden Warning-Elementes) eine Warnung bereitstellen, die es den Mitarbeitern der Leistungserbringerinstitution ermöglichen, die Ursache des (partiellen) Fehlers zu identifizieren und mögliche Gegenmaßnahmen zu ergreifen und die partiellen Fehler vom partiellen Erfolg unterscheiden helfen. ]]></description_html>
+  </requirement>
+  <requirement id="A_14920" type="leafRequirement" severity="SOLL" lastUpdate="2024-01-18" technicalID="ML-88215" revision="875845">
+    <title><![CDATA[Fehlertexte aus der RegistryErrorList zur Anzeige von Fehlertexten]]></title>
+    <description><![CDATA[Das PS SOLL für Fehler aus der RegistryErrorList eine deutschsprachige 
+Fehlermeldung erstellen.]]></description>
+    <description_html><![CDATA[Das PS SOLL für Fehler aus der <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">RegistryErrorList </span>eine deutschsprachige Fehlermeldung erstellen.]]></description_html>
+  </requirement>
+  <requirement id="A_15092" type="leafRequirement" severity="KANN" lastUpdate="2024-01-18" technicalID="ML-88216" revision="875845">
+    <title><![CDATA[Eigene Übersetzungen von Fehlertexten]]></title>
+    <description><![CDATA[Das PS KANN die IHE-Error-Fehlertexte mit eigenen Übersetzungen zur Anzeige 
+bringen. Andernfalls KANN der Fehlertext für Fehler, bei denen keine 
+Handlungsanweisung besteht, mit dem generischen Fehlertext "Der 
+ePA-Anwendungsfall konnte nicht erfolgreich beendet werden." zur Anzeige 
+gebracht werden.]]></description>
+    <description_html><![CDATA[Das PS KANN die IHE-Error-Fehlertexte mit eigenen Übersetzungen zur Anzeige bringen. Andernfalls KANN der Fehlertext für Fehler, bei denen keine Handlungsanweisung besteht, mit dem generischen Fehlertext &quot;Der ePA-Anwendungsfall konnte nicht erfolgreich beendet werden.&quot; zur Anzeige gebracht werden.]]></description_html>
+  </requirement>
+</requirements>

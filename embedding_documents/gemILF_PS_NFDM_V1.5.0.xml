@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<requirements>
+  <requirement id="NFDM-A_2375" type="leafRequirement" severity="MUSS" lastUpdate="2018-11-09">
+    <title><![CDATA[Clientseitige Validierung]]></title>
+    <description><![CDATA[Bevor das Primärsystem einen NFD oder DPE an den Konnektor sendet, MUSS es 
+alle durch das XML-Schema des Infomodells NFDM festgelegten Regeln und die 
+darüber hinaus gehenden in [gemSpec_InfoNFDM] definierten Integritätsregeln auf 
+Einhaltung überprüfen und den Akteur solange auf fehlerhafte Einträge 
+hinweisen, bis er alle korrigiert hat.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Bevor das Prim&auml;rsystem einen NFD oder DPE an den Konnektor sendet, MUSS es alle durch das XML-Schema des Infomodells NFDM festgelegten Regeln und die dar&uuml;ber hinaus gehenden in [gemSpec_InfoNFDM] definierten Integrit&auml;tsregeln auf Einhaltung &uuml;berpr&uuml;fen und den Akteur solange auf fehlerhafte Eintr&auml;ge hinweisen, bis er alle korrigiert hat.</span></p>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2289" type="leafRequirement" severity="KANN" lastUpdate="2018-11-09">
+    <title><![CDATA[Protokollierung der nachprüfbaren Informationen über die zugriffsberechtigten Personen]]></title>
+    <description><![CDATA[Greift die zugriffsberechtigte Person mittels SMC-B auf den NFD oder den DPE 
+des Versicherten zu und ist diese Person auch von einer anderen Person mit 
+elektronischem Heilberufsausweis (HBA) autorisiert,KANN das Primärsystem 
+nachprüfbare Informationen über diese beiden Personen protokollieren (§291a 
+Abs. 5 Satz 4 SGB V).]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Greift die zugriffsberechtigte Person mittels SMC-B auf den NFD oder den DPE </span><span>des</span><span> Versicherten zu und ist diese Person auch von einer anderen Person mit elektronischem Heilberufsausweis (HBA) autorisiert, </span><span>KANN</span><span> das Prim&auml;rsystem nachpr&uuml;fbare Informationen &uuml;ber diese beiden Personen protokollieren (&sect;291a Abs. 5 Satz 4 SGB V).</span></p>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2291" type="leafRequirement" severity="MUSS" lastUpdate="2018-11-09">
+    <title><![CDATA[Unabhängige Verarbeitung des NFD von der DPE]]></title>
+    <description><![CDATA[Das Primärsystem MUSS sicherstellen, dass das Lesen, Aktualisieren, Signieren, 
+Schreiben und Löschen des Notfalldatensatzes unabhängigvon der Verwaltung des 
+Datensatzes „Persönliche Erklärungen“ stattfindet.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Das Prim&auml;rsystem MUSS sicherstellen, dass das Lesen, Aktualisieren, Signieren, Schreiben und L&ouml;schen des Notfalldatensatzes unabh&auml;ngig </span><span>von der Verwaltung des</span><span> Datensatz</span><span>es</span><span> </span><span>&bdquo;</span><span>Pers&ouml;nliche Erkl&auml;rungen</span><span>&ldquo;</span><span> stattfindet.</span></p>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2296" type="leafRequirement" severity="MUSS" lastUpdate="2018-11-09">
+    <title><![CDATA[Ermöglichung der Trennung von Arbeitsschritten bei der Verarbeitung des NFD]]></title>
+    <description><![CDATA[Das Primärsystem MUSS es dem Akteur ermöglichen, durch Konfiguration oder 
+andere Regelungen sicherzustellen,dass das Zusammenstellen, Signieren und 
+Schreiben desNFD in zeitlich getrennten Arbeitsschritten durch unterschiedliche 
+Akteure erfolgen kann.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Das Prim&auml;rsystem MUSS es dem </span><span>Akteur</span><span> erm&ouml;glichen, </span><span>durch Konfiguration oder andere Regelungen sicherzustellen, </span><span>dass das Zusammenstellen, Signieren und Schreiben des </span><span>NFD</span><span> </span><span>in z</span><span>eitlich </span><span>getrennten</span><span> Arbeitsschritten </span><span>durch unterschiedliche Akteure erfolgen kann</span><span>.</span></p>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2374" type="leafRequirement" severity="MUSS" lastUpdate="2018-11-09">
+    <title><![CDATA[Ermöglichung der Trennung von Arbeitsschritten bei der Verarbeitung persönlicher Erklärungen]]></title>
+    <description><![CDATA[Das Primärsystem MUSS es dem Akteur ermöglichen, durch Konfiguration oder 
+andere Regelungen sicherzustellen, dass das Zusammenstellen und Schreiben einer 
+persönlichen Erklärung in zeitlich getrennten Arbeitsschritten durch 
+unterschiedliche Akteure erfolgen kann.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Das Prim&auml;rsystem MUSS es dem Akteur erm&ouml;glichen, durch Konfiguration oder andere Regelungen sicherzustellen, dass das Zusammenstellen und Schreiben einer pers&ouml;nlichen Erkl&auml;rung in zeitlich getrennten Arbeitsschritten durch unterschiedliche Akteure erfolgen kann.</span></p>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2293" type="leafRequirement" severity="MUSS" lastUpdate="2018-11-09">
+    <title><![CDATA[NFD im Notfall von eGK anzeigen]]></title>
+    <description><![CDATA[Das Primärsystem MUSS den Anwendungsfall gemäß Tabelle „Tab_ILF_NFDM_001 – NFD 
+im Notfall von eGK anzeigen“ umsetzen.]]></description>
+    <description_html><![CDATA[Das Primärsystem MUSS den Anwendungsfall gemäß Tabelle „Tab_ILF_NFDM_001 – NFD im Notfall von eGK anzeigen“ umsetzen.<br/>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2294" type="leafRequirement" severity="MUSS" lastUpdate="2018-11-09">
+    <title><![CDATA[NFD außerhalb des Notfalls von eGK anzeigen]]></title>
+    <description><![CDATA[Das Primärsystem MUSS den Anwendungsfall gemäß Tabelle „Tab_ILF_NFDM_003 – NFD 
+außerhalb des Notfalls von eGK anzeigen“ umsetzen.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Das Prim&auml;rsystem MUSS den Anwendungsfall </span><span>gem&auml;&szlig;</span><span> Tabelle &bdquo;</span><span>Tab_ILF_NFDM_00</span><span>3</span><span> &ndash; NFD au&szlig;erhalb des Notfalls von eGK anzeigen</span><span>&ldquo; umsetzen.</span></p>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2295" type="leafRequirement" severity="MUSS" lastUpdate="2018-11-09">
+    <title><![CDATA[NFD auf eGK erstellen]]></title>
+    <description><![CDATA[Das Primärsystem MUSS den Anwendungsfall gemäß Tabelle „Tab_ILF_NFDM_005 – NFD 
+auf eGK erstellen“ umsetzen.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Das Prim&auml;rsystem MUSS den Anwendungsfall gem&auml;&szlig; Tabelle &bdquo;</span><span>Tab_ILF_NFDM_005 &ndash; NFD auf eGK erstellen</span><span>&ldquo; umsetzen.</span></p>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2297" type="leafRequirement" severity="MUSS" lastUpdate="2018-11-09">
+    <title><![CDATA[NFD auf eGK aktualisieren]]></title>
+    <description><![CDATA[Das Primärsystem MUSS den Anwendungsfall gemäß Tabelle „Tab_ILF_NFDM_007 – NFD 
+auf eGK aktualisieren“ umsetzen.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Das Prim&auml;rsystem MUSS den Anwendungsfall gem&auml;&szlig; Tabelle &bdquo;</span><span>Tab_ILF_NFDM_007 &ndash; NFD auf eGK aktualisieren</span><span>&ldquo; umsetzen.</span></p>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2298" type="leafRequirement" severity="MUSS" lastUpdate="2019-05-06">
+    <title><![CDATA[NFD qualifiziert elektronisch signieren]]></title>
+    <description><![CDATA[Das Primärsystem MUSS es dem Benutzer ermöglichen, einen NFD mittels seines 
+HBA qualifiziert elektronisch zu signieren.
+​​]]></description>
+    <description_html><![CDATA[<html><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta content="HTML Tidy for Java (vers. 26 Sep 2004), see www.w3.org" name="generator"><title></title></head><body><p><span>Das Prim&auml;rsystem MUSS es dem Benutzer erm&ouml;glichen, einen NFD mittels seines HBA qualifiziert elektronisch zu signieren</span><span>.</span><span><br>​​</span></p></body></html>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2376" type="leafRequirement" severity="MUSS" lastUpdate="2018-11-09">
+    <title><![CDATA[Beachtung NFDM-Signaturpolicy]]></title>
+    <description><![CDATA[Das Primärsystem MUSS beim Aufruf von SignDocument am Konnektor bzw. 
+Signaturproxy die Vorgaben der Signaturpolicy NFDM ([gemRL_QES_NFDM]) beachten.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Das Prim&auml;rsystem MUSS beim Aufruf von </span><span style="font-family: 'Courier New', Courier, monospace;">SignDocument</span><span> am Konnektor bzw. Signaturproxy die Vorgaben der Signaturpolicy NFDM ([gemRL_QES_NFDM]) beachten.</span></p>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2377" type="leafRequirement" severity="MUSS" lastUpdate="2018-11-09">
+    <title><![CDATA[Vorhandene QES entfernen]]></title>
+    <description><![CDATA[Das Primärsystem MUSS vor dem Aufruf von SignDocument am Konnektor bzw. 
+Signaturproxy eine ggf. im NFD bereits vorhandene Signatur entfernen.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Das Prim&auml;rsystem MUSS vor dem Aufruf von </span><span style="font-family: 'Courier New', Courier, monospace;">SignDocument</span><span> am Konnektor bzw. Signaturproxy eine ggf. im NFD bereits vorhandene Signatur entfernen.</span></p>]]></description_html>
+  </requirement>
+  <requirement id="A_18019" type="leafRequirement" severity="DARF NICHT" lastUpdate="2019-10-15">
+    <title><![CDATA[Keine Verwendung des Parameters Crypt]]></title>
+    <description><![CDATA[Der Parameter Crypt DARF beim Signieren der Notfalldaten NICHT verwendet werden.]]></description>
+    <description_html><![CDATA[Der Parameter <span style="font-family: &#39;Courier New&#39;, Courier, monospace, HanWangKanTan;">Crypt </span>DARF beim Signieren der Notfalldaten NICHT verwendet werden.]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2378" type="leafRequirement" severity="MUSS" lastUpdate="2018-11-09">
+    <title><![CDATA[PIN-Eingabe während des Signaturvorgangs]]></title>
+    <description><![CDATA[Das Primärsystem MUSS den Akteur im Rahmen des Signaturvorgangs sowohl über 
+eine notwendige PIN-Eingabe am Kartenterminal als auch über das Ergebnis der 
+PIN-Eingabe am Kartenterminal informieren.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Das Prim&auml;rsystem MUSS den Akteur </span><span>im Rahmen des Signaturvorgangs </span><span>sowohl &uuml;ber eine notwendige PIN-Eingabe</span><span> </span><span>am Kartenterminal als auch &uuml;ber das Ergebnis der PIN-Eingabe am Kartenterminal informieren.</span></p>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2300" type="leafRequirement" severity="MUSS" lastUpdate="2018-11-09">
+    <title><![CDATA[NFD auf eGK schreiben]]></title>
+    <description><![CDATA[Das Primärsystem MUSS den Anwendungsfall gemäß Tabelle „Tab_ILF_NFDM_011 – NFD 
+auf eGK schreiben“ umsetzen.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Das Prim&auml;rsystem MUSS den Anwendungsfall gem&auml;&szlig; Tabelle &bdquo;</span><span>Tab_ILF_NFDM_011 &ndash; NFD auf eGK schreiben</span><span>&ldquo; umsetzen.</span></p>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2301" type="leafRequirement" severity="MUSS" lastUpdate="2018-11-09">
+    <title><![CDATA[NFD von eGK löschen]]></title>
+    <description><![CDATA[Das Primärsystem MUSS den Anwendungsfall gemäß Tabelle „Tab_ILF_NFDM_013 – NFD 
+von eGK löschen“ umsetzen.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Das Prim&auml;rsystem MUSS den Anwendungsfall gem&auml;&szlig; Tabelle &bdquo;</span><span>Tab_ILF_NFDM_013 &ndash; NFD von eGK l&ouml;schen</span><span>&ldquo; umsetzen.</span></p>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2302" type="leafRequirement" severity="DARF NICHT" lastUpdate="2018-11-09">
+    <title><![CDATA[Keine Signaturerstellung für den DPE]]></title>
+    <description><![CDATA[Das Primärsystem DARF es dem Akteur NICHT ermöglichen, den DPE des 
+Versicherten zu signieren.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Das Prim&auml;rsystem DARF es dem Akteur NICHT erm&ouml;glichen, den DPE des Versicherten zu signieren.</span></p>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2304" type="leafRequirement" severity="MUSS" lastUpdate="2018-11-09">
+    <title><![CDATA[Persönliche Erklärung im Notfall von eGK anzeigen]]></title>
+    <description><![CDATA[Das Primärsystem MUSS den Anwendungsfall gemäß Tabelle „Tab_ILF_NFDM_015 – 
+Persönliche Erklärung im Notfall von eGK anzeigen“ umsetzen.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Das Prim&auml;rsystem MUSS den Anwendungsfall gem&auml;&szlig; Tabelle &bdquo;</span><span>Tab_ILF_NFDM_015 &ndash; Pers&ouml;nliche Erkl&auml;rung im Notfall von eGK anzeigen</span><span>&ldquo; umsetzen.</span></p>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2305" type="leafRequirement" severity="MUSS" lastUpdate="2018-11-09">
+    <title><![CDATA[Persönliche Erklärung außerhalb des Notfalls von eGK anzeigen]]></title>
+    <description><![CDATA[Das Primärsystem MUSS den Anwendungsfall gemäß Tabelle „Tab_ILF_NFDM_017 – 
+Persönliche Erklärung außerhalb des Notfalls von eGK anzeigen“ umsetzen.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Das Prim&auml;rsystem MUSS den Anwendungsfall gem&auml;&szlig; Tabelle &bdquo;</span><span>Tab_ILF_NFDM_017 &ndash; Pers&ouml;nliche Erkl&auml;rung au&szlig;erhalb des Notfalls von eGK anzeigen</span><span>&ldquo; umsetzen.</span></p>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2306" type="leafRequirement" severity="MUSS" lastUpdate="2018-11-09">
+    <title><![CDATA[Persönliche Erklärung auf eGK aktualisieren]]></title>
+    <description><![CDATA[Das Primärsystem MUSS den Anwendungsfall gemäß Tabelle „Tab_ILF_NFDM_019 – 
+Persönliche Erklärung auf eGK aktualisieren“ umsetzen.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Das Prim&auml;rsystem MUSS den Anwendungsfall gem&auml;&szlig; Tabelle &bdquo;</span><span>Tab_ILF_NFDM_019 &ndash; Pers&ouml;nliche Erkl&auml;rung auf eGK aktualisieren</span><span>&ldquo; umsetzen.</span></p>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2307" type="leafRequirement" severity="MUSS" lastUpdate="2018-11-09">
+    <title><![CDATA[Persönliche Erklärung auf eGK erstellen]]></title>
+    <description><![CDATA[Das Primärsystem MUSS den Anwendungsfall gemäß Tabelle „Tab_ILF_NFDM_021 – 
+Persönliche Erklärung auf eGK erstellen“ umsetzen.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Das Prim&auml;rsystem MUSS den Anwendungsfall gem&auml;&szlig; Tabelle &bdquo;</span><span>Tab_ILF_NFDM_021 &ndash; Pers&ouml;nliche Erkl&auml;rung auf eGK erstellen</span><span>&ldquo; umsetzen.</span></p>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2308" type="leafRequirement" severity="MUSS" lastUpdate="2018-11-09">
+    <title><![CDATA[Persönliche Erklärung von eGK löschen]]></title>
+    <description><![CDATA[Das Primärsystem MUSS den Anwendungsfall gemäß Tabelle „Tab_ILF_NFDM_023 – 
+Persönliche Erklärung von eGK löschen“ umsetzen.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Das Prim&auml;rsystem MUSS den Anwendungsfall gem&auml;&szlig; Tabelle &bdquo;</span><span>Tab_ILF_NFDM_023 &ndash; Pers&ouml;nliche Erkl&auml;rung von eGK l&ouml;schen</span><span>&ldquo; umsetzen.</span></p>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2309" type="leafRequirement" severity="MUSS" lastUpdate="2018-11-09">
+    <title><![CDATA[DPE auf eGK schreiben]]></title>
+    <description><![CDATA[Das Primärsystem MUSS den Anwendungsfall gemäß Tabelle „Tab_ILF_NFDM_025 – 
+(secondary) DPE auf eGK schreiben“ umsetzen.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Das Prim&auml;rsystem MUSS den Anwendungsfall gem&auml;&szlig; Tabelle &bdquo;</span><span>Tab_ILF_NFDM_025 &ndash; (secondary) DPE auf eGK schreiben</span><span>&ldquo; umsetzen.</span></p>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2310" type="leafRequirement" severity="MUSS" lastUpdate="2018-11-09">
+    <title><![CDATA[DPE von eGK löschen]]></title>
+    <description><![CDATA[Das Primärsystem MUSS den Anwendungsfall gemäß Tabelle „Tab_ILF_NFDM_027 – DPE 
+von eGK löschen“ umsetzen.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Das Prim&auml;rsystem MUSS den Anwendungsfall gem&auml;&szlig; Tabelle &bdquo;</span><span>Tab_ILF_NFDM_027 &ndash; DPE von eGK l&ouml;schen</span><span>&ldquo; umsetzen.</span></p>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2314" type="leafRequirement" severity="MUSS" lastUpdate="2018-11-09">
+    <title><![CDATA[Drucken des kompletten NFD]]></title>
+    <description><![CDATA[Das Primärsystem MUSS es dem Akteur ermöglichen, den Inhalt des kompletten NFD 
+auszudrucken.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Das Prim&auml;rsystem MUSS es dem Akteur erm&ouml;glichen, den Inhalt des kompletten NFD auszudrucken.</span></p>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2315" type="leafRequirement" severity="MUSS" lastUpdate="2018-11-09">
+    <title><![CDATA[Drucken der pE]]></title>
+    <description><![CDATA[Das Primärsystem MUSS sicherstellen, dass die einzelnen Arten der pE (Gewebe- 
+und Organspendeerklärung, Vorsorgevollmacht und Patientenverfügung) separat 
+ausdruckbar sind.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Das Prim&auml;rsystem MUSS sicherstellen, dass die einzelnen Arten der pE (Gewebe- und Organspendeerkl&auml;rung, Vorsorgevollmacht und Patientenverf&uuml;gung) separat ausdruckbar sind.</span></p>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2317" type="leafRequirement" severity="SOLL" lastUpdate="2018-11-09">
+    <title><![CDATA[Lokale Fehlerbehandlung im Primärsystem]]></title>
+    <description><![CDATA[Kommt es während der lokalen Verarbeitung des NFD oder des DPE des 
+Versicherten innerhalb desPrimärsystems zu einem Fehler, SOLL das Primärsystem 
+den Akteur über diesen Fehler informieren.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Kommt es w&auml;hrend der lokalen Verarbeitung des NFD oder des DPE des Versicherten innerhalb des </span><span>Prim&auml;rsystem</span><span>s zu einem Fehler, SOLL das Prim&auml;rsystem den Akteur &uuml;ber diesen Fehler informieren.</span></p>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2318" type="leafRequirement" severity="SOLL" lastUpdate="2018-11-09">
+    <title><![CDATA[Verarbeitung von Fehlern auf der Nachrichtentransportebene]]></title>
+    <description><![CDATA[Verarbeitet oder erkennt das Primärsystem Fehler auf der 
+Nachrichtentransportebene, SOLL das Primärsystem den Akteur über den Fehler 
+informieren.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Verarbeitet oder erkennt das Prim&auml;rsystem Fehler auf der Nachrichtentransportebene, SOLL das Prim&auml;rsystem den Akteur &uuml;ber den Fehler informieren.</span></p>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2319" type="leafRequirement" severity="MUSS" lastUpdate="2018-11-09">
+    <title><![CDATA[Umgang mit generischen und spezifischen Fehlermeldungen]]></title>
+    <description><![CDATA[Das Primärsystem MUSS für die in Tabelle „Tab_ILF_NFDM_033 – Generische und 
+spezifische Fehlermeldungen“ angegebenen Operationen die generischen und 
+spezifischen Fehlermeldungen verarbeiten können und den Akteur über die 
+Fehlermeldungen informieren.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Das Prim&auml;rsystem MUSS f&uuml;r die in Tabelle &bdquo;</span><span>Tab_ILF_NFDM_033 &ndash; Generische und spezifische Fehlermeldungen</span><span>&ldquo; angegebenen Operationen die generischen und spezifischen Fehlermeldungen verarbeiten k&ouml;nnen und den Akteur &uuml;ber die Fehlermeldungen informieren.</span></p>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2330" type="leafRequirement" severity="MUSS" lastUpdate="2018-11-09">
+    <title><![CDATA[Verlagerung von Schreibvorgängen in den Hintergrund]]></title>
+    <description><![CDATA[Während des Schreibvorganges MUSS das Primärsystem dem Akteur ermöglichen, im 
+Primärsystem reibungsfrei andere Tätigkeiten zu starten, ohne auf die 
+Vollendung des Schreibvorganges zu warten.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>W&auml;hrend des Schreibvorganges MUSS </span><span>das Prim&auml;rsystem dem</span><span> Akteur </span><span>erm&ouml;glichen</span><span>, im Prim&auml;rsystem reibungsfrei andere T&auml;tigkeiten zu starten</span><span>, </span><span>ohne auf</span><span> die Vollendung des Schreibvorganges zu warten</span><span>.</span></p>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2320" type="leafRequirement" severity="MUSS" lastUpdate="2018-11-09">
+    <title><![CDATA[Versionsverwaltung beim Lesen von der eGK (Abwärtskompatibilität)]]></title>
+    <description><![CDATA[Das Primärsystem MUSS in der Lage sein, alle veröffentlichten Versionen des 
+NFD-/DPE-Schemas der Fachanwendung NFDM zu verarbeiten.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Das Prim&auml;rsystem MUSS in der Lage sein, alle ver&ouml;ffentlichten Versionen des NFD-/DPE-Schemas der Fachanwendung NFDM zu verarbeiten.</span></p>]]></description_html>
+  </requirement>
+  <requirement id="NFDM-A_2321" type="leafRequirement" severity="MUSS" lastUpdate="2018-11-09">
+    <title><![CDATA[Verwendung des aktuellen XML-Schema beim Schreiben auf die eGK des Versicherten]]></title>
+    <description><![CDATA[Das Primärsystem MUSS sicherstellen, dass beim Schreiben des NFD oder des DPE 
+auf die eGK des Versicherten stets die aktuelle Version des NFD-/DPE-Schemas 
+der Fachanwendung NFDM zu verwenden wird.]]></description>
+    <description_html><![CDATA[<p style="margin-left: 0px;"><span>Das Prim&auml;rsystem MUSS sicherstellen, dass beim Schreiben des NFD oder des DPE auf die eGK des Versicherten stets die aktuelle Version des NFD-/DPE-Schemas der Fachanwendung NFDM zu verwenden wird.</span></p>]]></description_html>
+  </requirement>
+</requirements>
