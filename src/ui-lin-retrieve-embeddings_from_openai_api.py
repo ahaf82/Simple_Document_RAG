@@ -39,7 +39,11 @@ def generate_initial_text(query_sentence):
     )
 
     # Concatenate results into a single string
-    initial_text = extract_search_results_content(results)
+    initial_text = f"""
+    The initial question is: {query_sentence}
+    The context retrieved from the vector db is: {extract_search_results_content(results)}
+    """
+    
     return initial_text
 
 # Function to extract the 'content' field from entity
