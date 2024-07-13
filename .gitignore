@@ -39845,3 +39845,4 @@ venv/lib/python3.10/site-packages/torch/include/torch/csrc/distributed/c10d/Para
 venv/lib/python3.10/site-packages/torch/include/torch/csrc/distributed/c10d/PrefixStore.hpp
 
 venv/
+.env
