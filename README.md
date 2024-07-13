@@ -12,3 +12,7 @@ python src/embed-documents-in-vectordb.py
 
 ### Retrieve Information from Promptext in retrieval file and test with local LLM
 python src/win-retrieve-embeddings.py
+
+### Use Mini UI with OpenAI API to get summarized information from documents
+create *.env* file with your openAI key (OPENAI_API_KEY=<your key>) 
+open ui with **src/ui-lin-retrieve-embeddings_from_openai_api.py**
