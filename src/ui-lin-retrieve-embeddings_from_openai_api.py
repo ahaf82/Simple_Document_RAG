@@ -6,6 +6,11 @@ from tkinter import scrolledtext
 import os
 from dotenv import dotenv_values
 
+initial_message_content = [
+    {"role" : "system", "content" : "You got information from a vector database according pdf documents. You are building an understandable, factual text out of this information in german"},
+]
+messages = initial_message_content
+
 # Function to generate initial text from the given script
 def generate_initial_text(query_sentence):
     # Load the pre-trained model for generating the query embedding
@@ -68,10 +73,8 @@ def summarize_text_stream(openai_api_key, text, output_text_widget, max_new_toke
     # Initialize variables to store the stream content
     full_summary = ""
 
-    messages = [
-		{"role" : "system", "content" : "You got information from a vector database according pdf documents. You are building an understandable, factual text out of this information in german"},
-		{"role" : "user", "content" : f"{text}"}
-    ]
+    messages.append({"role": "user", "content": text})
+    output_text_widget.insert(tk.END, f"Antwort: \r\n\n")
     
     # Make a request to the OpenAI API to summarize the text
     response = openai.chat.completions.create(
@@ -84,29 +87,37 @@ def summarize_text_stream(openai_api_key, text, output_text_widget, max_new_toke
         stream=True
 	)
 
-    print(response)
     # Process the stream
     for event in response:
         content_part = event.choices[0].delta.content
-        output_text_widget.insert(tk.END, content_part)
-        output_text_widget.see(tk.END)
-        full_summary += content_part
+        if content_part is not None:
+            output_text_widget.insert(tk.END, content_part)
+            output_text_widget.see(tk.END)
+            full_summary += content_part
 
     # Return the full summary
+    output_text_widget.insert(tk.END, "\n\r\n")
+    messages.append({"role": "user", "content": full_summary})
     return full_summary
 
-def on_submit():
+def on_submit(event=None):
     query_sentence = query_entry.get()
+    query_entry.delete(0, tk.END)
     initial_text = generate_initial_text(query_sentence)
-    summary_textbox.delete('1.0', tk.END)  # Clear previous summary
+    summary_textbox.insert(tk.END, f"Frage: {query_sentence}\r\n\n")
     summarize_text_stream(openai_api_key, initial_text, summary_textbox)
+
+def on_new_question():
+    messages = initial_message_content
+    summary_textbox.delete('1.0', tk.END)  # Clear previous summary
+    query_entry.delete(0, tk.END)
 
 # Set up the UI
 root = tk.Tk()
 root.title("Dokumenten Suche und Auswertung")
 
 # Summary output text box
-summary_textbox = scrolledtext.ScrolledText(root, width=110, height=20)
+summary_textbox = scrolledtext.ScrolledText(root, width=110, height=35)
 summary_textbox.pack()
 
 # Query input field
@@ -115,10 +126,19 @@ query_label.pack()
 
 query_entry = tk.Entry(root, width=100)
 query_entry.pack()
+query_entry.bind("<Return>", on_submit)  # Bind the Enter key to the on_submit function
+
+# Button frame
+button_frame = tk.Frame(root)
+button_frame.pack()
 
 # Submit button
-submit_button = tk.Button(root, text="Abschicken", command=on_submit)
-submit_button.pack()
+submit_button = tk.Button(button_frame, text="Abschicken", command=on_submit)
+submit_button.pack(side=tk.LEFT)
+
+# New question button
+new_question_button = tk.Button(button_frame, text="Neue Frage", command=on_new_question)
+new_question_button.pack(side=tk.LEFT)
 
 # Example usage:
 config = dotenv_values('.env')
