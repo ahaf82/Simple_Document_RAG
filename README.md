@@ -21,3 +21,7 @@
 ### Use Mini UI with OpenAI API to get summarized information from documents
 <br>create *.env* file with your openAI key (OPENAI_API_KEY=\<your_key\>)</br>
 <br>open ui with **src/ui-lin-retrieve-embeddings_from_openai_api.py**</br>
+
+### License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
