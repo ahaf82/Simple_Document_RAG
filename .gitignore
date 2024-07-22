@@ -39846,3 +39846,6 @@ venv/lib/python3.10/site-packages/torch/include/torch/csrc/distributed/c10d/Pref
 
 venv/
 .env
+licenses.md
+
+often_used_commands.md
