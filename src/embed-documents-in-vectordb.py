@@ -1,5 +1,8 @@
 import os
 import fitz  # PyMuPDF
+import xml.etree.ElementTree as ET
+import openpyxl  # For XLSX files
+import docx  # For DOCX files
 from sentence_transformers import SentenceTransformer
 from pymilvus import connections, utility, FieldSchema, CollectionSchema, DataType, Collection
 
@@ -11,13 +14,39 @@ def extract_text_from_pdf(pdf_path):
         text += page.get_text()
     return text
 
+def extract_text_from_xml(xml_path):
+    tree = ET.parse(xml_path)
+    root = tree.getroot()
+    text = ""
+    for elem in root.iter():
+        if elem.text:
+            text += elem.text + " "
+    return text.strip()
+
+def extract_text_from_xlsx(xlsx_path):
+    workbook = openpyxl.load_workbook(xlsx_path)
+    text = ""
+    for sheet in workbook:
+        for row in sheet.iter_rows(values_only=True):
+            for cell in row:
+                if cell is not None:
+                    text += str(cell) + " "
+    return text.strip()
+
+def extract_text_from_docx(docx_path):
+    doc = docx.Document(docx_path)
+    text = ""
+    for paragraph in doc.paragraphs:
+        text += paragraph.text + " "
+    return text.strip()
+
 def chunk_text(text, max_length=500):
     # Split text into chunks of max_length
     words = text.split()
     for i in range(0, len(words), max_length):
         yield " ".join(words[i:i + max_length])
 
-def process_pdfs_in_directory(directory_path):
+def process_files_in_directory(directory_path):
     # Initialize the model
     model = SentenceTransformer('all-MiniLM-L6-v2')
 
@@ -28,7 +57,7 @@ def process_pdfs_in_directory(directory_path):
     connected = connections.has_connection("default")
     print(f"Connected to Milvus: {connected}")
 
-    collection_name = "pdf_collection"
+    collection_name = "document_collection"
 
     # List all collections
     all_collections = utility.list_collections()
@@ -43,7 +72,6 @@ def process_pdfs_in_directory(directory_path):
     else:
         print(f"Collection '{collection_name}' does not exist.")
 
-
     # Define the schema
     fields = [
         FieldSchema(name="id", dtype=DataType.INT64, is_primary=True, auto_id=True),
@@ -56,22 +84,31 @@ def process_pdfs_in_directory(directory_path):
     collection = Collection(collection_name, schema)
 
     for filename in os.listdir(directory_path):
+        file_path = os.path.join(directory_path, filename)
         if filename.endswith(".pdf"):
-            pdf_path = os.path.join(directory_path, filename)
-            print(f"Processing {pdf_path}")
+            print(f"Processing {file_path}")
+            file_text = extract_text_from_pdf(file_path)
+        elif filename.endswith(".xml"):
+            print(f"Processing {file_path}")
+            file_text = extract_text_from_xml(file_path)
+        elif filename.endswith(".xlsx"):
+            print(f"Processing {file_path}")
+            file_text = extract_text_from_xlsx(file_path)
+        elif filename.endswith(".docx"):
+            print(f"Processing {file_path}")
+            file_text = extract_text_from_docx(file_path)
+        else:
+            continue
 
-            # Extract text from PDF
-            pdf_text = extract_text_from_pdf(pdf_path)
+        # Chunk text if it's too long
+        chunks = list(chunk_text(file_text))
 
-            # Chunk text if it's too long
-            chunks = list(chunk_text(pdf_text))
+        for chunk in chunks:
+            # Convert text to vector
+            text_vector = model.encode(chunk)
 
-            for chunk in chunks:
-                # Convert text to vector
-                text_vector = model.encode(chunk)
-
-                # Insert vector and content into Milvus
-                collection.insert([[text_vector], [chunk]])
+            # Insert vector and content into Milvus
+            collection.insert([[text_vector], [chunk]])
 
     # Create an index for the 'embedding' field
     index_params = {
@@ -83,7 +120,7 @@ def process_pdfs_in_directory(directory_path):
 
 def main():
     directory_path = "embedding_documents"
-    process_pdfs_in_directory(directory_path)
+    process_files_in_directory(directory_path)
 
 if __name__ == "__main__":
     main()

@@ -78,7 +78,7 @@ def summarize_text_stream(openai_api_key, text, output_text_widget, max_new_toke
     
     # Make a request to the OpenAI API to summarize the text
     response = openai.chat.completions.create(
-		model="gpt-3.5-turbo",
+		model="gpt-4o-mini",
 		messages=messages,
 		max_tokens=2000,
         n=1,
