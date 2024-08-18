@@ -2,6 +2,7 @@ import os
 import xml.etree.ElementTree as ET
 from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, Settings
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
+from sqlalchemy import true
 from transformers import AutoModel, AutoTokenizer, GPT2Model, GPT2Tokenizer
 import torch
 from pymilvus import connections, utility, FieldSchema, CollectionSchema, DataType, Collection
@@ -11,7 +12,7 @@ codebert_model = AutoModel.from_pretrained("./codebert_model")
 codebert_tokenizer = AutoTokenizer.from_pretrained("./codebert_model")
 
 # Initialize the HuggingFace Embedding with GPT-2
-embed_model = HuggingFaceEmbedding(model_name="./all-MiniLM-L6-v2")
+embed_model = HuggingFaceEmbedding(model_name="./all-mpnet-base-v2")
 Settings.embed_model = embed_model
 
 def chunk_text(text, max_length=500):
@@ -67,7 +68,7 @@ def process_files_in_directory(directory_path):
     collection = Collection(collections[0], schema)
 
     # Use SimpleDirectoryReader to recursively read files and embed them
-    reader = SimpleDirectoryReader(directory_path)
+    reader = SimpleDirectoryReader(directory_path, recursive=true)
     documents = reader.load_data()
 
     # Process each document
