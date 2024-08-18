@@ -61,6 +61,7 @@ def process_files_in_directory(directory_path):
 
     # List all collections
     all_collections = utility.list_collections()
+    print("\nCollections:", all_collections)
     
     # Check if the collection exists
     if collection_name in all_collections:
